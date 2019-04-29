@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=6.7.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.7.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.7.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="题目传送门 题解ydc 的题面 II？？ 测试点 1 ~ 3 : 1_998244353输入：1234567891011121314151_998244353100000012345678910.... 输出：12345678910111 (=19^0)19 (=19^1)361 (=19^2)6859 (=19^3)1303212476099470458818938717391340904025">
+<meta name="keywords" content="非传统题,偏题，怪题,快速幂,欧拉定理,生日定理，判圈,质数,Miller-Rabin,莫比乌斯函数,原根,十二省联考">
+<meta property="og:type" content="article">
+<meta property="og:title" content="洛谷P5285 [十二省联考2019]骗分过样例">
+<meta property="og:url" content="http://fsy-juruo.github.io/2019/04/29/洛谷P5285-十二省联考2019-骗分过样例/index.html">
+<meta property="og:site_name" content="fsy&#39;s blog">
+<meta property="og:description" content="题目传送门 题解ydc 的题面 II？？ 测试点 1 ~ 3 : 1_998244353输入：1234567891011121314151_998244353100000012345678910.... 输出：12345678910111 (=19^0)19 (=19^1)361 (=19^2)6859 (=19^3)1303212476099470458818938717391340904025">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-29T12:45:50.614Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="洛谷P5285 [十二省联考2019]骗分过样例">
+<meta name="twitter:description" content="题目传送门 题解ydc 的题面 II？？ 测试点 1 ~ 3 : 1_998244353输入：1234567891011121314151_998244353100000012345678910.... 输出：12345678910111 (=19^0)19 (=19^1)361 (=19^2)6859 (=19^3)1303212476099470458818938717391340904025">
+
+
+
+
+
+
+  <link rel="canonical" href="http://fsy-juruo.github.io/2019/04/29/洛谷P5285-十二省联考2019-骗分过样例/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>洛谷P5285 [十二省联考2019]骗分过样例 | fsy's blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">fsy's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">燃峥嵘岁月，烈日终破云。</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fsy-juruo.github.io/2019/04/29/洛谷P5285-十二省联考2019-骗分过样例/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fsy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar01.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fsy's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">洛谷P5285 [十二省联考2019]骗分过样例
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-29 20:07:40 / 修改时间：20:45:50" itemprop="dateCreated datePublished" datetime="2019-04-29T20:07:40+08:00">2019-04-29</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">12k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">11 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://www.luogu.org/problemnew/show/P5285" target="_blank" rel="noopener">题目传送门</a></p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p><del>ydc 的题面 II？？</del></p>
+<h3 id="测试点-1-3-1-998244353"><a href="#测试点-1-3-1-998244353" class="headerlink" title="测试点 1 ~ 3 : 1_998244353"></a>测试点 1 ~ 3 : <code>1_998244353</code></h3><p>输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">1_998244353</span><br><span class="line"></span><br><span class="line">100000</span><br><span class="line">0</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">....</span><br></pre></td></tr></table></figure></p>
+<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1 (=19^0)</span><br><span class="line">19 (=19^1)</span><br><span class="line">361 (=19^2)</span><br><span class="line">6859 (=19^3)</span><br><span class="line">130321</span><br><span class="line">2476099</span><br><span class="line">47045881</span><br><span class="line">893871739</span><br><span class="line">13409040</span><br><span class="line">254771760</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<p>显然是要求 $19^x$。<br>但是输出很明显被取模了。你可以直接通过看 功能编号 看出模数是 $998244353$。或者可以用以下的数学推导过程：</p>
+<blockquote>
+<p>由于在输入中，$19^7 = 893871739$ 没爆模数，但是$19^8 = 893871739 \times 19$ 爆了。所以模数肯定是 $19^8 - 13409040 = 16970154001 = 17 \times 998244353$ 的约数且大于 $893871739$，所以模数只可能是 $998244353$</p>
+</blockquote>
+<p>对于测试点 1，$x &lt; 10^5$，所以可以循环求解，时间复杂度 $O(x_{max})$</p>
+<p>对于测试点 2，$x$ 在 <code>long long</code> 范围内，考虑快速幂处理，时间复杂度 $O(n \ log \ x)$</p>
+<p>对于测试点 3，$x$ 超出了 <code>long long</code> 范围。根据扩展欧拉定理，$a^b \equiv a^{b\text{ mod }\varphi(m) + \varphi(m)} \pmod m$，由于 $998244353$ 是质数，所以 $\varphi(998244353) = 998244352$，所以在输入时将数字对 $998244352$ 取模，然后快速幂求 $a^{b + 998244352}$ 即可。</p>
+<p>预计得分：12</p>
+<p>代码见下文。</p>
+<h3 id="测试点-4：1"><a href="#测试点-4：1" class="headerlink" title="测试点 4：1?"></a>测试点 4：<code>1?</code></h3><p>输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1?</span><br><span class="line"></span><br><span class="line">30000</span><br><span class="line">0</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">627811703016764290815178977207148434322</span><br><span class="line">856773959631992699884816425292659199878</span><br><span class="line">....</span><br></pre></td></tr></table></figure></p>
+<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">19</span><br><span class="line">361</span><br><span class="line">642666</span><br><span class="line">986870</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<p>这一次没有模数了，需要我们自己思考。</p>
+<p>我们发现输出数字并不大，所以模数肯定也不大，所以我们考虑找到输出中最大的数字，然后从那个数字开始枚举，直至找到答案。</p>
+<p>输出中最大的数是 $1145099$，在输出数据的第 3303 行和第 23865 行。</p>
+<p>所以我们从 $1145099$ 开始枚举，最终枚举到答案是 $1145141$。</p>
+<p>照样扩展欧拉定理一波。</p>
+<p>预计得分：19</p>
+<h3 id="测试点-5：1"><a href="#测试点-5：1" class="headerlink" title="测试点 5：1?+"></a>测试点 5：<code>1?+</code></h3><p>输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1?+</span><br><span class="line"></span><br><span class="line">10000</span><br><span class="line">...</span><br><span class="line">278117030</span><br><span class="line">167642908</span><br><span class="line">517897720</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">4780942455857497844</span><br><span class="line">3723979667086536331</span><br><span class="line">4605453201349670131</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<p>我们发现这一次输出的数字过大，明显无法直接枚举。</p>
+<p>所以我们可以考虑测试点 3 的数学计算法。</p>
+<p>我们幸运地发现有两组数据十分接近：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">7146| 264708066</span><br><span class="line">...</span><br><span class="line">9371| 264708068</span><br></pre></td></tr></table></figure></p>
+<p>再找到它们对应的输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">7143| 1996649514996338529</span><br><span class="line">...</span><br><span class="line">9368| 1589589654696467295</span><br></pre></td></tr></table></figure></p>
+<p>所以模数一定是 $1996649514996338529 \times 19^2 - 1589589654696467295 = 719200885258981741674$ 的约数。</p>
+<p>最后分解下来为 $5211600617818708273$，快速幂处理。注意使用快速乘或者 <code>__int128</code> 来防止爆 <code>long long</code>。</p>
+<p>预计得分：28</p>
+<h3 id="测试点-6-7：1wa-998244353"><a href="#测试点-6-7：1wa-998244353" class="headerlink" title="测试点 6 ~ 7：1wa_998244353"></a>测试点 6 ~ 7：<code>1wa_998244353</code></h3><p>输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">1wa_998244353</span><br><span class="line"></span><br><span class="line">100000</span><br><span class="line">0</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<p>输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">19</span><br><span class="line">361</span><br><span class="line">6859</span><br><span class="line">130321</span><br><span class="line">2476099</span><br><span class="line">47045881</span><br><span class="line">893871739</span><br><span class="line">-196306143</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<p>出现负数，计算过程中肯定爆 <code>long long</code> 了。</p>
+<p>我们注意到题目中的一段话：</p>
+<blockquote>
+<p>如果你的程序希望利用 <code>int</code> 的自然溢出的特性，请转换为 <code>unsigned</code> 类型运算。例如将 <code>a + b</code> 改写为 <code>(int) ((unsigned) a + (unsigned) b)</code>，以避免出现不预期的错误。</p>
+</blockquote>
+<p>所以我们可以运用这个方法。在测试点 6 中，$x \le 10^5$，所以考虑用上面自然溢出的办法模拟求值。</p>
+<p>对于测试点 7，数字过大，无法直接模拟，所以考虑求循环节，使用 <code>map</code> 找出循环节，直接求解即可。</p>
+<p>预计得分：41</p>
+<h3 id="测试点-8-10：2p"><a href="#测试点-8-10：2p" class="headerlink" title="测试点 8 ~ 10：2p"></a>测试点 8 ~ 10：<code>2p</code></h3><p>我们先随便观察两组输入输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：2 10  输出：pp.p.p...</span><br><span class="line">输入：5 10  输出：p.p...</span><br></pre></td></tr></table></figure>
+<p>首先非常明显的发现，输出是一个区间。其次，我们发现，如果该字符下标是质数，则该字符是 p，否则是 .</p>
+<p>所以这是区间求质数题…</p>
+<p>对于测试点 8，$L, R \le 10^6$，直接线性筛。</p>
+<p>对于测试点 9 和 10，可以对每个数跑一遍 <code>Miller-Rabin</code> 算法。</p>
+<p>预计得分：59</p>
+<h3 id="测试点-11-13：2u"><a href="#测试点-11-13：2u" class="headerlink" title="测试点 11 ~ 13：2u"></a>测试点 11 ~ 13：<code>2u</code></h3><p>首先观察输出，发现只有 +-0 三种符号。<br>再看编号 2u，基本上就能猜出来这是莫比乌斯函数。</p>
+<p>对于测试点 11， $L, R &lt;= 10^6$ ，依旧线性筛解决。</p>
+<p>对于剩下的两个测试点，可以打表解决，也可以使用如下的非打表算法：</p>
+<blockquote>
+<p>首先，先筛出 $2$ ~ $10^6$ 之间的质数。然后，对于给定区间里的数，我们先用这些小于 $10^6$ 的质数去进行分解。过程中注意一旦筛到 $n$ 有平方数因子就把 $\mu (n)$ 直接设为 $0$，且计算筛到质数的乘积。</p>
+<p>此时，如果用完小于 $10^6$ 的质数进行分解后，筛到的乘积仍然小于原数，只有以下三种情况：</p>
+<ol>
+<li>剩下这个数是质数。<br><strong>判断方法：</strong> Miller-Rabin 一遍即可。（强调一遍，<strong>只要用一个 $2$ 判断就可以了！</strong>）</li>
+<li>剩下这个数是平方数。<strong>判断方法：</strong> 将剩下这个数 sqrt 后判断即可。（有些大佬没判这个也 A 了，为了保险我还是判了）</li>
+<li>剩下这个数是两个不同的，大于 $10^6$ 的质数之积。<br><strong>只要上述两个条件均不成立，那这个条件自然成立。</strong></li>
+</ol>
+<p>可以证明，剩下的数肯定不会是三个及以上大于 $10^6$ 的质数的乘积。</p>
+</blockquote>
+<p>预计得分：79</p>
+<h3 id="测试点-14-15：2g，测试点-16：2g"><a href="#测试点-14-15：2g，测试点-16：2g" class="headerlink" title="测试点 14~15：2g，测试点 16：2g?"></a>测试点 14~15：<code>2g</code>，测试点 16：<code>2g?</code></h3><p>看出这三个点需要较强的数论知识，因为如果不知道原根是很难看出来的。</p>
+<p>不过只要写过求原根，或者 N 次剩余和 NTT 代码的都应该知道原根。</p>
+<p>如果您不会相关知识，您可以看下面的概念：</p>
+<blockquote>
+<ol>
+<li>阶：对于两个互质的数 $a,n$，定义 $a$ 模 $n$ 的阶为满足 $a^d \equiv 1 \pmod n$ 的最小正整数 $d$。记作 $\delta _n(a)$。由欧拉定理可知，$\delta _n(a) | \varphi(n)$。</li>
+<li>原根：如果 $\delta _n(a) = \varphi(n)$，则 $a$ 是模 $n$ 意义下的原根。一般用 $g$ 表示。</li>
+<li>指标：根据原根的意义可知，${1, g, g^2, g^3, g^{\varphi(m)}}$ 组成了一个模 $m$ 的剩余系。指标相当于幂的逆运算，用 $I$ 表示，满足：$I(g^x) = x$。</li>
+</ol>
+</blockquote>
+<p>那么，如何求原根呢？</p>
+<p>很简单，根据原根的定义，对于模数 $p$ 和一个数 $a$，如果对于任意一个 $\varphi(p)$ 的质因子 $q$，有 $a^{\frac{\varphi(p)}{q}} \equiv 1 \pmod p$。那么 $a$ 就不是 $p$ 的原根。</p>
+<p>对于测试点 14，对模数质因子分解，暴力判断即可。</p>
+<p>测试点 15 模数发生了变化，直接暴力跑不过去。考虑用指标做。</p>
+<p>先找出模数的一个原根 $6$，然后线性扫一遍指标。当一个数的指标与 $\varphi(p)$ 互质时，该数就是 $p$ 的原根，否则不是。</p>
+<p>测试点 16 需要自己找模数，这个别的大佬都讲过了，模数是 $1515343657$，用测试点 14 的方法暴力即可。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> GCC optimize(<span class="meta-string">"Ofast"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _rep(i, x, y) for (int i = x; i &lt;= y; i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">LL mo = <span class="number">998244352</span>;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(T &amp;x)</span> </span>&#123;</span><br><span class="line">    x = <span class="number">0</span>;</span><br><span class="line">    LL f = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">char</span> c = getchar();</span><br><span class="line">    <span class="keyword">for</span> (; !<span class="built_in">isdigit</span>(c); c = getchar())</span><br><span class="line">        <span class="keyword">if</span> (c == <span class="string">'-'</span>)</span><br><span class="line">            f = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span> (; <span class="built_in">isdigit</span>(c); c = getchar()) x = x * <span class="number">10</span> + c - <span class="number">48</span>;</span><br><span class="line">    x *= f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">readmo</span><span class="params">(T &amp;x)</span> </span>&#123; <span class="comment">// 读入时对 mo 取模。</span></span><br><span class="line">    x = <span class="number">0</span>;</span><br><span class="line">    LL f = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">char</span> c = getchar();</span><br><span class="line">    <span class="keyword">for</span> (; !<span class="built_in">isdigit</span>(c); c = getchar())</span><br><span class="line">        <span class="keyword">if</span> (c == <span class="string">'-'</span>)</span><br><span class="line">            f = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span> (; <span class="built_in">isdigit</span>(c); c = getchar()) &#123;</span><br><span class="line">        x = x * <span class="number">10</span> + c - <span class="number">48</span>;</span><br><span class="line">        x %= mo;</span><br><span class="line">    &#125;</span><br><span class="line">    x *= f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">(T x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">putchar</span>(<span class="string">'-'</span>);</span><br><span class="line">        x = -x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (x &gt; <span class="number">9</span>)</span><br><span class="line">        write(x / <span class="number">10</span>);</span><br><span class="line">    <span class="built_in">putchar</span>(x % <span class="number">10</span> + <span class="string">'0'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">string</span> utensil; <span class="comment">// 读入的类别。</span></span><br><span class="line"><span class="function">LL <span class="title">qmul</span><span class="params">(LL a, LL b, LL p)</span> </span>&#123; <span class="comment">// 使用 __int128 快速乘。</span></span><br><span class="line">    <span class="keyword">return</span> (__int128) a * b % p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">LL <span class="title">qpow</span><span class="params">(LL a, LL b, LL p)</span> </span>&#123; <span class="comment">// long long 意义下的快速幂，使用了快速乘。</span></span><br><span class="line">    LL sum = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (b) &#123;</span><br><span class="line">        <span class="keyword">if</span> (b &amp; <span class="number">1</span>)</span><br><span class="line">            sum = (__int128)sum * a % p;</span><br><span class="line">        a = ((__int128)a * a) % p;</span><br><span class="line">        b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; prefix, answer; </span><br><span class="line"><span class="keyword">int</span> b, p;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pretreatment</span><span class="params">()</span> </span>&#123; <span class="comment">// 寻找循环节。</span></span><br><span class="line">    <span class="keyword">int</span> mod = <span class="number">998244353</span>;</span><br><span class="line">    <span class="keyword">int</span> c = <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; m; <span class="comment">// 存放数字，以寻找循环节。</span></span><br><span class="line">    m[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    prefix.push_back(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;; i++) &#123;</span><br><span class="line">        prefix.push_back(c = ((<span class="keyword">int</span>)((<span class="keyword">unsigned</span>)c * <span class="number">19u</span>) % mod)); <span class="comment">// 利用题目中的方法溢出。</span></span><br><span class="line">        <span class="keyword">if</span> (m[c]) &#123; <span class="comment">// 该数存在过了。</span></span><br><span class="line">            p = i - m[c]; <span class="comment">// 循环节长度就是两数字间的距离。</span></span><br><span class="line">            b = m[c]; <span class="comment">// 开始循环的位置即为 map 里该数字第一次存在的位置。</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        m[c] = i;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    answer.resize(p); <span class="comment">// 存放答案。</span></span><br><span class="line">    _rep(i, <span class="number">0</span>, p - <span class="number">1</span>) &#123;</span><br><span class="line">        answer[(i + b) % p] = c;</span><br><span class="line">        c = (<span class="keyword">int</span>)((<span class="keyword">unsigned</span>)c * <span class="number">19u</span>) % mod;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 返回 1_wa998244353 数据的答案。</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">solving_modwa</span><span class="params">(LL x)</span> </span>&#123; <span class="keyword">return</span> (x &lt; b) ? prefix[x] : answer[x % p]; &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> prime_list[<span class="number">12</span>] = &#123; <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">13</span>, (LL) <span class="number">1e9</span> + <span class="number">7</span> &#125;; <span class="comment">// 质数表，用于 Miller-Rabin 算法。</span></span><br><span class="line"></span><br><span class="line"><span class="function">LL <span class="title">gcd</span><span class="params">(LL a, LL b)</span> </span>&#123; <span class="keyword">return</span> a % b == <span class="number">0</span> ? b : gcd(b, a % b); &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">miller_rabin</span><span class="params">(LL x, <span class="keyword">int</span> times = <span class="number">7</span>)</span> </span>&#123; <span class="comment">// times 控制次数，为 2u 测试点提共方便。</span></span><br><span class="line">    <span class="keyword">if</span> (x &lt; <span class="number">2</span>) <span class="comment">// 特判。</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span> (x == <span class="number">2</span> || x == <span class="number">3</span> || x == <span class="number">5</span> || x == <span class="number">7</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">if</span> (x % <span class="number">2</span> == <span class="number">0</span> || x % <span class="number">3</span> == <span class="number">0</span> || x % <span class="number">5</span> == <span class="number">0</span> || x % <span class="number">7</span> == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    LL cnt = <span class="number">0</span>, rem = x - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (!(rem &amp; <span class="number">1</span>)) &#123;</span><br><span class="line">        cnt++;</span><br><span class="line">        rem &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    _rep(i, <span class="number">0</span>, times - <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(x == prime_list[i]) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(x % prime_list[i] == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        LL rt = qpow(prime_list[i], rem, x);</span><br><span class="line">        LL y = rt;</span><br><span class="line">        _rep(i, <span class="number">1</span>, cnt) &#123;</span><br><span class="line">            rt = qmul(rt, rt, x);</span><br><span class="line">            <span class="keyword">if</span> (rt == <span class="number">1</span> &amp;&amp; y != <span class="number">1</span> &amp;&amp; y != x - <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            y = rt;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (rt != <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">verdict_mobius</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> maxn = <span class="number">1000000</span>;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; prime(maxn + <span class="number">1</span>), v(maxn + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">int</span> m = <span class="number">0</span>;</span><br><span class="line">    _rep(i, <span class="number">2</span>, maxn) &#123; <span class="comment">// 线性筛。</span></span><br><span class="line">        <span class="keyword">if</span>(v[i] == <span class="number">0</span>) &#123;</span><br><span class="line">            v[i] = i; prime[++m] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        _rep(j, <span class="number">1</span>, m) &#123;</span><br><span class="line">            <span class="keyword">if</span>(prime[j] &gt; v[i] || prime[j] &gt; maxn / i) <span class="keyword">break</span>;</span><br><span class="line">            v[i * prime[j]] = prime[j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> t; LL L, R;</span><br><span class="line">    read(t);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(t--) &#123;</span><br><span class="line">        read(L); read(R);</span><br><span class="line">        <span class="built_in">vector</span>&lt;LL&gt; num;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; miu;</span><br><span class="line">        num.resize(R - L + <span class="number">1</span>); miu.resize(R - L + <span class="number">1</span>);</span><br><span class="line">        _rep(i, <span class="number">0</span>, R - L) &#123;</span><br><span class="line">            num[i] = <span class="number">1</span>; miu[i] = <span class="number">1</span>; </span><br><span class="line">        &#125;</span><br><span class="line">        _rep(i, <span class="number">1</span>, m) &#123;</span><br><span class="line">            <span class="keyword">for</span>(LL j = (((L - <span class="number">1</span>) / prime[i] + <span class="number">1</span>) * prime[i]); j &lt;= R; j += prime[i]) &#123; <span class="comment">// 在这一段区间内寻找能被该质数整除的数</span></span><br><span class="line">                <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">if</span>(j % ((LL) prime[i] * prime[i]) == <span class="number">0</span>) miu[j - L] = <span class="number">0</span>; <span class="comment">// 如果 j 能被该质数的平方整除，则直接把该数的莫比乌斯函数设为 0 </span></span><br><span class="line">                <span class="keyword">else</span> miu[j - L] = -miu[j - L]; <span class="comment">// 否则就将莫比乌斯函数乘 -1 </span></span><br><span class="line">                num[j - L] *= prime[i]; <span class="comment">// 乘上该质数。</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        _rep(i, <span class="number">0</span>, R - L) &#123;</span><br><span class="line">            <span class="keyword">if</span>(miu[i] == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="built_in">putchar</span>(<span class="string">'0'</span>); <span class="keyword">continue</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span>(num[i] != i + L) &#123;</span><br><span class="line">                <span class="keyword">if</span>(miller_rabin((i + L) / num[i], <span class="number">1</span>)) &#123; <span class="comment">// 情况一：剩下这个数是质数。</span></span><br><span class="line">                    miu[i] *= <span class="number">-1</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    LL t = (<span class="keyword">long</span> <span class="keyword">long</span>)<span class="built_in">sqrt</span>((i + L) / num[i]); <span class="comment">// 情况二：剩下这个数是平方数。</span></span><br><span class="line">                    <span class="keyword">if</span>(t * t == (i + L) / num[i]) miu[i] = <span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">putchar</span>(miu[i] == <span class="number">0</span>? <span class="string">'0'</span> : (miu[i] == <span class="number">1</span>? <span class="string">'+'</span> : <span class="string">'-'</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">putchar</span>(<span class="string">'\n'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; fac[<span class="number">4</span>];</span><br><span class="line"><span class="keyword">int</span> idx[<span class="number">13126666</span>], vis[<span class="number">13126666</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">factor</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> type)</span> </span>&#123; <span class="comment">// 质因子分解。</span></span><br><span class="line">    _rep(i, <span class="number">2</span>, <span class="built_in">sqrt</span>(x)) &#123;</span><br><span class="line">        <span class="keyword">if</span>(x % i == <span class="number">0</span>) &#123;</span><br><span class="line">            fac[type].push_back(i);</span><br><span class="line">            <span class="keyword">while</span>(x % i == <span class="number">0</span>) x /= i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(x &gt; <span class="number">1</span>) fac[type].push_back(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">is_primitive_root</span><span class="params">(<span class="keyword">int</span> g, <span class="keyword">int</span> type, <span class="keyword">int</span> phi, <span class="keyword">int</span> mod)</span> </span>&#123; <span class="comment">// 判断原根。</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> i : fac[type]) &#123;</span><br><span class="line">        <span class="keyword">if</span>(qpow(g, phi / i, mod) == <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; utensil;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (utensil == <span class="string">"1_998244353"</span>) &#123;</span><br><span class="line">        <span class="keyword">int</span> n;</span><br><span class="line">        read(n);</span><br><span class="line"></span><br><span class="line">        _rep(i, <span class="number">1</span>, n) &#123;</span><br><span class="line">            LL x;</span><br><span class="line">            readmo(x);</span><br><span class="line">            write(qpow(<span class="number">19</span>, x + <span class="number">998244352</span>, <span class="number">998244353</span>));</span><br><span class="line">            <span class="built_in">putchar</span>(<span class="string">'\n'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (utensil == <span class="string">"1?"</span>) &#123;</span><br><span class="line">        <span class="keyword">int</span> n;</span><br><span class="line">        read(n);</span><br><span class="line"></span><br><span class="line">        mo = <span class="number">1145140</span>;</span><br><span class="line">        _rep(i, <span class="number">1</span>, n) &#123;</span><br><span class="line">            LL x;</span><br><span class="line">            readmo(x);</span><br><span class="line">            write(qpow(<span class="number">19</span>, x + <span class="number">1145140</span>, <span class="number">1145141</span>));</span><br><span class="line">            <span class="built_in">putchar</span>(<span class="string">'\n'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (utensil == <span class="string">"1?+"</span>) &#123;</span><br><span class="line">        <span class="keyword">int</span> n;</span><br><span class="line">        read(n);</span><br><span class="line"></span><br><span class="line">        mo = <span class="number">5211600617818708273l</span>l;</span><br><span class="line">        _rep(i, <span class="number">1</span>, n) &#123;</span><br><span class="line">            LL x;</span><br><span class="line">            read(x);</span><br><span class="line">            write(qpow(<span class="number">19</span>, x, mo));</span><br><span class="line">            <span class="built_in">putchar</span>(<span class="string">'\n'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (utensil == <span class="string">"1wa_998244353"</span>) &#123;</span><br><span class="line">        <span class="keyword">int</span> n;</span><br><span class="line">        read(n);</span><br><span class="line"></span><br><span class="line">        pretreatment();</span><br><span class="line">        _rep(i, <span class="number">1</span>, n) &#123;</span><br><span class="line">            LL x;</span><br><span class="line">            read(x);</span><br><span class="line">            write(solving_modwa(x));</span><br><span class="line">            <span class="built_in">putchar</span>(<span class="string">'\n'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(utensil == <span class="string">"2p"</span>) &#123;</span><br><span class="line">        <span class="keyword">int</span> n;</span><br><span class="line">        read(n);</span><br><span class="line"></span><br><span class="line">        _rep(i, <span class="number">1</span>, n) &#123;</span><br><span class="line">            LL L, R;</span><br><span class="line">            read(L); read(R);</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">long</span> <span class="keyword">long</span> j = L; j &lt;= R; j++) &#123;</span><br><span class="line">                <span class="built_in">putchar</span>(miller_rabin(j)? <span class="string">'p'</span> : <span class="string">'.'</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">putchar</span>(<span class="string">'\n'</span>);</span><br><span class="line">        &#125;    	</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(utensil == <span class="string">"2u"</span>) &#123;</span><br><span class="line">        verdict_mobius();</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(utensil == <span class="string">"2g"</span> || utensil == <span class="string">"2g?"</span>) &#123;</span><br><span class="line">        <span class="keyword">int</span> n;</span><br><span class="line">        read(n);</span><br><span class="line"></span><br><span class="line">        factor(<span class="number">998244352</span>, <span class="number">1</span>); <span class="comment">// 预处理因子，尽可能减少时间复杂度。</span></span><br><span class="line">        factor(<span class="number">13123110</span>, <span class="number">2</span>);</span><br><span class="line">        factor(<span class="number">1515343656</span>, <span class="number">3</span>);</span><br><span class="line">        _rep(i, <span class="number">1</span>, n) &#123;</span><br><span class="line">            LL L, R, t, mo;</span><br><span class="line">            <span class="built_in">string</span> m;</span><br><span class="line">            read(L); read(R);</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; m;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(m == <span class="string">"998244353"</span>) &#123;</span><br><span class="line">                mo = <span class="number">998244353</span>; t = <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span>(m == <span class="string">"13123111"</span>) &#123;</span><br><span class="line">                mo = <span class="number">13123111</span>; t = <span class="number">2</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                mo = <span class="number">1515343657</span>; t = <span class="number">3</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(t == <span class="number">2</span>) &#123;</span><br><span class="line">                <span class="keyword">int</span> g = <span class="number">6</span>;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">auto</span> i : fac[t]) &#123;</span><br><span class="line">                    <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt;= mo; j += i) &#123; <span class="comment">// 处理所有与 phi(p) 的质因数不互质的数。</span></span><br><span class="line">                        vis[j] = <span class="number">1</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">int</span> ans = <span class="number">1</span>;</span><br><span class="line">                _rep(i, <span class="number">1</span>, mo) &#123; <span class="comment">// 线性扫指标。</span></span><br><span class="line">                    ans = ans * g % mo;</span><br><span class="line">                    idx[ans] = i;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                _rep(i, L, R) &#123;</span><br><span class="line">                    <span class="built_in">putchar</span>(vis[idx[i]] ? <span class="string">'.'</span> : <span class="string">'g'</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="built_in">putchar</span>(<span class="string">'\n'</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                _rep(i, L, R) &#123;</span><br><span class="line">                    <span class="built_in">putchar</span>(is_primitive_root(i, t, mo - <span class="number">1</span>, mo) ? <span class="string">'g'</span> : <span class="string">'.'</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="built_in">putchar</span>(<span class="string">'\n'</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;    	</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/非传统题/" <i class="fa fa-tag"> 非传统题</a>
+          
+            <a href="/tags/偏题，怪题/" <i class="fa fa-tag"> 偏题，怪题</a>
+          
+            <a href="/tags/快速幂/" <i class="fa fa-tag"> 快速幂</a>
+          
+            <a href="/tags/欧拉定理/" <i class="fa fa-tag"> 欧拉定理</a>
+          
+            <a href="/tags/生日定理，判圈/" <i class="fa fa-tag"> 生日定理，判圈</a>
+          
+            <a href="/tags/质数/" <i class="fa fa-tag"> 质数</a>
+          
+            <a href="/tags/Miller-Rabin/" <i class="fa fa-tag"> Miller-Rabin</a>
+          
+            <a href="/tags/莫比乌斯函数/" <i class="fa fa-tag"> 莫比乌斯函数</a>
+          
+            <a href="/tags/原根/" <i class="fa fa-tag"> 原根</a>
+          
+            <a href="/tags/十二省联考/" <i class="fa fa-tag"> 十二省联考</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/26/UVA-10622-Perfect-P-th-Powers/" rel="next" title="UVA 10622 Perfect P-th Powers">
+                <i class="fa fa-chevron-left"></i> UVA 10622 Perfect P-th Powers
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar01.png" alt="fsy">
+            
+              <p class="site-author-name" itemprop="name">fsy</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/fsy-juruo" title="GitHub &rarr; https://github.com/fsy-juruo" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题解"><span class="nav-number">1.</span> <span class="nav-text">题解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#测试点-1-3-1-998244353"><span class="nav-number">1.1.</span> <span class="nav-text">测试点 1 ~ 3 : 1_998244353</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试点-4：1"><span class="nav-number">1.2.</span> <span class="nav-text">测试点 4：1?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试点-5：1"><span class="nav-number">1.3.</span> <span class="nav-text">测试点 5：1?+</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试点-6-7：1wa-998244353"><span class="nav-number">1.4.</span> <span class="nav-text">测试点 6 ~ 7：1wa_998244353</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试点-8-10：2p"><span class="nav-number">1.5.</span> <span class="nav-text">测试点 8 ~ 10：2p</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试点-11-13：2u"><span class="nav-number">1.6.</span> <span class="nav-text">测试点 11 ~ 13：2u</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试点-14-15：2g，测试点-16：2g"><span class="nav-number">1.7.</span> <span class="nav-text">测试点 14~15：2g，测试点 16：2g?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">fsy</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">19k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    
+    <span title="站点阅读时长">17 分钟</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v6.7.0</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.7.0"></script>
+
+  <script src="/js/src/motion.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=6.7.0"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=6.7.0"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.7.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+      for (i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+  overflow: auto hidden;
+}
+</style>
+
+    
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var range = document.createRange(); //For Chrome
+        var sel = window.getSelection(); //For Chrome
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.value = code;
+        ta.textContent = code; //For FireFox
+        ta.contentEditable = true;
+        ta.readOnly = false;
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('复制成功');
+          else $(this).text('复制失败');
+        
+        ta.blur(); //For iOS
+        $(this).blur();
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function () {
+          $b.text('复制');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+  
+
+</body>
+</html>
