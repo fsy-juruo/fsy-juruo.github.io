@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="算是 Recent 里较水的一道题吧。难度应该不超过 40%。 首先，如果你懒得想正解，可以直接学讨论区里的某位巨佬，优化一下暴力，运行时间在 28min ~ 48hrs 不等。 接下来讲正解。 有一个很明显的结论：如果 $x$ 不是 SRS，则 $x = py$，其中 $p$ 是质数，且 $y \leq p$。 证明啊，首先 $y$ 不可能大于 $p$，这样子的话，$p$ 一定小于 $\sqrt">
+  <meta name="description" content="Password is required to read this passage.">
 <meta name="keywords" content="【OJ】Project Euler,【算法】整除分块,【算法】质数筛,【算法】快速质数计数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Project Euler 668 Square root smooth Numbers">
 <meta property="og:url" content="http://fsy-juruo.github.io/2019/08/27/Project-Euler-668-Square-root-smooth-Numbers/index.html">
 <meta property="og:site_name" content="fsy&#39;s blog">
-<meta property="og:description" content="算是 Recent 里较水的一道题吧。难度应该不超过 40%。 首先，如果你懒得想正解，可以直接学讨论区里的某位巨佬，优化一下暴力，运行时间在 28min ~ 48hrs 不等。 接下来讲正解。 有一个很明显的结论：如果 $x$ 不是 SRS，则 $x = py$，其中 $p$ 是质数，且 $y \leq p$。 证明啊，首先 $y$ 不可能大于 $p$，这样子的话，$p$ 一定小于 $\sqrt">
+<meta property="og:description" content="Password is required to read this passage.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-27T14:50:13.319Z">
+<meta property="og:updated_time" content="2019-08-27T15:06:15.205Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Project Euler 668 Square root smooth Numbers">
-<meta name="twitter:description" content="算是 Recent 里较水的一道题吧。难度应该不超过 40%。 首先，如果你懒得想正解，可以直接学讨论区里的某位巨佬，优化一下暴力，运行时间在 28min ~ 48hrs 不等。 接下来讲正解。 有一个很明显的结论：如果 $x$ 不是 SRS，则 $x = py$，其中 $p$ 是质数，且 $y \leq p$。 证明啊，首先 $y$ 不可能大于 $p$，这样子的话，$p$ 一定小于 $\sqrt">
+<meta name="twitter:description" content="Password is required to read this passage.">
 
 
 
@@ -387,7 +387,7 @@
                 
               
 
-              <time title="创建时间：2019-08-27 22:03:56 / 修改时间：22:50:13" itemprop="dateCreated datePublished" datetime="2019-08-27T22:03:56+08:00">2019-08-27</time>
+              <time title="创建时间：2019-08-27 22:03:56 / 修改时间：23:06:15" itemprop="dateCreated datePublished" datetime="2019-08-27T22:03:56+08:00">2019-08-27</time>
             
 
             
@@ -426,7 +426,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">636</span>
+                <span title="本文字数">4k</span>
               
 
               
@@ -440,7 +440,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">4 分钟</span>
               
             </div>
           
@@ -460,16 +460,19 @@
       
 
       
-        <p>算是 Recent 里较水的一道题吧。难度应该不超过 40%。</p>
-<p>首先，如果你懒得想正解，可以直接学讨论区里的某位巨佬，优化一下暴力，运行时间在 28min ~ 48hrs 不等。</p>
-<p>接下来讲正解。</p>
-<p>有一个很明显的结论：如果 $x$ 不是 SRS，则 $x = py$，其中 $p$ 是质数，且 $y \leq p$。</p>
-<p>证明啊，首先 $y$ 不可能大于 $p$，这样子的话，$p$ 一定小于 $\sqrt{x}$。其次 $p$ 的指数也不会大于 1，否则也会导致 $p \leq \sqrt{x}$。</p>
-<p>综上，答案即为 $n - \sum_{i \in \mathbb{P}}^{n} \min(i,\lfloor\frac{n}{i}\rfloor) = n - \sum_{i \in \mathbb{P}}^{\sqrt{n}} i - \sum_{i \in \mathbb{P}, i = \sqrt{n} + 1}^{n} \lfloor\frac{n}{i}\rfloor$。其中 $\mathbb{P}$ 表示质数集合。</p>
-<p>$\sum_{i \in \mathbb{P}}^{\sqrt{n}} i$ 可以筛法解决，$\sum_{i \in \mathbb{P}, i = \sqrt{n} + 1}^{n} \lfloor\frac{n}{i}\rfloor$ 可以整除分块做掉（这里需要快速质数计数）。</p>
-<p>至此本题解决。（Min25 筛貌似也能做）</p>
-<p>代码不放。</p>
-
+        <div id="hbe-security">
+  <div class="hbe-input-container">
+  <input type="password" class="hbe-form-control" id="pass" placeholder="请回答：当 n = 1e7 时，本问题的答案是?">
+    <label for="pass">请回答：当 n = 1e7 时，本问题的答案是?</label>
+    <div class="bottom-line"></div>
+  </div>
+</div>
+<div id="decryptionError" style="display: none;">Incorrect Password!</div>
+<div id="noContentError" style="display: none;">No content to display!</div>
+<div id="encrypt-blog" style="display:none">
+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
+</div>
+<script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
       
     </div>
 
@@ -746,7 +749,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">36k</span>
+    <span title="站点总字数">39k</span>
   
 
   
@@ -757,7 +760,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">33 分钟</span>
+    <span title="站点阅读时长">36 分钟</span>
   
 </div>
 
