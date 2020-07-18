@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=6.7.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.7.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.7.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="嘛貌似是远古时期写的文章了 qwq 填了填坑 1、$\alpha$ Alpha 关（全解完成） 共计 11 关，4 个教程关，7 个主关 36 颗星，其中 V 星 3 个  Tutorial 等边三角形 / Equilateral Triangle（V 星关） 限制：4L 4E。解数：2   Construct an equilateral triangle with the given side">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Euclidea解法与证明明">
+<meta property="og:url" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/index.html">
+<meta property="og:site_name" content="fsy&#39;s blog">
+<meta property="og:description" content="嘛貌似是远古时期写的文章了 qwq 填了填坑 1、$\alpha$ Alpha 关（全解完成） 共计 11 关，4 个教程关，7 个主关 36 颗星，其中 V 星 3 个  Tutorial 等边三角形 / Equilateral Triangle（V 星关） 限制：4L 4E。解数：2   Construct an equilateral triangle with the given side">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//alpha1%204l%204e.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//alpha2%20sol.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//alpha3%20sol.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//alpha4.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//alpha5.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//alpha5%202sol.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//alpha6.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//alpha6%205e.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//alpha7%206l.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//alpha7%207e%20part.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//ALPHA7%207e%20final.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//beta1%20sol.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//beta2%202l.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//beta2%206e.png">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//beta3.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//beta4%20sol.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//beta4%202v.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//beta5.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//beta6%202l.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//beta6%203e.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//beta7%201l.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//beta7%203e.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//beta8%202l.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//beta8%203e.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//beta9.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//beta10%20sol.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//gamma1%20sol.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//gamma2%203l.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//gamma2%206e.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//gamma3%202l2e.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//gamma4%204l6e.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//gamma5%203l.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//gamma5%206e.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//gamma6%203l.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//gamma6%205e.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/.io//proof.PNG">
+<meta property="og:updated_time" content="2020-07-18T23:11:41.267Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Euclidea解法与证明明">
+<meta name="twitter:description" content="嘛貌似是远古时期写的文章了 qwq 填了填坑 1、$\alpha$ Alpha 关（全解完成） 共计 11 关，4 个教程关，7 个主关 36 颗星，其中 V 星 3 个  Tutorial 等边三角形 / Equilateral Triangle（V 星关） 限制：4L 4E。解数：2   Construct an equilateral triangle with the given side">
+<meta name="twitter:image" content="http://fsy-juruo.github.io/.io//alpha1%204l%204e.PNG">
+
+
+
+
+
+
+  <link rel="canonical" href="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Euclidea解法与证明明 | fsy's blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">fsy's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">燃峥嵘岁月，烈日终破云。</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fsy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar01.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fsy's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Euclidea解法与证明明
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-07-19 07:08:17 / 修改时间：07:11:41" itemprop="dateCreated datePublished" datetime="2020-07-19T07:08:17+08:00">2020-07-19</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">8.4k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">8 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>嘛貌似是远古时期写的文章了 qwq 填了填坑</p>
+<h3 id="1、-alpha-Alpha-关（全解完成）"><a href="#1、-alpha-Alpha-关（全解完成）" class="headerlink" title="1、$\alpha$ Alpha 关（全解完成）"></a>1、$\alpha$ Alpha 关（全解完成）</h3><ul>
+<li>共计 11 关，4 个教程关，7 个主关</li>
+<li>36 颗星，其中 V 星 3 个</li>
+</ul>
+<h5 id="Tutorial-等边三角形-Equilateral-Triangle（V-星关）"><a href="#Tutorial-等边三角形-Equilateral-Triangle（V-星关）" class="headerlink" title="Tutorial 等边三角形 / Equilateral Triangle（V 星关）"></a>Tutorial 等边三角形 / Equilateral Triangle（V 星关）</h5><ul>
+<li>限制：4L 4E。解数：2</li>
+</ul>
+<blockquote>
+<p>Construct an equilateral triangle with the given side. The construction must be exact. Guessing even very close points does not count as a solution.</p>
+<p>过已知边作等边三角形。构造必须严密，即使猜的点非常的精密也不被算为正解。</p>
+</blockquote>
+<p><strong>4L 4E</strong> 等腰三角形三边相等</p>
+<ul>
+<li>工具：圆，圆，线，线</li>
+</ul>
+<p><img src="/.io//alpha1 4l 4e.PNG" style="zoom:50%;"></p>
+<p><strong>2V</strong> 下面还有一个</p>
+<h5 id="Alpha-1-60°-角-Angle-of-60°-（V-星关）"><a href="#Alpha-1-60°-角-Angle-of-60°-（V-星关）" class="headerlink" title="Alpha.1 60° 角 / Angle of 60° （V 星关）"></a>Alpha.1 60° 角 / Angle of 60° （V 星关）</h5><ul>
+<li>限制：3L 3E。解数：2</li>
+</ul>
+<blockquote>
+<p>Construct an angle of 60° with the given side.</p>
+<p>对于给定射线做一个 60° 角。</p>
+</blockquote>
+<p><strong>3L 3E</strong> 等价于上一关</p>
+<ul>
+<li>工具：圆，圆，线</li>
+</ul>
+<p><strong>2V</strong> 下面还有一个</p>
+<h5 id="Tutorial-教程：相交工具-Tutorial-Intersect-Tool"><a href="#Tutorial-教程：相交工具-Tutorial-Intersect-Tool" class="headerlink" title="Tutorial 教程：相交工具 / Tutorial: Intersect Tool"></a>Tutorial 教程：相交工具 / Tutorial: Intersect Tool</h5><ul>
+<li>限制：0L 0E。</li>
+</ul>
+<blockquote>
+<p>… construct the intersection of the given circles.</p>
+<p>求两圆交点。</p>
+</blockquote>
+<p><strong>0L 0E</strong> 点相交工具，再点两个圆就 OK</p>
+<h5 id="Alpha-2-垂直平分线-Perpendicular-Bisector"><a href="#Alpha-2-垂直平分线-Perpendicular-Bisector" class="headerlink" title="Alpha.2 垂直平分线 / Perpendicular Bisector"></a>Alpha.2 垂直平分线 / Perpendicular Bisector</h5><ul>
+<li>限制：3L 3E</li>
+</ul>
+<blockquote>
+<p>Construct the perpendicular bisector of the segment.</p>
+<p>作给定线段的垂直平分线。</p>
+</blockquote>
+<p><strong>3L 3E</strong> 初中基础尺规作图</p>
+<ul>
+<li>工具：圆，圆，线</li>
+</ul>
+<p><img src="/.io//alpha2 sol.PNG" style="zoom:50%;"></p>
+<h5 id="Tutorial-教程：垂直平分线-Tutorial-Perpendicular-Bisector"><a href="#Tutorial-教程：垂直平分线-Tutorial-Perpendicular-Bisector" class="headerlink" title="Tutorial 教程：垂直平分线 / Tutorial: Perpendicular Bisector"></a>Tutorial 教程：垂直平分线 / Tutorial: Perpendicular Bisector</h5><p>你可以直接点击线段的两个端点，作这个线段的垂直平分线了。使用花费：1L 3E</p>
+<h5 id="Alpha-3-中点-Midpoint"><a href="#Alpha-3-中点-Midpoint" class="headerlink" title="Alpha.3 中点 / Midpoint"></a>Alpha.3 中点 / Midpoint</h5><ul>
+<li>限制：2L 4E</li>
+</ul>
+<blockquote>
+<p>Construct the midpoint of the segment defined by two points.</p>
+<p>作给定两点对应线段的中点。</p>
+</blockquote>
+<p><strong>2L 4E</strong> 1L3E 用中垂线，1L1E 连接两个端点，两条线的交点即为所求。</p>
+<p><img src="/.io//alpha3 sol.PNG" style="zoom:50%;"></p>
+<h5 id="Alpha-4-正方形内的圆-Circle-in-Square"><a href="#Alpha-4-正方形内的圆-Circle-in-Square" class="headerlink" title="Alpha.4 正方形内的圆 / Circle in Square"></a>Alpha.4 正方形内的圆 / Circle in Square</h5><ul>
+<li>限制：3L 5E</li>
+</ul>
+<blockquote>
+<p>Inscribe a circle in the square.</p>
+<p>在正方形内内接一个圆。</p>
+</blockquote>
+<p><strong>3L 5E</strong> 圆心：正方形对角线交点，半径：正方形边长一半，以此确定圆。</p>
+<ul>
+<li>工具：中垂，线，圆</li>
+</ul>
+<p><img src="/.io//alpha4.PNG" style="zoom:50%;"></p>
+<h5 id="Tutorial-教程：移动-Tutorial-Move-Tool"><a href="#Tutorial-教程：移动-Tutorial-Move-Tool" class="headerlink" title="Tutorial 教程：移动 / Tutorial: Move Tool"></a>Tutorial 教程：移动 / Tutorial: Move Tool</h5><p>这个描述的是帕斯卡定理。但你其实并不需要知道它是啥，随便拖着一个蓝点移动就 OK</p>
+<h5 id="Alpha-5-矩形内的菱形-Rhombus-in-Rectangle（V-星关）"><a href="#Alpha-5-矩形内的菱形-Rhombus-in-Rectangle（V-星关）" class="headerlink" title="Alpha.5 矩形内的菱形 / Rhombus in Rectangle（V 星关）"></a>Alpha.5 矩形内的菱形 / Rhombus in Rectangle（V 星关）</h5><ul>
+<li>限制：3L 5E，解数：2</li>
+</ul>
+<blockquote>
+<p>Inscribe a rhombus in the rectangle so that they share a diagonal.</p>
+<p>在矩形内内接一个菱形，且二者共用对角线。</p>
+</blockquote>
+<p><strong>3L 5E</strong> 菱形对角线互相垂直平分，所以随便选一条对角线并作其垂直平分线。与矩形产生 2 个交点，加上选的那条对角线的顶点就有 4 个点了。注意其中标注的两条边已经有了别再画一遍…</p>
+<p><img src="/.io//alpha5.PNG" style="zoom:50%;"></p>
+<p><strong>2V</strong> 有两条对角线可选，就有两个不同菱形…</p>
+<p><img src="/.io//alpha5 2sol.PNG" style="zoom:50%;"></p>
+<h5 id="Alpha-6-圆心-Circle-Center"><a href="#Alpha-6-圆心-Circle-Center" class="headerlink" title="Alpha.6 圆心 / Circle Center"></a>Alpha.6 圆心 / Circle Center</h5><ul>
+<li>限制：2L 5E</li>
+</ul>
+<blockquote>
+<p>Construct the center of the circle.Note! L and E goals are independent. To get 3 stars on this level you need to solve it twice: one solution with 2L and the other with 5E.</p>
+<p>作给定圆的圆心。<strong>注意：本关 L 星，E 星为两个独立的任务。为了得到三星，你必须作图两次：一个 2L 的解和一个 5E 的解。</strong></p>
+</blockquote>
+<p><strong>从这关开始，大多数关卡的 L 星，E 星都不能通过只作一次图同时得到。</strong></p>
+<p><strong>2L</strong> 在圆上随便选两组点，作每组点的垂直平分线，交点即为中点</p>
+<ul>
+<li><p>依据：垂径定理推论（弦的垂直平分线必经过圆心）</p>
+</li>
+<li><p>工具：中垂，中垂，交点</p>
+</li>
+</ul>
+<p><img src="/.io//alpha6.PNG" style="zoom:50%;"></p>
+<p><strong>5E</strong> 利用<strong>共用圆</strong>的方法，作 3 个圆来得到 2 组垂直平分线，再求交点</p>
+<ul>
+<li>工具：圆，圆，圆，线，线</li>
+</ul>
+<p><img src="/.io//alpha6 5e.PNG" style="zoom:50%;"></p>
+<h5 id="Alpha-7-圆内接正方形-Inscribed-Square"><a href="#Alpha-7-圆内接正方形-Inscribed-Square" class="headerlink" title="Alpha.7 圆内接正方形 / Inscribed Square"></a>Alpha.7 圆内接正方形 / Inscribed Square</h5><ul>
+<li>要求：6L 7E</li>
+</ul>
+<blockquote>
+<p>Inscribe a square in the circle. One vertex of the square is given.</p>
+<p>给定一个顶点，过这个点作给定圆的内接正方形。</p>
+</blockquote>
+<p><strong>6L</strong> 直接连给定点与圆心得到正方形一条对角线，再做这个对角线的垂直平分线，四个顶点就都有了，顺次连接即可</p>
+<ul>
+<li>依据：正方形对角线互相垂直平分</li>
+<li>工具：线，中垂，线，线，线，线</li>
+</ul>
+<p><img src="/.io//alpha7 6l.PNG" style="zoom:50%;"></p>
+<p><strong>7E</strong> <strong>此任务是许多新手遇到的第一个障碍。故进行分步阐述</strong></p>
+<ul>
+<li><p>工具：圆，圆，线，线，线，线，线</p>
+</li>
+<li><p>第 1 步：以 A 为圆心，AO 为半径，作 $\bigodot A$，交原来的圆于 B、C</p>
+</li>
+<li>第 2 步：以 C 为圆心，CB 为半径，作 $\bigodot C$，交原来的圆于 D</li>
+</ul>
+<p><img src="/.io//alpha7 7e part.PNG" style="zoom:67%;"></p>
+<p><strong>结论 1：A、O、D 三点共线</strong></p>
+<p><strong>证明：</strong> 首先可以清晰地看到 Tutorial 里的等边三角形模型，得 $\angle AOC=60^{\circ}$，运用圆周角定理可得 $\angle ABC=30^{\circ}$，易知 $\angle ACB=30^{\circ}$，$\angle BAC=120^{\circ}$。</p>
+<p>然后有一个 SSS 全等：$\triangle ABC \cong \triangle ODC$，证明过于简单，略去。于是 $\angle COD=120^{\circ}$，$\angle COD+\angle AOC=180^{\circ}$。得证！</p>
+<ul>
+<li>第 3 步：以 O、C 为端点作直线，交 $\bigodot C$ 于 E、F</li>
+<li>第 4~5 步：连接 D、E 交原来的圆于 G，连接 D，F 交原来的圆于 H</li>
+<li>第 6~7 步：连接 AG，AH。</li>
+</ul>
+<p><img src="/.io//ALPHA7 7e final.PNG" style="zoom:67%;"></p>
+<p><strong>证明：</strong> 首先，由直径 $EF$ 的圆周角得出 $\angle EDF = 90^{\circ}$，直径 $AD$ 的圆周角得出 $\angle AGD = 90^{\circ}$，$\angle AHD = 90^{\circ}$，轻松证明出 4 个 $90^{\circ}$。</p>
+<p>上文已证出 $\angle COD = \angle DOC = 30^{\circ}$，圆周角定理得 $\angle EFD = 15^{\circ}$，进一步可得 $\angle CDF = 15^{\circ}$，$\angle ADH = 45^{\circ}$。此时就可以轻易证明这是一个正方形了。</p>
+<h3 id="2、-beta-Beta-关（全解完成）"><a href="#2、-beta-Beta-关（全解完成）" class="headerlink" title="2、$\beta$ Beta 关（全解完成）"></a>2、$\beta$ Beta 关（全解完成）</h3><ul>
+<li>共计 12 关，2 个教程关，10 个主关</li>
+<li>38 颗星，其中 V 星 2 个</li>
+</ul>
+<h5 id="Beta-1-角平分线-Angle-Bisector"><a href="#Beta-1-角平分线-Angle-Bisector" class="headerlink" title="Beta.1 角平分线 / Angle Bisector"></a>Beta.1 角平分线 / Angle Bisector</h5><ul>
+<li>限制：2L 4E</li>
+</ul>
+<blockquote>
+<p>Construct the line that bisects the given angle.</p>
+<p>构造给定角的角平分线。</p>
+</blockquote>
+<p><strong>2L 4E</strong> 以任意半径作圆，这个圆与给定角有两个交点，作两个交点的垂直平分线即可。</p>
+<ul>
+<li>依据：等腰三角形三线合一</li>
+<li>工具：圆，中垂</li>
+</ul>
+<p><img src="/.io//beta1 sol.PNG" style="zoom:50%;"></p>
+<h5 id="Tutorial-教程：角平分线-Tutorial-Angle-Bisector"><a href="#Tutorial-教程：角平分线-Tutorial-Angle-Bisector" class="headerlink" title="Tutorial 教程：角平分线 / Tutorial: Angle Bisector"></a>Tutorial 教程：角平分线 / Tutorial: Angle Bisector</h5><p>你可以顺次点击角一条边上的任意一点，角的顶点，角另外一条边上的任意一点，来直接画出这个角的角平分线了。花费：1L 4E</p>
+<h5 id="Beta-2-角平分线交点-Intersection-of-Angle-Bisectors"><a href="#Beta-2-角平分线交点-Intersection-of-Angle-Bisectors" class="headerlink" title="Beta.2 角平分线交点 / Intersection of Angle Bisectors"></a>Beta.2 角平分线交点 / Intersection of Angle Bisectors</h5><ul>
+<li>限制：2L 6E</li>
+</ul>
+<blockquote>
+<p>Construct the point where the angle bisectors of the triangle are intersected.</p>
+<p>作给定三角形三个角角平分线的交点。</p>
+</blockquote>
+<p><strong>2L</strong> 这就是内心… 只要做两个角的角平分线，取交点就可以了</p>
+<ul>
+<li>工具：角分，角分，交点</li>
+</ul>
+<p><img src="/.io//beta2 2l.PNG" style="zoom:50%;"></p>
+<p><strong>6E</strong> 巧妙地共用圆，用 4 个圆作两条角平分线。如图，A，B 两个圆被共用。</p>
+<p><img src="/.io//beta2 6e.png" style="zoom:50%;"></p>
+<h5 id="Beta-3-30°-角-Angle-of-30°（V-星关）"><a href="#Beta-3-30°-角-Angle-of-30°（V-星关）" class="headerlink" title="Beta.3 30° 角 / Angle of 30°（V 星关）"></a>Beta.3 30° 角 / Angle of 30°（V 星关）</h5><ul>
+<li>限制：3L 3E，解数：2</li>
+</ul>
+<blockquote>
+<p>Construct an angle of 30° with the given side.</p>
+<p>给定一条射线，过这个射线作一个 30° 角</p>
+</blockquote>
+<p><strong>3L 3E</strong> 先构造出 60° 角，再作 30° 角。</p>
+<ul>
+<li><p>依据：圆周角定理</p>
+</li>
+<li><p>工具：圆，圆，线</p>
+</li>
+</ul>
+<p><strong>2V</strong> 下面还有一个。</p>
+<p><img src="/.io//beta3.PNG" style="zoom:50%;"></p>
+<h5 id="Beta-4-二倍角-Double-Angle（V-星关）"><a href="#Beta-4-二倍角-Double-Angle（V-星关）" class="headerlink" title="Beta.4 二倍角 / Double Angle（V 星关）"></a>Beta.4 二倍角 / Double Angle（V 星关）</h5><ul>
+<li>限制：3L 3E，解数：2</li>
+</ul>
+<blockquote>
+<p>Construct an angle equal to the given one so that they share one side.</p>
+<p>给定一个角，作这个角的二倍角，且两个角的其中一条边共线。</p>
+</blockquote>
+<p><strong>3L 3E</strong> 作圆后，构造二倍弧。</p>
+<ul>
+<li>工具：圆，圆，线</li>
+</ul>
+<p><img src="/.io//beta4 sol.PNG" style="zoom:50%;"></p>
+<p><strong>2V</strong> 下面还有一解。</p>
+<p><img src="/.io//beta4 2v.PNG" style="zoom:50%;"></p>
+<h5 id="Beta-5-切割矩形-Cut-Rectangle"><a href="#Beta-5-切割矩形-Cut-Rectangle" class="headerlink" title="Beta.5 切割矩形 / Cut Rectangle"></a>Beta.5 切割矩形 / Cut Rectangle</h5><ul>
+<li>限制：3L 3E</li>
+</ul>
+<blockquote>
+<p>Construct a line through the given point that cuts the rectangle into two parts of equal area.</p>
+<p>过给定点引一条直线，使得这条直线平分矩形的面积</p>
+</blockquote>
+<p><strong>3L 3E</strong> </p>
+<ul>
+<li><p>依据：过矩形中心的直线平分矩形面积。</p>
+</li>
+<li><p>工具：线，线，线</p>
+</li>
+</ul>
+<p><img src="/.io//beta5.PNG" style="zoom:50%;"></p>
+<h5 id="Beta-6-过线外一点作垂线-Drop-a-Perpendicular"><a href="#Beta-6-过线外一点作垂线-Drop-a-Perpendicular" class="headerlink" title="Beta.6 过线外一点作垂线 / Drop a Perpendicular"></a>Beta.6 过线外一点作垂线 / Drop a Perpendicular</h5><ul>
+<li>限制：2L 3E</li>
+</ul>
+<blockquote>
+<p>Drop a perpendicular from the point to the line.</p>
+<p>由给定点向直线引一条垂线。</p>
+</blockquote>
+<p><strong>2L</strong> </p>
+<ul>
+<li>依据：垂径定理推论（弦的垂直平分线必经过圆心）</li>
+<li>工具：圆，中垂</li>
+</ul>
+<p><img src="/.io//beta6 2l.PNG" style="zoom:50%;"></p>
+<p><strong>3E</strong> 作给定点对于给定直线的对称点，连接即可。</p>
+<ul>
+<li>工具：圆，圆，线</li>
+</ul>
+<p><img src="/.io//beta6 3e.PNG" style="zoom:50%;"></p>
+<h5 id="Beta-7-过线上一点引垂线-Erect-a-Perpendicular"><a href="#Beta-7-过线上一点引垂线-Erect-a-Perpendicular" class="headerlink" title="Beta.7 过线上一点引垂线 / Erect a Perpendicular"></a>Beta.7 过线上一点引垂线 / Erect a Perpendicular</h5><ul>
+<li>限制：1L 3E</li>
+</ul>
+<blockquote>
+<p>Erect a perpendicular from the point on the line.</p>
+<p>由给定点向直线引一条垂线。</p>
+</blockquote>
+<p><strong>1L</strong> $180^{\circ} = 90^{\circ} \times 2$，等价于作角平分线。</p>
+<ul>
+<li>工具：角分</li>
+</ul>
+<p><img src="/.io//beta7 1l.PNG" style="zoom:50%;"></p>
+<p><strong>3E</strong> 过给定点任意作圆，做出对应直径，即可得到垂线。</p>
+<ul>
+<li>依据：直径所对圆周角为 $90^{\circ}$</li>
+<li>工具：圆，线，线</li>
+</ul>
+<p><img src="/.io//beta7 3e.PNG" style="zoom:50%;"></p>
+<h5 id="Tutorial-教程：垂线-Tutorial-Perpendicular"><a href="#Tutorial-教程：垂线-Tutorial-Perpendicular" class="headerlink" title="Tutorial 教程：垂线 / Tutorial: Perpendicular"></a>Tutorial 教程：垂线 / Tutorial: Perpendicular</h5><p>你可以直接过一点作一条直线的垂线了。花费：1L 3E</p>
+<h5 id="Beta-8-过圆上一点的切线-Tangent-to-Circle-at-Point"><a href="#Beta-8-过圆上一点的切线-Tangent-to-Circle-at-Point" class="headerlink" title="Beta.8 过圆上一点的切线 / Tangent to Circle at Point"></a>Beta.8 过圆上一点的切线 / Tangent to Circle at Point</h5><ul>
+<li>限制：2L 3E</li>
+</ul>
+<blockquote>
+<p>Construct a tangent to the circle at the given point.</p>
+<p>在给定点上作给定圆的切线。</p>
+</blockquote>
+<p><strong>2L</strong> </p>
+<ul>
+<li>依据：圆的切线垂直于过切点的半径</li>
+<li>工具：圆，垂直</li>
+</ul>
+<p><img src="/.io//beta8 2l.PNG" style="zoom:50%;"></p>
+<p><strong>3E</strong> <strong>分步解释</strong></p>
+<p><img src="/.io//beta8 3e.PNG" style="zoom:67%;"></p>
+<ul>
+<li>第 1 步：在 $\bigodot A$ 上任意选取异于 $B$ 的一点 $C$，以 $C$ 为圆心，$BC$ 长为半径作 $\bigodot C$，$\bigodot C$ 与 $\bigodot A$ 的另一个交点为 $D$</li>
+<li>第 2 步：以 $B$ 为圆心，$BD$ 长为半径作 $\bigodot B$，$\bigodot C$ 与 $\bigodot B$ 的另一个交点为 $E$</li>
+<li>第 3 步：连接 BE 即为所求。</li>
+</ul>
+<p><strong>证明：</strong></p>
+<ul>
+<li>依据：<strong>弦切角逆定理</strong>（以三角形任意一条边为邻边，在三角形外部作一个角等于该边的对角，那么所作角的另一边与三角形外接圆相切，切点为所作角的顶点。）</li>
+</ul>
+<p>由圆可以轻易推出 $DC = CB$，$CB = CE$，$DB=EB$。可得到 $\triangle DCB \cong \triangle BCE$，$\angle BDC = \angle CBE$。由弦切角逆定理，$BE$ 为 $\bigodot A$ 的切线，$B$ 为切点。</p>
+<h5 id="Beta-9-直线的切圆-Circle-Tangent-to-Line"><a href="#Beta-9-直线的切圆-Circle-Tangent-to-Line" class="headerlink" title="Beta.9 直线的切圆 / Circle Tangent to Line"></a>Beta.9 直线的切圆 / Circle Tangent to Line</h5><ul>
+<li>限制：2L 4E</li>
+</ul>
+<blockquote>
+<p>Construct a circle with the given center that is tangent to the given line.</p>
+<p>给定圆心，作圆使得这个圆与给定直线相切。</p>
+</blockquote>
+<p><strong>2L 4E</strong> 说明略…</p>
+<ul>
+<li>工具：垂直，圆</li>
+</ul>
+<p><img src="/.io//beta9.PNG" style="zoom:50%;"></p>
+<h5 id="Beta-10-菱形的内切圆-Сircle-in-Rhombus"><a href="#Beta-10-菱形的内切圆-Сircle-in-Rhombus" class="headerlink" title="Beta.10 菱形的内切圆 / Сircle in Rhombus"></a>Beta.10 菱形的内切圆 / Сircle in Rhombus</h5><ul>
+<li>限制：4L 6E</li>
+</ul>
+<blockquote>
+<p>Inscribe a circle in the rhombus.</p>
+<p>在菱形内内接一个圆。</p>
+</blockquote>
+<p><strong>4L 6E</strong> 连接两条对角线，作垂直获得切点，最后画圆就 OK</p>
+<p><img src="/.io//beta10 sol.PNG" style="zoom:50%;"></p>
+<h3 id="3、-gamma-Gamma-关"><a href="#3、-gamma-Gamma-关" class="headerlink" title="3、$\gamma$ Gamma 关"></a>3、$\gamma$ Gamma 关</h3><ul>
+<li>共计 9 关，全是主关</li>
+<li>30 颗星，其中 V 星 3 个</li>
+</ul>
+<h5 id="Gamma-1-弦中点-Chord-Midpoint"><a href="#Gamma-1-弦中点-Chord-Midpoint" class="headerlink" title="Gamma.1 弦中点 / Chord Midpoint"></a>Gamma.1 弦中点 / Chord Midpoint</h5><ul>
+<li>限制：2L 4E</li>
+</ul>
+<blockquote>
+<p>Construct a chord whose midpoint is given.</p>
+<p>给定弦的中点，作弦。</p>
+</blockquote>
+<p><strong>2L 4E</strong> 连接两点，再作垂线。</p>
+<ul>
+<li>依据：垂径定理</li>
+<li>工具：线，垂直</li>
+</ul>
+<p><img src="/.io//gamma1 sol.PNG" style="zoom:50%;"></p>
+<h5 id="Gamma-2-由角和垂心定义的三角形-Triangle-by-Angle-and-Orthocenter"><a href="#Gamma-2-由角和垂心定义的三角形-Triangle-by-Angle-and-Orthocenter" class="headerlink" title="Gamma.2 由角和垂心定义的三角形 / Triangle by Angle and Orthocenter"></a>Gamma.2 由角和垂心定义的三角形 / Triangle by Angle and Orthocenter</h5><ul>
+<li>限制：3L 7E</li>
+</ul>
+<blockquote>
+<p>Construct a segment connecting the sides of the angle to get a triangle whose orthocenter is in the point O.</p>
+<p>作一条线段，使其连接已知角的两边，从而获得一个垂心为 O 的三角形。</p>
+</blockquote>
+<p><strong>3L</strong> 作垂得到另外两点的位置，连接即可。</p>
+<ul>
+<li>依据：垂心的性质</li>
+<li>工具：垂直，垂直，线</li>
+</ul>
+<p><img src="/.io//gamma2 3l.PNG" style="zoom:50%;"></p>
+<p><strong>6E</strong> 与 3L 思想一样，用 Beta.6 3E 的方法作垂线，用共用圆的思想，使用 3 个圆作 2 条垂线。</p>
+<ul>
+<li>依据：垂心的性质</li>
+<li>工具：圆，圆，圆，线，线，线</li>
+</ul>
+<p><img src="/.io//gamma2 6e.PNG" style="zoom:50%;"></p>
+<h5 id="Gamma-3-垂直平分线交点-Intersection-of-Perpendicular-Bisectors"><a href="#Gamma-3-垂直平分线交点-Intersection-of-Perpendicular-Bisectors" class="headerlink" title="Gamma.3 垂直平分线交点 / Intersection of Perpendicular Bisectors"></a>Gamma.3 垂直平分线交点 / Intersection of Perpendicular Bisectors</h5><ul>
+<li>限制：2L 2E</li>
+</ul>
+<blockquote>
+<p>Construct a segment connecting the sides of the angle to get a triangle whose perpendicular bisectors are intersected in the point O.</p>
+<p>作一条线段，使其连接已知角的两边，从而获得一个三边垂直平分线交点为 O 的三角形。</p>
+</blockquote>
+<p><strong>2L 2E</strong> 三边垂直平分线交点？就是外心啊！作出外接圆，连接交点就可以了</p>
+<ul>
+<li>依据：外心到三角形三边的距离相等。</li>
+<li>工具：圆，线</li>
+</ul>
+<p><img src="/.io//gamma3 2l2e.PNG" style="zoom:50%;"></p>
+<h5 id="Gamma-4-三条等长线段-I-Three-equal-segments-1（V-星关）"><a href="#Gamma-4-三条等长线段-I-Three-equal-segments-1（V-星关）" class="headerlink" title="Gamma.4 三条等长线段 I / Three equal segments - 1（V 星关）"></a>Gamma.4 三条等长线段 I / Three equal segments - 1（V 星关）</h5><ul>
+<li>限制：4L 6E，解数：2</li>
+</ul>
+<blockquote>
+<p>Given an angle ABC and a point M inside it, find points D on BA and E on BC and construct segments DM and ME such that BD = DM = ME.</p>
+<p>给定 $\angle ABC$ 与在角内的一点 M，在射线 AB 上，射线 BC 上分别作出点 D、E，使得 BD = DM = ME</p>
+</blockquote>
+<p><strong>4L 6E</strong> 很明显 D 在 BM 垂直平分线上，E 一定在以 DM 为半径，M 为圆心的圆上</p>
+<ul>
+<li>依据：垂直平分线的性质；圆的半径处处相等</li>
+<li>工具：中垂，线，圆，线</li>
+</ul>
+<p><img src="/.io//gamma4 4l6e.PNG" style="zoom:50%;"></p>
+<p><strong>2V</strong> 明显 $\bigodot M$ 与 BC 有两个交点，所以 E 点有 2 个</p>
+<h5 id="Gamma-5-过一点并切直线的圆-Circle-through-Point-Tangent-to-Line"><a href="#Gamma-5-过一点并切直线的圆-Circle-through-Point-Tangent-to-Line" class="headerlink" title="Gamma.5 过一点并切直线的圆 / Circle through Point Tangent to Line"></a>Gamma.5 过一点并切直线的圆 / Circle through Point Tangent to Line</h5><ul>
+<li>限制：3L 6E</li>
+</ul>
+<blockquote>
+<p>Construct a circle through the point A that is tangent to the given line at the point B.</p>
+<p>构造一个圆，使其经过点 A，并与给定直线相切于点 B。</p>
+</blockquote>
+<p><strong>3L</strong> 作 AB 垂直平分线得到圆心所在直线。由于相切于 B，过 B 点作垂得到圆心，作圆即可。</p>
+<ul>
+<li>工具：中垂，垂直，线</li>
+</ul>
+<p><img src="/.io//gamma5 3l.PNG" style="zoom:50%;"></p>
+<p><strong>6E</strong> 运用共用圆思想，使用两个圆来同时达成作垂线与垂直平分线。如下图，作垂线用的是 Beta.7 3E 的做法。</p>
+<ul>
+<li>工具：圆，圆，线，线，线，圆</li>
+</ul>
+<p><img src="/.io//gamma5 6e.PNG" style="zoom:50%;"></p>
+<h5 id="Gamma-6-梯形底边的中点-Midpoints-of-Trapezoid-Bases"><a href="#Gamma-6-梯形底边的中点-Midpoints-of-Trapezoid-Bases" class="headerlink" title="Gamma.6 梯形底边的中点 / Midpoints of Trapezoid Bases"></a>Gamma.6 梯形底边的中点 / Midpoints of Trapezoid Bases</h5><ul>
+<li>限制：3L 5E</li>
+</ul>
+<blockquote>
+<p>Construct a line passing through the midpoints of the trapezoid bases.</p>
+<p>做一条直线，使其经过梯形两条底边的中点。</p>
+</blockquote>
+<p><strong>3L</strong> 用垂直平分线作出两个中点，连接即可</p>
+<ul>
+<li>工具：中垂，中垂，线</li>
+</ul>
+<p><img src="/.io//gamma6 3l.PNG" style="zoom:50%;"></p>
+<p><strong>5E</strong> 详细证明见下</p>
+<ul>
+<li>工具：线，线，线，线，线</li>
+</ul>
+<p><img src="/.io//gamma6 5e.PNG" style="zoom:50%;"></p>
+<p><strong>证明</strong>（前置知识略有难度，但是证明简短）</p>
+<p><img src="/.io//proof.PNG" style="zoom:50%;"></p>
+<ul>
+<li>依据：<strong>塞瓦定理</strong>（在 $\triangle ABC$ 内任取一点 O，延长 AO、BO、CO 分别交对边于 D、E、F，则 $\frac{BD}{DC} \times \frac{CE}{EA} \times \frac{AF}{FB} = 1$）</li>
+</ul>
+<p>首先可以轻易看出，把梯形补成三角形后，只要作出三角形中位线就可以了。</p>
+<p>由梯形 $AB \parallel CD$，易得 $\frac{FA}{AC} = \frac{FB}{BD}$，即 $\frac{FA}{AC} \times \frac{BD}{FB} = 1$。</p>
+<p>由塞瓦定理 $\frac{CG}{GD} \times \frac{FA}{AC} \times \frac{BD}{FB} = 1$，所以 $\frac{CG}{GD} = 1$，$CG = GD$。G 为 CD 中点。</p>
+<p>故 EG 为三角形中位线。</p>
+<h5 id="Gamma-7-45°-角-Angle-of-45°"><a href="#Gamma-7-45°-角-Angle-of-45°" class="headerlink" title="Gamma.7 45° 角 / Angle of 45°"></a>Gamma.7 45° 角 / Angle of 45°</h5><h3 id="4、-delta-Delta-关"><a href="#4、-delta-Delta-关" class="headerlink" title="4、$\delta$ Delta 关"></a>4、$\delta$ Delta 关</h3><ul>
+<li>共计 10 关，全是主关</li>
+<li>34 颗星，其中 V 星 4 个</li>
+</ul>
+<p>咕咕咕…</p>
+<h3 id="5、-varepsilon-Epsilon-关"><a href="#5、-varepsilon-Epsilon-关" class="headerlink" title="5、$\varepsilon$ Epsilon 关"></a>5、$\varepsilon$ Epsilon 关</h3><ul>
+<li>共计 12 关，1 个教程关，11 个主关</li>
+<li>40 颗星，其中 V 星 4 个</li>
+</ul>
+<p>咕咕咕…</p>
+<h3 id="6、-zeta-Zeta-关"><a href="#6、-zeta-Zeta-关" class="headerlink" title="6、$\zeta$ Zeta 关"></a>6、$\zeta$ Zeta 关</h3><ul>
+<li>共计 12 关，1 个教程关，11 个主关</li>
+<li>41 颗星，其中 V 星 5 个</li>
+</ul>
+<p>咕咕咕…</p>
+<h3 id="7、-eta-Eta-关"><a href="#7、-eta-Eta-关" class="headerlink" title="7、$\eta$ Eta 关"></a>7、$\eta$ Eta 关</h3><ul>
+<li>共计 11 关，全是主关</li>
+<li>37 颗星，其中 V 星 4 个</li>
+</ul>
+<p>咕咕咕…</p>
+<h3 id="8、-theta-Theta-关"><a href="#8、-theta-Theta-关" class="headerlink" title="8、$\theta$ Theta 关"></a>8、$\theta$ Theta 关</h3><ul>
+<li>共计 7 关，全是主关</li>
+<li>27 颗星，其中 V 星 6 个</li>
+</ul>
+<p>咕咕咕…</p>
+<h3 id="9、-iota-Iota-关"><a href="#9、-iota-Iota-关" class="headerlink" title="9、$\iota$ Iota 关"></a>9、$\iota$ Iota 关</h3><ul>
+<li>共计 10 关，全是主关</li>
+<li>32 颗星，其中 V 星 2 个</li>
+</ul>
+<p>咕咕咕…</p>
+<h3 id="10、-kappa-Kappa-关"><a href="#10、-kappa-Kappa-关" class="headerlink" title="10、$\kappa$ Kappa 关"></a>10、$\kappa$ Kappa 关</h3><ul>
+<li>共计 12 关，全是主关</li>
+<li>42 颗星，其中 V 星 6 个</li>
+</ul>
+<p>咕咕咕…</p>
+<h3 id="11、-lambda-Lambda-关"><a href="#11、-lambda-Lambda-关" class="headerlink" title="11、$\lambda$ Lambda 关"></a>11、$\lambda$ Lambda 关</h3><ul>
+<li>共计 10 关，全是主关</li>
+<li>34 颗星，其中 V 星 4 个</li>
+</ul>
+<p>咕咕咕…</p>
+<h3 id="12、-mu-Mu-关"><a href="#12、-mu-Mu-关" class="headerlink" title="12、$\mu$ Mu 关"></a>12、$\mu$ Mu 关</h3><ul>
+<li>共计 10 关，全是主关</li>
+<li>35 颗星，其中 V 星 5 个</li>
+</ul>
+<p>咕咕咕…</p>
+<h3 id="13、-nu-Nu-关"><a href="#13、-nu-Nu-关" class="headerlink" title="13、$\nu$ Nu 关"></a>13、$\nu$ Nu 关</h3><ul>
+<li>共计 9 关，全是主关</li>
+<li>34 颗星，其中 V 星 7 个</li>
+</ul>
+<p>咕咕咕…</p>
+<h3 id="14、-xi-Xi-关"><a href="#14、-xi-Xi-关" class="headerlink" title="14、$\xi$ Xi 关"></a>14、$\xi$ Xi 关</h3><ul>
+<li>共计 5 关，全是主关</li>
+<li>19 颗星，其中 V 星 4 个</li>
+</ul>
+<p>咕咕咕…</p>
+<h3 id="15、-omicron-Omicron-关"><a href="#15、-omicron-Omicron-关" class="headerlink" title="15、$\omicron$ Omicron 关"></a>15、$\omicron$ Omicron 关</h3><ul>
+<li>共计 11 关，全是主关</li>
+<li>37 颗星，其中 V 星 4 个</li>
+</ul>
+<p>咕咕咕…</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/06/03/洛谷P6583-回首过去/" rel="next" title="洛谷P6583 回首过去">
+                <i class="fa fa-chevron-left"></i> 洛谷P6583 回首过去
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div id="gitalk-container">
+    </div>
+    
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar01.png" alt="fsy">
+            
+              <p class="site-author-name" itemprop="name">fsy</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/fsy-juruo" title="GitHub &rarr; https://github.com/fsy-juruo" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/evenbao/" title="https://www.cnblogs.com/evenbao/" rel="noopener" target="_blank">even_bao</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://2006duckonline.github.io/2019/08/13/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5/" title="https://2006duckonline.github.io/2019/08/13/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5/" rel="noopener" target="_blank">zyx</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://ybw051114.ml/" title="https://ybw051114.ml/" rel="noopener" target="_blank">ybw</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、-alpha-Alpha-关（全解完成）"><span class="nav-number">1.</span> <span class="nav-text">1、$\alpha$ Alpha 关（全解完成）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Tutorial-等边三角形-Equilateral-Triangle（V-星关）"><span class="nav-number">1.0.1.</span> <span class="nav-text">Tutorial 等边三角形 / Equilateral Triangle（V 星关）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Alpha-1-60°-角-Angle-of-60°-（V-星关）"><span class="nav-number">1.0.2.</span> <span class="nav-text">Alpha.1 60° 角 / Angle of 60° （V 星关）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Tutorial-教程：相交工具-Tutorial-Intersect-Tool"><span class="nav-number">1.0.3.</span> <span class="nav-text">Tutorial 教程：相交工具 / Tutorial: Intersect Tool</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Alpha-2-垂直平分线-Perpendicular-Bisector"><span class="nav-number">1.0.4.</span> <span class="nav-text">Alpha.2 垂直平分线 / Perpendicular Bisector</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Tutorial-教程：垂直平分线-Tutorial-Perpendicular-Bisector"><span class="nav-number">1.0.5.</span> <span class="nav-text">Tutorial 教程：垂直平分线 / Tutorial: Perpendicular Bisector</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Alpha-3-中点-Midpoint"><span class="nav-number">1.0.6.</span> <span class="nav-text">Alpha.3 中点 / Midpoint</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Alpha-4-正方形内的圆-Circle-in-Square"><span class="nav-number">1.0.7.</span> <span class="nav-text">Alpha.4 正方形内的圆 / Circle in Square</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Tutorial-教程：移动-Tutorial-Move-Tool"><span class="nav-number">1.0.8.</span> <span class="nav-text">Tutorial 教程：移动 / Tutorial: Move Tool</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Alpha-5-矩形内的菱形-Rhombus-in-Rectangle（V-星关）"><span class="nav-number">1.0.9.</span> <span class="nav-text">Alpha.5 矩形内的菱形 / Rhombus in Rectangle（V 星关）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Alpha-6-圆心-Circle-Center"><span class="nav-number">1.0.10.</span> <span class="nav-text">Alpha.6 圆心 / Circle Center</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Alpha-7-圆内接正方形-Inscribed-Square"><span class="nav-number">1.0.11.</span> <span class="nav-text">Alpha.7 圆内接正方形 / Inscribed Square</span></a></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#2、-beta-Beta-关（全解完成）"><span class="nav-number">2.</span> <span class="nav-text">2、$\beta$ Beta 关（全解完成）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-1-角平分线-Angle-Bisector"><span class="nav-number">2.0.1.</span> <span class="nav-text">Beta.1 角平分线 / Angle Bisector</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Tutorial-教程：角平分线-Tutorial-Angle-Bisector"><span class="nav-number">2.0.2.</span> <span class="nav-text">Tutorial 教程：角平分线 / Tutorial: Angle Bisector</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-2-角平分线交点-Intersection-of-Angle-Bisectors"><span class="nav-number">2.0.3.</span> <span class="nav-text">Beta.2 角平分线交点 / Intersection of Angle Bisectors</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-3-30°-角-Angle-of-30°（V-星关）"><span class="nav-number">2.0.4.</span> <span class="nav-text">Beta.3 30° 角 / Angle of 30°（V 星关）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-4-二倍角-Double-Angle（V-星关）"><span class="nav-number">2.0.5.</span> <span class="nav-text">Beta.4 二倍角 / Double Angle（V 星关）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-5-切割矩形-Cut-Rectangle"><span class="nav-number">2.0.6.</span> <span class="nav-text">Beta.5 切割矩形 / Cut Rectangle</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-6-过线外一点作垂线-Drop-a-Perpendicular"><span class="nav-number">2.0.7.</span> <span class="nav-text">Beta.6 过线外一点作垂线 / Drop a Perpendicular</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-7-过线上一点引垂线-Erect-a-Perpendicular"><span class="nav-number">2.0.8.</span> <span class="nav-text">Beta.7 过线上一点引垂线 / Erect a Perpendicular</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Tutorial-教程：垂线-Tutorial-Perpendicular"><span class="nav-number">2.0.9.</span> <span class="nav-text">Tutorial 教程：垂线 / Tutorial: Perpendicular</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-8-过圆上一点的切线-Tangent-to-Circle-at-Point"><span class="nav-number">2.0.10.</span> <span class="nav-text">Beta.8 过圆上一点的切线 / Tangent to Circle at Point</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-9-直线的切圆-Circle-Tangent-to-Line"><span class="nav-number">2.0.11.</span> <span class="nav-text">Beta.9 直线的切圆 / Circle Tangent to Line</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-10-菱形的内切圆-Сircle-in-Rhombus"><span class="nav-number">2.0.12.</span> <span class="nav-text">Beta.10 菱形的内切圆 / Сircle in Rhombus</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、-gamma-Gamma-关"><span class="nav-number">3.</span> <span class="nav-text">3、$\gamma$ Gamma 关</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Gamma-1-弦中点-Chord-Midpoint"><span class="nav-number">3.0.1.</span> <span class="nav-text">Gamma.1 弦中点 / Chord Midpoint</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Gamma-2-由角和垂心定义的三角形-Triangle-by-Angle-and-Orthocenter"><span class="nav-number">3.0.2.</span> <span class="nav-text">Gamma.2 由角和垂心定义的三角形 / Triangle by Angle and Orthocenter</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Gamma-3-垂直平分线交点-Intersection-of-Perpendicular-Bisectors"><span class="nav-number">3.0.3.</span> <span class="nav-text">Gamma.3 垂直平分线交点 / Intersection of Perpendicular Bisectors</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Gamma-4-三条等长线段-I-Three-equal-segments-1（V-星关）"><span class="nav-number">3.0.4.</span> <span class="nav-text">Gamma.4 三条等长线段 I / Three equal segments - 1（V 星关）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Gamma-5-过一点并切直线的圆-Circle-through-Point-Tangent-to-Line"><span class="nav-number">3.0.5.</span> <span class="nav-text">Gamma.5 过一点并切直线的圆 / Circle through Point Tangent to Line</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Gamma-6-梯形底边的中点-Midpoints-of-Trapezoid-Bases"><span class="nav-number">3.0.6.</span> <span class="nav-text">Gamma.6 梯形底边的中点 / Midpoints of Trapezoid Bases</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Gamma-7-45°-角-Angle-of-45°"><span class="nav-number">3.0.7.</span> <span class="nav-text">Gamma.7 45° 角 / Angle of 45°</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、-delta-Delta-关"><span class="nav-number">4.</span> <span class="nav-text">4、$\delta$ Delta 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、-varepsilon-Epsilon-关"><span class="nav-number">5.</span> <span class="nav-text">5、$\varepsilon$ Epsilon 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、-zeta-Zeta-关"><span class="nav-number">6.</span> <span class="nav-text">6、$\zeta$ Zeta 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、-eta-Eta-关"><span class="nav-number">7.</span> <span class="nav-text">7、$\eta$ Eta 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8、-theta-Theta-关"><span class="nav-number">8.</span> <span class="nav-text">8、$\theta$ Theta 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9、-iota-Iota-关"><span class="nav-number">9.</span> <span class="nav-text">9、$\iota$ Iota 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10、-kappa-Kappa-关"><span class="nav-number">10.</span> <span class="nav-text">10、$\kappa$ Kappa 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11、-lambda-Lambda-关"><span class="nav-number">11.</span> <span class="nav-text">11、$\lambda$ Lambda 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12、-mu-Mu-关"><span class="nav-number">12.</span> <span class="nav-text">12、$\mu$ Mu 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13、-nu-Nu-关"><span class="nav-number">13.</span> <span class="nav-text">13、$\nu$ Nu 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14、-xi-Xi-关"><span class="nav-number">14.</span> <span class="nav-text">14、$\xi$ Xi 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15、-omicron-Omicron-关"><span class="nav-number">15.</span> <span class="nav-text">15、$\omicron$ Omicron 关</span></a></li></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">fsy</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">51k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    
+    <span title="站点阅读时长">47 分钟</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v6.7.0</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.7.0"></script>
+
+  <script src="/js/src/motion.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=6.7.0"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=6.7.0"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.7.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script src="//cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.min.js"></script>
+
+  
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.css">
+
+  
+  
+  <script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+
+   <script>
+        var gitalk = new Gitalk({
+          clientID: '5a61fb0f7adaaeed9336',
+          clientSecret: 'aa4e8e185129493ab8ce5d0741589163e72b097c',
+          repo: 'fsy-juruo-comments',
+          owner: 'fsy-juruo',
+          admin: ['fsy-juruo'],
+          id: md5(location.pathname),
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')
+       </script>
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+      for (i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+  overflow: auto hidden;
+}
+</style>
+
+    
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var range = document.createRange(); //For Chrome
+        var sel = window.getSelection(); //For Chrome
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.value = code;
+        ta.textContent = code; //For FireFox
+        ta.contentEditable = true;
+        ta.readOnly = false;
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('复制成功');
+          else $(this).text('复制失败');
+        
+        ta.blur(); //For iOS
+        $(this).blur();
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function () {
+          $b.text('复制');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+  
+  
+
+  
+  
+
+  
+
+
+</body>
+</html>
