@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="fsy&#39;s blog">
 <meta property="og:description" content="简要题意 一开始有 $k$ 种生物，每种生物有 $n$ 个属性 $a_{k,1}, a_{k,2}, \cdots, a_{k,n}$。现有以下 $3$ 种操作： (1). 给定两个正整数 $x$，$y$。创建一个新生物，此生物的第 $i$ 项属性为 $\max(a_{x,i}, a_{y,i})$。 (2). 给定两个正整数 $x$，$y$。创建一个新生物，此生物的第 $i$ 项属性为 $\mi">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-11-01T14:20:06.885Z">
+<meta property="og:updated_time" content="2020-11-01T14:29:59.864Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Codeforces878D Magic Breeding">
 <meta name="twitter:description" content="简要题意 一开始有 $k$ 种生物，每种生物有 $n$ 个属性 $a_{k,1}, a_{k,2}, \cdots, a_{k,n}$。现有以下 $3$ 种操作： (1). 给定两个正整数 $x$，$y$。创建一个新生物，此生物的第 $i$ 项属性为 $\max(a_{x,i}, a_{y,i})$。 (2). 给定两个正整数 $x$，$y$。创建一个新生物，此生物的第 $i$ 项属性为 $\mi">
@@ -386,7 +386,7 @@
                 
               
 
-              <time title="创建时间：2020-11-01 22:19:07 / 修改时间：22:20:06" itemprop="dateCreated datePublished" datetime="2020-11-01T22:19:07+08:00">2020-11-01</time>
+              <time title="创建时间：2020-11-01 22:19:07 / 修改时间：22:29:59" itemprop="dateCreated datePublished" datetime="2020-11-01T22:19:07+08:00">2020-11-01</time>
             
 
             
@@ -467,6 +467,7 @@
 <li>新生物的编号获得最小的未使用数字。</li>
 <li>操作数 $q \leq 10^5$，属性数 $n \leq 10^5$，$k \leq 12$。</li>
 </ul>
+<a id="more"></a>
 <h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>注意到 $k$ 很小，而且最终的答案只会在这 $k$ 个生物里面，考虑把 $k$ 作为切入点。</p>
 <p>令 $f_{i,mask}$ 为 如果选择的生物的二进制压缩为 $mask$，则此新生物中，是否一定会存在一个属性大于等于 $i$ 号生物的对应属性？</p>
 <p><strong>初始化：</strong> 枚举 $mask$，注意到如果 $i$ 号生物被选，则 $f_{i, mask}$ 一定为 $1$，否则不确定，为 $0$。</p>
@@ -539,8 +540,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/10/05/20201005-初赛模拟答案与解释/" rel="next" title="20201005 初赛模拟答案与解释">
-                <i class="fa fa-chevron-left"></i> 20201005 初赛模拟答案与解释
+              <a href="/2020/09/05/树链剖分做题小记/" rel="next" title="重链剖分做题小记">
+                <i class="fa fa-chevron-left"></i> 重链剖分做题小记
               </a>
             
           </div>
@@ -623,7 +624,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -728,7 +729,7 @@
                     
                       
                     
-                    <span class="site-state-item-count">45</span>
+                    <span class="site-state-item-count">44</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -855,7 +856,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">121k</span>
+    <span title="站点总字数">116k</span>
   
 
   
@@ -866,7 +867,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">1:50</span>
+    <span title="站点阅读时长">1:46</span>
   
 </div>
 
