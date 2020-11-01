@@ -1895,7 +1895,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #da4a5c;
+  background: #ffa3b3;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2896,11 +2896,17 @@ hr {
   font-family: "Microsoft Yahei";
   cursor: pointer;
 }
-.close:after {
-  content: "��";
+.close:before {
+  content: "[SHOW]";
 }
-.open:after {
-  content: "��";
+.open:before {
+  content: "[HIDE]";
+}
+.post-body div.fold_hider {
+  margin-left: 1.5em;
+}
+.post-body div.fold {
+  margin-top: -15px;
 }
 .admonition {
   margin: 1.5625em 0;
