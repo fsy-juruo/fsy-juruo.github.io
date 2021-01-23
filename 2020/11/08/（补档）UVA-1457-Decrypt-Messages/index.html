@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=6.7.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.7.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.7.0',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+  <meta name="description" content="高次剩余问题：给定正整数 $a, y, p$，其中 $p$ 是质数，求 $x \in [0, p)$ 满足：$$x^a \equiv y \pmod p$$此处的 $x$ 被称为一个高次剩余，有时也译作离散根（discrete root）。">
+<meta name="keywords" content="【OJ】UVA,【算法】原根,【算法】大步小步算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="（补档）UVA 1457 Decrypt Messages">
+<meta property="og:url" content="http://fsy-juruo.github.io/2020/11/08/（补档）UVA-1457-Decrypt-Messages/index.html">
+<meta property="og:site_name" content="fsy&#39;s blog">
+<meta property="og:description" content="高次剩余问题：给定正整数 $a, y, p$，其中 $p$ 是质数，求 $x \in [0, p)$ 满足：$$x^a \equiv y \pmod p$$此处的 $x$ 被称为一个高次剩余，有时也译作离散根（discrete root）。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-11-08T10:22:35.232Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="（补档）UVA 1457 Decrypt Messages">
+<meta name="twitter:description" content="高次剩余问题：给定正整数 $a, y, p$，其中 $p$ 是质数，求 $x \in [0, p)$ 满足：$$x^a \equiv y \pmod p$$此处的 $x$ 被称为一个高次剩余，有时也译作离散根（discrete root）。">
+
+
+
+
+
+
+  <link rel="canonical" href="http://fsy-juruo.github.io/2020/11/08/（补档）UVA-1457-Decrypt-Messages/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>（补档）UVA 1457 Decrypt Messages | fsy's blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">fsy's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">燃峥嵘岁月，烈日终破云。</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fsy-juruo.github.io/2020/11/08/（补档）UVA-1457-Decrypt-Messages/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fsy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar01.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fsy's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">（补档）UVA 1457 Decrypt Messages
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-11-08 14:21:30 / 修改时间：18:22:35" itemprop="dateCreated datePublished" datetime="2020-11-08T14:21:30+08:00">2020-11-08</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">7.1k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">6 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="高次剩余问题："><a href="#高次剩余问题：" class="headerlink" title="高次剩余问题："></a>高次剩余问题：</h4><p>给定正整数 $a, y, p$，其中 $p$ 是质数，求 $x \in [0, p)$ 满足：<br>$$<br>x^a \equiv y \pmod p<br>$$<br>此处的 $x$ 被称为一个高次剩余，有时也译作<strong>离散根（discrete root）</strong>。</p>
+<a id="more"></a>
+<h4 id="前置知识-原根："><a href="#前置知识-原根：" class="headerlink" title="前置知识 - 原根："></a>前置知识 - 原根：</h4><p><strong>定义 1（阶）：</strong> 满足模方程 $a^d \equiv 1 \pmod p$ 的最小正整数 $d$ 被称为模 $p$ 意义下 $a$ 的一个<strong>阶（order）</strong>，常用 $\textrm{ord}_p a$ 或 $\delta_p(a)$ 表示。</p>
+<p><strong>定理 1.1：</strong> $\textrm{ord}_p a | \varphi(p)$。</p>
+<blockquote>
+<p><strong>证明：</strong>令 $d = \textrm{ord}_p a$，假设 $d \not | \varphi(p)$，设 $\varphi(p) = \alpha \times d + b$，其中 $b \in [1, d)$。</p>
+<p>由欧拉定理 $a^{\varphi(p)} \equiv 1 \pmod p$，故 $a^{\alpha \times d + b} \equiv 1 \pmod p$，可推得 $a^b \equiv 1 \pmod p$</p>
+<p>由于 $b &lt; d$ 且 $a^b \equiv 1 \pmod p$，故我们推出了一个更小的阶 $b$，出现矛盾，得证！</p>
+</blockquote>
+<p><strong>定理 1.2：</strong> 令模 $p$ 意义下 $a$ 的一个阶为 $d’$，则 $a^0 \bmod p, a^1 \bmod p, \cdots a^{d’-1} \bmod p$ 互不相同。</p>
+<blockquote>
+<p><strong>证明：</strong> 若存在 $i, j \in [0, d’)$ 使得 $i &gt; j$，$a^i \equiv a^j \pmod p$，则移项后有 $a^{i-j} \equiv 1 \pmod p$。</p>
+<p>由于 $i &gt; j$ 故 $i-j&gt;0$，且易证 $i-j &lt; d’$，故我们找到了一个更小的阶 $i-j$，出现矛盾，得证！</p>
+</blockquote>
+<p><strong>定义 2（原根）</strong>：若存在整数 $g \in [0, p)$，使得模 $p$ 意义下，$g$ 的阶等于 $\varphi(p)$，则称 $g$ 为模 $p$ 意义下的一个<strong>原根（primitive root）</strong>。</p>
+<p>下面不加证明的给出三个定理。</p>
+<p><strong>定理 2.1：</strong> 对于任何大于 $2$ 的质数 $p$ 与所有正整数 $e$，当 $n = 2, 4, p^e, 2p^e$ 时，存在模 $n$ 意义下的原根。</p>
+<p><strong>定理 2.2：</strong> 若存在模 $n$ 意义下的原根，则模 $n$ 大小不超过 $n$ 的原根有 $\varphi(\varphi(n))$ 个。</p>
+<p><strong>定理 2.3： </strong>$g^0 \pmod p, g^1 \pmod p, \cdots, g^{p-2} \pmod p$ 这 $p-1$ 个数互不相同。</p>
+<p><del>事实上定理 2.3 = 定义 2 + 定理 1.2</del></p>
+<p>关于离散对数，指标的定义说法不一，本文使用如下定义：</p>
+<p><strong>定义 3（离散对数）：</strong> $p &gt; 1$，正整数 $a, b \in [0, p)$，若存在 $k$ 使得 $a^k \equiv b \pmod p$，则称 $k$ 为模 $p$ 意义下到基 $a$ 上 $b$ 的一个<strong>离散对数（discrete logarithm）</strong>。</p>
+<p><strong>定义 4（指标）：</strong> 令 $p$ 原根为 $g$，$b \in [0, p)$，则<strong>指标（index）</strong>为模 $p$ 意义下到基 $g$ 上 $b$ 的离散对数，记作 $\textrm{ind}_g b$。</p>
+<p>容易看出离散对数，指标可以使用 Shank 的大步小步算法计算。</p>
+<h4 id="怎么求原根？"><a href="#怎么求原根？" class="headerlink" title="怎么求原根？"></a>怎么求原根？</h4><p>设 $\varphi(p)$ 的唯一分解式为 ${p_1}^{x_1} {p_2}^{x_2} \cdots p_{cnt}^{x_{cnt}}$。</p>
+<p>则由原根的定义，可知：$\forall i \in [1, cnt]$，$g^{\frac{\varphi(p)}{p_i}} \not\equiv 1 \pmod p$</p>
+<p>质因数分解 $\varphi(p)$ 后，暴力枚举 $g$ 即可。</p>
+<p>原根的密度很大，最小原根一般很小，所以不必特别担心复杂度。</p>
+<h4 id="怎么求模质数意义下的高次剩余？"><a href="#怎么求模质数意义下的高次剩余？" class="headerlink" title="怎么求模质数意义下的高次剩余？"></a>怎么求模质数意义下的高次剩余？</h4><p>重新审视这个式子。<br>$$<br>x^a \equiv y \pmod p<br>$$<br>注意到 $p$ 是质数，模 $p$ 意义下，一定有原根 $g$。</p>
+<p>由性质 2.3 可知，$g^0 \pmod p, g^1 \pmod p, \cdots, g^{p-2} \pmod p$ 这 $p-1$ 个数互不相同。</p>
+<p>设 $x \equiv g^{\lambda} \pmod p$，$y \equiv g^{\beta} \pmod p$，则有：<br>$$<br>g^{a\lambda} \equiv g^{\beta} \pmod p<br>$$<br>注意到 $\beta$ 可以使用大步小步算法求出。</p>
+<p>由性质 2.3 可知 $a\lambda \equiv \beta \pmod {p-1}$</p>
+<blockquote>
+<p><strong>证明：</strong> 设 $a \lambda - \beta \equiv k \pmod {p-1}$，其中 $k \in [1, p-2]$。</p>
+<p>则 $g^{a\lambda} \equiv g^{\beta} \pmod p \rightarrow g^{k} \equiv 1 \pmod p$</p>
+<p>由性质 2.3 可知，$g^0 \pmod p, g^1 \pmod p, \cdots, g^{p-2} \pmod p$ 这 $p-1$ 个数互不相同。因为 $g^0 \equiv 1 \pmod p$，且 $k \neq 0$，可知 $g^k \not \equiv 1 \pmod p$，出现矛盾！得证！</p>
+</blockquote>
+<p>注意到上式是一个不定方程，可以使用扩展欧几里得算法求解出 $\lambda$。</p>
+<p>最后使用快速幂计算 $x = g^{\lambda} \bmod p$ 即可。</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ULL unsigned long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LD long double</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> reg register</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _rep(i, x, y) for(int i = x; i &lt;= y; i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _per(i, x, y) for(int i = x; i &gt;= y; i--)</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(T &amp;x)</span> </span>&#123;</span><br><span class="line">	x = <span class="number">0</span>; T f = (T) <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">char</span> c = getchar();</span><br><span class="line">	<span class="keyword">for</span>(; !<span class="built_in">isdigit</span>(c); c = getchar()) &#123;<span class="keyword">if</span>(c == <span class="string">'-'</span>) f = -f;&#125;</span><br><span class="line">	<span class="keyword">for</span>(; <span class="built_in">isdigit</span>(c); c = getchar()) x = x * <span class="number">10</span> + c - <span class="number">48</span>;</span><br><span class="line">	x *= f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>... Args&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(T&amp; x, Args&amp;... args)</span> </span>&#123;</span><br><span class="line">    read(x); read(args...);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">(T x)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(x &lt; <span class="number">0</span>) &#123;x = -x; <span class="built_in">putchar</span>(<span class="string">'-'</span>);&#125;</span><br><span class="line">	<span class="keyword">if</span>(x &gt; <span class="number">9</span>) write(x / <span class="number">10</span>);</span><br><span class="line">	<span class="built_in">putchar</span>(x % <span class="number">10</span> + <span class="string">'0'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">writesp</span><span class="params">(T x, <span class="keyword">char</span> sp = <span class="string">' '</span>)</span> </span>&#123;write(x); <span class="built_in">putchar</span>(sp);&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">pow_mod</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> p = mod)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> sum = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(b) &#123;</span><br><span class="line">		<span class="keyword">if</span>(b &amp; <span class="number">1</span>) sum = <span class="number">1l</span>l * sum * a % p;</span><br><span class="line">		a = <span class="number">1l</span>l * a * a % p; b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">	&#125;	</span><br><span class="line">	<span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">ex_gcd</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, LL &amp;x, LL &amp;y)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(!b) &#123;x = <span class="number">1</span>; y = <span class="number">0</span>; <span class="keyword">return</span> a;&#125;</span><br><span class="line">	<span class="keyword">int</span> d = ex_gcd(b, a % b, x, y);</span><br><span class="line">	LL z = x; x = y; y = z - (a / b) * y; <span class="keyword">return</span> d;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">inv</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> p = mod)</span> </span>&#123;</span><br><span class="line">	LL x, y; <span class="keyword">int</span> d = ex_gcd(a, p, x, y);</span><br><span class="line">	<span class="keyword">return</span> (d == <span class="number">1</span> ? (x + p) % p : <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; equation(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> p = mod) &#123;</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; solution;</span><br><span class="line">	LL x, y; <span class="keyword">int</span> d = ex_gcd(a, p, x, y);</span><br><span class="line">	<span class="keyword">if</span>(b % d) <span class="keyword">return</span> solution;</span><br><span class="line">	<span class="keyword">int</span> m = p; a /= d; b /= d; m /= d;</span><br><span class="line">	LL sol = <span class="number">1l</span>l * b % m * inv(a, m) % m;</span><br><span class="line">	_rep(i, <span class="number">0</span>, d - <span class="number">1</span>) solution.push_back((<span class="number">1l</span>l * m * i + sol) % p);</span><br><span class="line">	<span class="keyword">return</span> solution;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">bsgs</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> p = mod)</span> </span>&#123;</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; HashTable;</span><br><span class="line">	<span class="keyword">int</span> blk = <span class="built_in">ceil</span>(<span class="built_in">sqrt</span>(p)), ret = b, qwq; HashTable[b] = <span class="number">0</span>; </span><br><span class="line">    _rep(i, <span class="number">1</span>, blk) ret = <span class="number">1l</span>l * ret * a % p, HashTable[ret] = i;</span><br><span class="line">    ret = <span class="number">1</span>, qwq = pow_mod(a, blk, p);</span><br><span class="line">    _rep(i, <span class="number">1</span>, blk) &#123;</span><br><span class="line">        ret = <span class="number">1l</span>l * ret * qwq % p;</span><br><span class="line">        <span class="keyword">if</span>(HashTable.count(ret)) <span class="keyword">return</span> (i * blk - HashTable[ret] + p) % p;</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">primitive</span><span class="params">(<span class="keyword">int</span> p = mod)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> phi = p - <span class="number">1</span>, tmp = phi; <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; factors;</span><br><span class="line">    _rep(i, <span class="number">2</span>, <span class="built_in">sqrt</span>(phi)) &#123;</span><br><span class="line">        <span class="keyword">if</span>(!(tmp % i)) &#123;</span><br><span class="line">            factors.push_back(i);</span><br><span class="line">            <span class="keyword">while</span>(!(tmp % i)) tmp /= i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(tmp &gt; <span class="number">1</span>) factors.push_back(tmp);</span><br><span class="line">    <span class="keyword">int</span> g = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">bool</span> is_g = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> i : factors) is_g = is_g &amp; (pow_mod(g, phi / i, p) != <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span>(is_g) <span class="keyword">break</span>;</span><br><span class="line">        g++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> g;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; mod_root(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> p = mod) &#123;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; Sol;</span><br><span class="line">    <span class="keyword">if</span>(!b) &#123;Sol.push_back(<span class="number">0</span>); <span class="keyword">return</span> Sol;&#125;</span><br><span class="line">    <span class="keyword">int</span> g = primitive(p), beta = bsgs(g, b, p);</span><br><span class="line">    <span class="keyword">if</span>(beta == <span class="number">-1</span>) <span class="keyword">return</span> Sol;</span><br><span class="line">    Sol = equation(a, beta, p - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span>(Sol.empty()) <span class="keyword">return</span> Sol;</span><br><span class="line">    _rep(i, <span class="number">0</span>, Sol.size() - <span class="number">1</span>) Sol[i] = pow_mod(g, Sol[i], p);</span><br><span class="line">    <span class="built_in">std</span>::sort(Sol.begin(), Sol.end()); <span class="keyword">return</span> Sol;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> days[<span class="number">13</span>] = &#123;<span class="number">0</span>, <span class="number">31</span>, <span class="number">28</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>, <span class="number">30</span>, <span class="number">31</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">leap_year</span><span class="params">(<span class="keyword">int</span> y)</span> </span>&#123;<span class="keyword">return</span> (y % <span class="number">400</span> == <span class="number">0</span> || (y % <span class="number">100</span> != <span class="number">0</span> &amp;&amp; y % <span class="number">4</span> == <span class="number">0</span>));&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">leap_second</span><span class="params">(<span class="keyword">int</span> y, <span class="keyword">int</span> m = <span class="number">12</span>)</span> </span>&#123;<span class="keyword">return</span> (y % <span class="number">10</span> == <span class="number">5</span> || y % <span class="number">10</span> == <span class="number">8</span>) &amp;&amp; (m == <span class="number">12</span>);&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print_time</span><span class="params">(<span class="keyword">int</span> y, <span class="keyword">int</span> m, <span class="keyword">int</span> d, <span class="keyword">int</span> H, <span class="keyword">int</span> M, <span class="keyword">int</span> S)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d.%02d.%02d %02d:%02d:%02d\n"</span>, y, m, d, H, M, S);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">transfer</span><span class="params">(<span class="keyword">int</span> res)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> y = <span class="number">2000</span>, m = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">int</span> ds = (<span class="number">365</span> + leap_year(y)) * <span class="number">86400</span> + leap_second(y, <span class="number">12</span>);</span><br><span class="line">        <span class="keyword">if</span>(res &lt; ds) <span class="keyword">break</span>;</span><br><span class="line">        res -= ds; y++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">int</span> ms = (days[m] + (leap_year(y) &amp;&amp; m == <span class="number">2</span>)) * <span class="number">86400</span> + leap_second(y, m);</span><br><span class="line">        <span class="keyword">if</span>(res &lt; ms) <span class="keyword">break</span>;</span><br><span class="line">        res -= ms; m++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(leap_second(y, m) &amp;&amp; res == <span class="number">31l</span>l * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span>) &#123;</span><br><span class="line">        print_time(y, m, <span class="number">31</span>, <span class="number">23</span>, <span class="number">59</span>, <span class="number">60</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        print_time(y, m, res / <span class="number">86400</span> + <span class="number">1</span>, res % <span class="number">86400</span> / <span class="number">3600</span>, res % <span class="number">3600</span> / <span class="number">60</span>, res % <span class="number">60</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T, t = <span class="number">0</span>; read(T);</span><br><span class="line">    <span class="keyword">while</span>(T--) &#123;</span><br><span class="line">        <span class="keyword">int</span> p, q, a; read(p, q, a); <span class="built_in">printf</span>(<span class="string">"Case #%d:\n"</span>, ++t);</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; Roots = mod_root(q, a, p);</span><br><span class="line">        <span class="keyword">if</span>(!Roots.size()) &#123;<span class="built_in">puts</span>(<span class="string">"Transmission error"</span>);&#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">auto</span> i : Roots) transfer(i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>fsy</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="http://fsy-juruo.github.io/2020/11/08/（补档）UVA-1457-Decrypt-Messages/" title="（补档）UVA 1457 Decrypt Messages">http://fsy-juruo.github.io/2020/11/08/（补档）UVA-1457-Decrypt-Messages/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/【OJ】UVA/" <i class="fa fa-tag"> 【OJ】UVA</a>
+          
+            <a href="/tags/【算法】原根/" <i class="fa fa-tag"> 【算法】原根</a>
+          
+            <a href="/tags/【算法】大步小步算法/" <i class="fa fa-tag"> 【算法】大步小步算法</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/11/01/Codeforces878D-Magic-Breeding/" rel="next" title="Codeforces878D Magic Breeding">
+                <i class="fa fa-chevron-left"></i> Codeforces878D Magic Breeding
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div id="gitalk-container">
+    </div>
+    
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar01.png" alt="fsy">
+            
+              <p class="site-author-name" itemprop="name">fsy</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/fsy-juruo" title="GitHub &rarr; https://github.com/fsy-juruo" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/evenbao/" title="https://www.cnblogs.com/evenbao/" rel="noopener" target="_blank">even_bao</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://2006duckonline.github.io/2019/08/13/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5/" title="https://2006duckonline.github.io/2019/08/13/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5/" rel="noopener" target="_blank">zyx</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://ybw051114.ml/" title="https://ybw051114.ml/" rel="noopener" target="_blank">ybw</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://wxq1229.github.io/" title="https://wxq1229.github.io/" rel="noopener" target="_blank">wxq</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#高次剩余问题："><span class="nav-number">1.</span> <span class="nav-text">高次剩余问题：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#前置知识-原根："><span class="nav-number">2.</span> <span class="nav-text">前置知识 - 原根：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#怎么求原根？"><span class="nav-number">3.</span> <span class="nav-text">怎么求原根？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#怎么求模质数意义下的高次剩余？"><span class="nav-number">4.</span> <span class="nav-text">怎么求模质数意义下的高次剩余？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码"><span class="nav-number">5.</span> <span class="nav-text">代码</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">fsy</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">133k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    
+    <span title="站点阅读时长">2:01</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.7.0</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.7.0"></script>
+
+  <script src="/js/src/motion.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+  
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+<script type="text/javascript" src="/custom/fold_action.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.7.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script src="//cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.min.js"></script>
+
+  
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.css">
+
+  
+  
+  <script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+
+   <script>
+        var gitalk = new Gitalk({
+          clientID: '5a61fb0f7adaaeed9336',
+          clientSecret: 'aa4e8e185129493ab8ce5d0741589163e72b097c',
+          repo: 'fsy-juruo-comments',
+          owner: 'fsy-juruo',
+          admin: ['fsy-juruo'],
+          id: md5(location.pathname),
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')
+       </script>
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+      for (i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+  overflow: auto hidden;
+}
+</style>
+
+    
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var range = document.createRange(); //For Chrome
+        var sel = window.getSelection(); //For Chrome
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.value = code;
+        ta.textContent = code; //For FireFox
+        ta.contentEditable = true;
+        ta.readOnly = false;
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('复制成功');
+          else $(this).text('复制失败');
+        
+        ta.blur(); //For iOS
+        $(this).blur();
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function () {
+          $b.text('复制');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+  
+  
+
+  
+  
+
+  
+
+
+</body>
+</html>
