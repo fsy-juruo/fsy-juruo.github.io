@@ -1,161 +1,81 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<html lang="zh-CN">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fsy-juruo.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
-
-<link rel="stylesheet" href="/css/main.css?v=6.7.0">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.7.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.7.0">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
-
-
-
-
-
-
-
-<script id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '6.7.0',
-    sidebar: {"position":"left","display":"always","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
-  <meta name="description" content="嘛貌似是远古时期写的文章了 qwq 填了填坑  玩过 Euclidea 吗？ 啥？那个暴力搜索游戏？">
+  <meta name="description" content="嘛貌似是远古时期写的文章了 qwq 填了填坑                            玩过 Euclidea 吗？ 啥？那个暴力搜索游戏？">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Euclidea解法与证明">
-<meta property="og:url" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/index.html">
+<meta property="og:url" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/index.html">
 <meta property="og:site_name" content="fsy&#39;s blog">
-<meta property="og:description" content="嘛貌似是远古时期写的文章了 qwq 填了填坑  玩过 Euclidea 吗？ 啥？那个暴力搜索游戏？">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/alpha1%204l%204e.PNG">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/alpha2%20sol.PNG">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/alpha3%20sol.PNG">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/alpha4.PNG">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/alpha5.PNG">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/alpha5%202sol.PNG">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/alpha6.PNG">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/alpha6%205e.PNG">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/alpha7%206l.PNG">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/alpha7%207e%20part.PNG">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/ALPHA7%207e%20final.PNG">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/beta1%20sol.PNG">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/beta2%202l.PNG">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/beta2%206e.png">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/beta3.PNG">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/beta4%20sol.PNG">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/beta4%202v.PNG">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/beta5.PNG">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/beta6%202l.PNG">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/beta6%203e.PNG">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/beta7%201l.PNG">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/beta7%203e.PNG">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/beta8%202l.PNG">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/beta8%203e.PNG">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/beta9.PNG">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/beta10%20sol.PNG">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/gamma1%20sol.PNG">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/gamma2%203l.PNG">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/gamma2%206e.PNG">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/gamma3%202l2e.PNG">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/gamma4%204l6e.PNG">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/gamma5%203l.PNG">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/gamma5%206e.PNG">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/gamma6%203l.PNG">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/gamma6%205e.PNG">
-<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/proof.PNG">
-<meta property="og:updated_time" content="2021-01-02T00:26:23.131Z">
+<meta property="og:description" content="嘛貌似是远古时期写的文章了 qwq 填了填坑                            玩过 Euclidea 吗？ 啥？那个暴力搜索游戏？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/alpha4.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/alpha5.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/alpha5%202sol.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/alpha6.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/alpha6%205e.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/alpha7%206l.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/alpha7%207e%20part.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/ALPHA7%207e%20final.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta1%20sol.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta2%202l.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta2%206e.png">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta3.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta4%20sol.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta4%202v.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta5.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta6%202l.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta6%203e.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta7%201l.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta7%203e.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta8%202l.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta8%203e.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta9.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta10%20sol.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/gamma1%20sol.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/gamma2%203l.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/gamma2%206e.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/gamma3%202l2e.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/gamma4%204l6e.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/gamma5%203l.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/gamma5%206e.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/gamma6%203l.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/gamma6%205e.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/proof.PNG">
+<meta property="article:published_time" content="2020-07-18T23:08:17.000Z">
+<meta property="article:modified_time" content="2021-02-02T09:19:44.664Z">
+<meta property="article:author" content="fsy">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Euclidea解法与证明">
-<meta name="twitter:description" content="嘛貌似是远古时期写的文章了 qwq 填了填坑  玩过 Euclidea 吗？ 啥？那个暴力搜索游戏？">
-<meta name="twitter:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/alpha1%204l%204e.PNG">
+<meta name="twitter:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/alpha4.PNG">
+
+<link rel="canonical" href="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/">
 
 
-
-
-
-
-  <link rel="canonical" href="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/">
-
-
-
-<script id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
@@ -167,15 +87,8 @@
 
 
 
-
-
-
-
-
-
   <noscript>
   <style>
-  .use-motion .motion-element,
   .use-motion .brand,
   .use-motion .menu-item,
   .sidebar-inner,
@@ -184,9 +97,8 @@
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -200,153 +112,69 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">fsy's blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    
-      
-        <p class="site-subtitle">燃峥嵘岁月，烈日终破云。</p>
-      
-    
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">fsy's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">燃峥嵘岁月，烈日终破云。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
 
 
 
+
 <nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
+        <li class="menu-item menu-item-about">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
+        <li class="menu-item menu-item-tags">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-categories">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
+        <li class="menu-item menu-item-archives">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
-
-      
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
+  </ul>
 </nav>
 
-
-
-  
 
 
 
@@ -354,149 +182,80 @@
     </header>
 
     
+  <div class="reading-progress-bar"></div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
-          <div id="content" class="content">
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fsy">
-      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar01.png">
+      <meta itemprop="name" content="fsy">
+      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="fsy's blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">Euclidea解法与证明
-
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          Euclidea解法与证明
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">发表于</span>
 
               <time title="创建时间：2020-07-19 07:08:17" itemprop="dateCreated datePublished" datetime="2020-07-19T07:08:17+08:00">2020-07-19</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2021-01-02 08:26:23" itemprop="dateModified" datetime="2021-01-02T08:26:23+08:00">2021-01-02</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="post-meta-item-icon">
-            <i class="fa fa-eye"></i>
-             阅读次数： 
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
             </span>
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">8.5k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">8 分钟</span>
-              
-            </div>
-          
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-02 17:19:44" itemprop="dateModified" datetime="2021-02-02T17:19:44+08:00">2021-02-02</time>
+              </span>
 
           
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>7.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>7 分钟</span>
+            </span>
 
         </div>
       </header>
-    
 
     
     
@@ -504,14 +263,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
         <p>嘛貌似是远古时期写的文章了 qwq 填了填坑</p>
-<blockquote class="blockquote-center"><p> 玩过 Euclidea 吗？</p>
+<blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p> 玩过 Euclidea 吗？</p>
 <p>啥？那个暴力搜索游戏？ </p>
-</blockquote>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+
 <a id="more"></a>
+
 <h3 id="1、-alpha-Alpha-关（全解完成）"><a href="#1、-alpha-Alpha-关（全解完成）" class="headerlink" title="1、$\alpha$ Alpha 关（全解完成）"></a>1、$\alpha$ Alpha 关（全解完成）</h3><ul>
 <li>共计 11 关，4 个教程关，7 个主关</li>
 <li>36 颗星，其中 V 星 3 个</li>
@@ -523,18 +285,20 @@
 <p>Construct an equilateral triangle with the given side. The construction must be exact. Guessing even very close points does not count as a solution.</p>
 <p>过已知边作等边三角形。构造必须精确，即使猜的点非常接近也不被算为正解。</p>
 </blockquote>
-<div><div class="fold_hider"><div class="close hider_title">4L4E</div></div><div class="fold">
+<div style="margin-top: -20px;"><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">4L4E</span></div></div><div class="fold">
 <p><strong>4L 4E</strong> 等腰三角形三边相等</p>
 <ul>
 <li>工具：圆，圆，线，线</li>
 </ul>
-<p><img src="/2020/07/19/Euclidea解法与证明/alpha1 4l 4e.PNG" alt></p>
+<p>![](Euclidea解法与证明\alpha1 4l 4e.PNG)</p>
 
-</div></div>
-<div><div class="fold_hider"><div class="close hider_title">2V（无图）</div></div><div class="fold">
+</div><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">4L4E</span></div></div></div>
+
+<div style="margin-top: -20px;"><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">2V（无图）</span></div></div><div class="fold">
 <p><strong>2V</strong> 下面还有一个</p>
 
-</div></div>
+</div><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">2V（无图）</span></div></div></div>
+
 <h5 id="Alpha-1-60°-角-Angle-of-60°-（V-星关）"><a href="#Alpha-1-60°-角-Angle-of-60°-（V-星关）" class="headerlink" title="Alpha.1 60° 角 / Angle of 60° （V 星关）"></a>Alpha.1 60° 角 / Angle of 60° （V 星关）</h5><ul>
 <li>限制：3L 3E。解数：2</li>
 </ul>
@@ -542,17 +306,19 @@
 <p>Construct an angle of 60° with the given side.</p>
 <p>对于给定射线做一个 60° 角。</p>
 </blockquote>
-<div><div class="fold_hider"><div class="close hider_title">3L3E（无图）</div></div><div class="fold">
+<div style="margin-top: -20px;"><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">3L3E（无图）</span></div></div><div class="fold">
 <p><strong>3L 3E</strong> 等价于上一关</p>
 <ul>
 <li>工具：圆，圆，线</li>
 </ul>
 
-</div></div>
-<div><div class="fold_hider"><div class="close hider_title">2V（无图）</div></div><div class="fold">
+</div><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">3L3E（无图）</span></div></div></div>
+
+<div style="margin-top: -20px;"><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">2V（无图）</span></div></div><div class="fold">
 <p><strong>2V</strong> 下面还有一个</p>
 
-</div></div>
+</div><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">2V（无图）</span></div></div></div>
+
 <h5 id="Tutorial-教程：相交工具-Tutorial-Intersect-Tool"><a href="#Tutorial-教程：相交工具-Tutorial-Intersect-Tool" class="headerlink" title="Tutorial 教程：相交工具 / Tutorial: Intersect Tool"></a>Tutorial 教程：相交工具 / Tutorial: Intersect Tool</h5><ul>
 <li>限制：0L 0E。</li>
 </ul>
@@ -568,14 +334,15 @@
 <p>Construct the perpendicular bisector of the segment.</p>
 <p>作给定线段的垂直平分线。</p>
 </blockquote>
-<div><div class="fold_hider"><div class="close hider_title">3L3E</div></div><div class="fold">
+<div style="margin-top: -20px;"><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">3L3E</span></div></div><div class="fold">
 <p><strong>3L 3E</strong> 初中基础尺规作图</p>
 <ul>
 <li>工具：圆，圆，线</li>
 </ul>
-<p><img src="/2020/07/19/Euclidea解法与证明/alpha2 sol.PNG" alt></p>
+<p>![](Euclidea解法与证明\alpha2 sol.PNG)</p>
 
-</div></div>
+</div><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">3L3E</span></div></div></div>
+
 <h5 id="Tutorial-教程：垂直平分线-Tutorial-Perpendicular-Bisector"><a href="#Tutorial-教程：垂直平分线-Tutorial-Perpendicular-Bisector" class="headerlink" title="Tutorial 教程：垂直平分线 / Tutorial: Perpendicular Bisector"></a>Tutorial 教程：垂直平分线 / Tutorial: Perpendicular Bisector</h5><p>你可以直接点击线段的两个端点，作这个线段的垂直平分线了。使用花费：1L 3E</p>
 <h5 id="Alpha-3-中点-Midpoint"><a href="#Alpha-3-中点-Midpoint" class="headerlink" title="Alpha.3 中点 / Midpoint"></a>Alpha.3 中点 / Midpoint</h5><ul>
 <li>限制：2L 4E</li>
@@ -584,11 +351,12 @@
 <p>Construct the midpoint of the segment defined by two points.</p>
 <p>作给定两点对应线段的中点。</p>
 </blockquote>
-<div><div class="fold_hider"><div class="close hider_title">2L4E</div></div><div class="fold">
+<div style="margin-top: -20px;"><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">2L4E</span></div></div><div class="fold">
 <p><strong>2L 4E</strong> 1L3E 用中垂线，1L1E 连接两个端点，两条线的交点即为所求。</p>
-<p><img src="/2020/07/19/Euclidea解法与证明/alpha3 sol.PNG" alt></p>
+<p>![](Euclidea解法与证明\alpha3 sol.PNG)</p>
 
-</div></div>
+</div><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">2L4E</span></div></div></div>
+
 <h5 id="Alpha-4-正方形内的圆-Circle-in-Square"><a href="#Alpha-4-正方形内的圆-Circle-in-Square" class="headerlink" title="Alpha.4 正方形内的圆 / Circle in Square"></a>Alpha.4 正方形内的圆 / Circle in Square</h5><ul>
 <li>限制：3L 5E</li>
 </ul>
@@ -596,14 +364,15 @@
 <p>Inscribe a circle in the square.</p>
 <p>在正方形内内接一个圆。</p>
 </blockquote>
-<div><div class="fold_hider"><div class="close hider_title">3L5E</div></div><div class="fold">
+<div style="margin-top: -20px;"><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">3L5E</span></div></div><div class="fold">
 <p><strong>3L 5E</strong> 圆心：正方形对角线交点，半径：正方形边长一半，以此确定圆。</p>
 <ul>
 <li>工具：中垂，线，圆</li>
 </ul>
-<p><img src="/2020/07/19/Euclidea解法与证明/alpha4.PNG" style="zoom:50%;"></p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/alpha4.PNG" style="zoom:50%;">
 
-</div></div>
+</div><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">3L5E</span></div></div></div>
+
 <h5 id="Tutorial-教程：移动-Tutorial-Move-Tool"><a href="#Tutorial-教程：移动-Tutorial-Move-Tool" class="headerlink" title="Tutorial 教程：移动 / Tutorial: Move Tool"></a>Tutorial 教程：移动 / Tutorial: Move Tool</h5><p>这个描述的是帕斯卡定理。但你其实并不需要知道它是啥，随便拖着一个蓝点移动就 OK</p>
 <h5 id="Alpha-5-矩形内的菱形-Rhombus-in-Rectangle（V-星关）"><a href="#Alpha-5-矩形内的菱形-Rhombus-in-Rectangle（V-星关）" class="headerlink" title="Alpha.5 矩形内的菱形 / Rhombus in Rectangle（V 星关）"></a>Alpha.5 矩形内的菱形 / Rhombus in Rectangle（V 星关）</h5><ul>
 <li>限制：3L 5E，解数：2</li>
@@ -612,16 +381,18 @@
 <p>Inscribe a rhombus in the rectangle so that they share a diagonal.</p>
 <p>在矩形内内接一个菱形，且二者共用一条对角线。</p>
 </blockquote>
-<div><div class="fold_hider"><div class="close hider_title">3L5E</div></div><div class="fold">
+<div style="margin-top: -20px;"><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">3L5E</span></div></div><div class="fold">
 <p><strong>3L 5E</strong> 菱形对角线互相垂直平分，所以随便选一条对角线并作其垂直平分线。与矩形产生 2 个交点，加上选的那条对角线的顶点就有 4 个点了。注意其中标注的两条边已经有了别再画一遍…</p>
-<p><img src="/2020/07/19/Euclidea解法与证明/alpha5.PNG" style="zoom:50%;"></p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/alpha5.PNG" style="zoom:50%;">
 
-</div></div>
-<div><div class="fold_hider"><div class="close hider_title">2V</div></div><div class="fold">
+</div><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">3L5E</span></div></div></div>
+
+<div style="margin-top: -20px;"><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">2V</span></div></div><div class="fold">
 <p><strong>2V</strong> 有两条对角线可选，就有两个不同菱形…</p>
-<p><img src="/2020/07/19/Euclidea解法与证明/alpha5 2sol.PNG" style="zoom:50%;"></p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/alpha5 2sol.PNG" style="zoom:50%;">
 
-</div></div>
+</div><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">2V</span></div></div></div>
+
 <h5 id="Alpha-6-圆心-Circle-Center"><a href="#Alpha-6-圆心-Circle-Center" class="headerlink" title="Alpha.6 圆心 / Circle Center"></a>Alpha.6 圆心 / Circle Center</h5><ul>
 <li>限制：2L 5E</li>
 </ul>
@@ -630,7 +401,7 @@
 <p>作给定圆的圆心。<strong>注意：本关 L 星，E 星为两个独立的任务。为了得到三星，你必须作图两次：一个 2L 的解和一个 5E 的解。</strong></p>
 </blockquote>
 <p><strong>从这关开始，大多数关卡的 L 星，E 星都不能通过只作一次图同时得到。</strong></p>
-<div><div class="fold_hider"><div class="close hider_title">2L</div></div><div class="fold">
+<div style="margin-top: -20px;"><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">2L</span></div></div><div class="fold">
 <p><strong>2L</strong> 在圆上随便选两组点，作每组点的垂直平分线，交点即为中点</p>
 <ul>
 <li><p>依据：垂径定理推论（弦的垂直平分线必经过圆心）</p>
@@ -638,17 +409,19 @@
 <li><p>工具：中垂，中垂，交点</p>
 </li>
 </ul>
-<p><img src="/2020/07/19/Euclidea解法与证明/alpha6.PNG" style="zoom:50%;"></p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/alpha6.PNG" style="zoom:50%;">
 
-</div></div>
-<div><div class="fold_hider"><div class="close hider_title">5E</div></div><div class="fold">
+</div><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">2L</span></div></div></div>
+
+<div style="margin-top: -20px;"><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">5E</span></div></div><div class="fold">
 <p><strong>5E</strong> 利用<strong>共用圆</strong>的方法，作 3 个圆来得到 2 组垂直平分线，再求交点</p>
 <ul>
 <li>工具：圆，圆，圆，线，线</li>
 </ul>
-<p><img src="/2020/07/19/Euclidea解法与证明/alpha6 5e.PNG" style="zoom:50%;"></p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/alpha6 5e.PNG" style="zoom:50%;">
 
-</div></div>
+</div><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">5E</span></div></div></div>
+
 <h5 id="Alpha-7-圆内接正方形-Inscribed-Square"><a href="#Alpha-7-圆内接正方形-Inscribed-Square" class="headerlink" title="Alpha.7 圆内接正方形 / Inscribed Square"></a>Alpha.7 圆内接正方形 / Inscribed Square</h5><ul>
 <li>要求：6L 7E</li>
 </ul>
@@ -656,25 +429,28 @@
 <p>Inscribe a square in the circle. One vertex of the square is given.</p>
 <p>以给定点为顶点，在圆中作一个内接正方形。</p>
 </blockquote>
-<div><div class="fold_hider"><div class="close hider_title">6L</div></div><div class="fold">
+<div style="margin-top: -20px;"><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">6L</span></div></div><div class="fold">
 <p><strong>6L</strong> 直接连给定点与圆心得到正方形一条对角线，再做这个对角线的垂直平分线，四个顶点就都有了，顺次连接即可</p>
 <ul>
 <li>依据：正方形对角线互相垂直平分</li>
 <li>工具：线，中垂，线，线，线，线</li>
 </ul>
-<p><img src="/2020/07/19/Euclidea解法与证明/alpha7 6l.PNG" style="zoom:50%;"></p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/alpha7 6l.PNG" style="zoom:50%;">
 
-</div></div>
-<div><div class="fold_hider"><div class="close hider_title">7E+分步阐述与证明</div></div><div class="fold">
+</div><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">6L</span></div></div></div>
+
+<div style="margin-top: -20px;"><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">7E+分步阐述与证明</span></div></div><div class="fold">
 <p><strong>7E</strong> <strong>此任务是许多新手遇到的第一个障碍。故进行分步阐述</strong></p>
 <ul>
 <li><p>工具：圆，圆，线，线，线，线，线</p>
 </li>
 <li><p>第 1 步：以 A 为圆心，AO 为半径，作 $\bigodot A$，交原来的圆于 B、C</p>
 </li>
-<li>第 2 步：以 C 为圆心，CB 为半径，作 $\bigodot C$，交原来的圆于 D</li>
+<li><p>第 2 步：以 C 为圆心，CB 为半径，作 $\bigodot C$，交原来的圆于 D</p>
+</li>
 </ul>
-<p><img src="/2020/07/19/Euclidea解法与证明/alpha7 7e part.PNG" style="zoom:67%;"></p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/alpha7 7e part.PNG" style="zoom:67%;">
+
 <p><strong>结论 1：A、O、D 三点共线</strong></p>
 <p><strong>证明：</strong> 首先可以清晰地看到 Tutorial 里的等边三角形模型，得 $\angle AOC=60^{\circ}$，运用圆周角定理可得 $\angle ABC=30^{\circ}$，易知 $\angle ACB=30^{\circ}$，$\angle BAC=120^{\circ}$。</p>
 <p>然后有一个 SSS 全等：$\triangle ABC \cong \triangle ODC$，证明略去。于是 $\angle COD=120^{\circ}$，$\angle COD+\angle AOC=180^{\circ}$。得证！</p>
@@ -683,11 +459,13 @@
 <li>第 4~5 步：连接 D、E 交原来的圆于 G，连接 D，F 交原来的圆于 H</li>
 <li>第 6~7 步：连接 AG，AH。</li>
 </ul>
-<p><img src="/2020/07/19/Euclidea解法与证明/ALPHA7 7e final.PNG" style="zoom:67%;"></p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/ALPHA7 7e final.PNG" style="zoom:67%;">
+
 <p><strong>证明：</strong> 首先，由直径 $EF$ 的圆周角得出 $\angle EDF = 90^{\circ}$，直径 $AD$ 的圆周角得出 $\angle AGD = 90^{\circ}$，$\angle AHD = 90^{\circ}$，轻松证明出 4 个 $90^{\circ}$。</p>
 <p>上文已证出 $\angle COD = \angle DOC = 30^{\circ}$，圆周角定理得 $\angle EFD = 15^{\circ}$，进一步可得 $\angle CDF = 15^{\circ}$，$\angle ADH = 45^{\circ}$。此时就可以证明这是一个正方形了。</p>
 
-</div></div>
+</div><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">7E+分步阐述与证明</span></div></div></div>
+
 <h3 id="2、-beta-Beta-关（全解完成）"><a href="#2、-beta-Beta-关（全解完成）" class="headerlink" title="2、$\beta$ Beta 关（全解完成）"></a>2、$\beta$ Beta 关（全解完成）</h3><ul>
 <li>共计 12 关，2 个教程关，10 个主关</li>
 <li>38 颗星，其中 V 星 2 个</li>
@@ -704,7 +482,8 @@
 <li>依据：等腰三角形三线合一</li>
 <li>工具：圆，中垂</li>
 </ul>
-<p><img src="/2020/07/19/Euclidea解法与证明/beta1 sol.PNG" style="zoom:50%;"></p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta1 sol.PNG" style="zoom:50%;">
+
 <h5 id="Tutorial-教程：角平分线-Tutorial-Angle-Bisector"><a href="#Tutorial-教程：角平分线-Tutorial-Angle-Bisector" class="headerlink" title="Tutorial 教程：角平分线 / Tutorial: Angle Bisector"></a>Tutorial 教程：角平分线 / Tutorial: Angle Bisector</h5><p>你可以顺次点击角一条边上的任意一点，角的顶点，角另外一条边上的任意一点，来直接画出这个角的角平分线了。花费：1L 4E</p>
 <h5 id="Beta-2-角平分线交点-Intersection-of-Angle-Bisectors"><a href="#Beta-2-角平分线交点-Intersection-of-Angle-Bisectors" class="headerlink" title="Beta.2 角平分线交点 / Intersection of Angle Bisectors"></a>Beta.2 角平分线交点 / Intersection of Angle Bisectors</h5><ul>
 <li>限制：2L 6E</li>
@@ -717,9 +496,11 @@
 <ul>
 <li>工具：角分，角分，交点</li>
 </ul>
-<p><img src="/2020/07/19/Euclidea解法与证明/beta2 2l.PNG" style="zoom:50%;"></p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta2 2l.PNG" style="zoom:50%;">
+
 <p><strong>6E</strong> 巧妙地共用圆，用 4 个圆作两条角平分线。如图，A，B 两个圆被共用。</p>
-<p><img src="/2020/07/19/Euclidea解法与证明/beta2 6e.png" style="zoom:50%;"></p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta2 6e.png" style="zoom:50%;">
+
 <h5 id="Beta-3-30°-角-Angle-of-30°（V-星关）"><a href="#Beta-3-30°-角-Angle-of-30°（V-星关）" class="headerlink" title="Beta.3 30° 角 / Angle of 30°（V 星关）"></a>Beta.3 30° 角 / Angle of 30°（V 星关）</h5><ul>
 <li>限制：3L 3E，解数：2</li>
 </ul>
@@ -735,7 +516,8 @@
 </li>
 </ul>
 <p><strong>2V</strong> 下面还有一个。</p>
-<p><img src="/2020/07/19/Euclidea解法与证明/beta3.PNG" style="zoom:50%;"></p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta3.PNG" style="zoom:50%;">
+
 <h5 id="Beta-4-二倍角-Double-Angle（V-星关）"><a href="#Beta-4-二倍角-Double-Angle（V-星关）" class="headerlink" title="Beta.4 二倍角 / Double Angle（V 星关）"></a>Beta.4 二倍角 / Double Angle（V 星关）</h5><ul>
 <li>限制：3L 3E，解数：2</li>
 </ul>
@@ -747,9 +529,11 @@
 <ul>
 <li>工具：圆，圆，线</li>
 </ul>
-<p><img src="/2020/07/19/Euclidea解法与证明/beta4 sol.PNG" style="zoom:50%;"></p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta4 sol.PNG" style="zoom:50%;">
+
 <p><strong>2V</strong> 下面还有一解。</p>
-<p><img src="/2020/07/19/Euclidea解法与证明/beta4 2v.PNG" style="zoom:50%;"></p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta4 2v.PNG" style="zoom:50%;">
+
 <h5 id="Beta-5-切割矩形-Cut-Rectangle"><a href="#Beta-5-切割矩形-Cut-Rectangle" class="headerlink" title="Beta.5 切割矩形 / Cut Rectangle"></a>Beta.5 切割矩形 / Cut Rectangle</h5><ul>
 <li>限制：3L 3E</li>
 </ul>
@@ -764,7 +548,8 @@
 <li><p>工具：线，线，线</p>
 </li>
 </ul>
-<p><img src="/2020/07/19/Euclidea解法与证明/beta5.PNG" style="zoom:50%;"></p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta5.PNG" style="zoom:50%;">
+
 <h5 id="Beta-6-过线外一点作垂线-Drop-a-Perpendicular"><a href="#Beta-6-过线外一点作垂线-Drop-a-Perpendicular" class="headerlink" title="Beta.6 过线外一点作垂线 / Drop a Perpendicular"></a>Beta.6 过线外一点作垂线 / Drop a Perpendicular</h5><ul>
 <li>限制：2L 3E</li>
 </ul>
@@ -777,12 +562,14 @@
 <li>依据：垂径定理推论（弦的垂直平分线必经过圆心）</li>
 <li>工具：圆，中垂</li>
 </ul>
-<p><img src="/2020/07/19/Euclidea解法与证明/beta6 2l.PNG" style="zoom:50%;"></p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta6 2l.PNG" style="zoom:50%;">
+
 <p><strong>3E</strong> 作给定点对于给定直线的对称点，连接即可。</p>
 <ul>
 <li>工具：圆，圆，线</li>
 </ul>
-<p><img src="/2020/07/19/Euclidea解法与证明/beta6 3e.PNG" style="zoom:50%;"></p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta6 3e.PNG" style="zoom:50%;">
+
 <h5 id="Beta-7-过线上一点引垂线-Erect-a-Perpendicular"><a href="#Beta-7-过线上一点引垂线-Erect-a-Perpendicular" class="headerlink" title="Beta.7 过线上一点引垂线 / Erect a Perpendicular"></a>Beta.7 过线上一点引垂线 / Erect a Perpendicular</h5><ul>
 <li>限制：1L 3E</li>
 </ul>
@@ -794,13 +581,15 @@
 <ul>
 <li>工具：角分</li>
 </ul>
-<p><img src="/2020/07/19/Euclidea解法与证明/beta7 1l.PNG" style="zoom:50%;"></p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta7 1l.PNG" style="zoom:50%;">
+
 <p><strong>3E</strong> 过给定点任意作圆，做出对应直径，即可得到垂线。</p>
 <ul>
 <li>依据：直径所对圆周角为 $90^{\circ}$</li>
 <li>工具：圆，线，线</li>
 </ul>
-<p><img src="/2020/07/19/Euclidea解法与证明/beta7 3e.PNG" style="zoom:50%;"></p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta7 3e.PNG" style="zoom:50%;">
+
 <h5 id="Tutorial-教程：垂线-Tutorial-Perpendicular"><a href="#Tutorial-教程：垂线-Tutorial-Perpendicular" class="headerlink" title="Tutorial 教程：垂线 / Tutorial: Perpendicular"></a>Tutorial 教程：垂线 / Tutorial: Perpendicular</h5><p>你可以直接过一点作一条直线的垂线了。花费：1L 3E</p>
 <h5 id="Beta-8-过圆上一点的切线-Tangent-to-Circle-at-Point"><a href="#Beta-8-过圆上一点的切线-Tangent-to-Circle-at-Point" class="headerlink" title="Beta.8 过圆上一点的切线 / Tangent to Circle at Point"></a>Beta.8 过圆上一点的切线 / Tangent to Circle at Point</h5><ul>
 <li>限制：2L 3E</li>
@@ -814,9 +603,11 @@
 <li>依据：圆的切线垂直于过切点的半径</li>
 <li>工具：圆，垂直</li>
 </ul>
-<p><img src="/2020/07/19/Euclidea解法与证明/beta8 2l.PNG" style="zoom:50%;"></p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta8 2l.PNG" style="zoom:50%;">
+
 <p><strong>3E</strong> <strong>分步解释</strong></p>
-<p><img src="/2020/07/19/Euclidea解法与证明/beta8 3e.PNG" style="zoom:67%;"></p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta8 3e.PNG" style="zoom:67%;">
+
 <ul>
 <li>第 1 步：在 $\bigodot A$ 上任意选取异于 $B$ 的一点 $C$，以 $C$ 为圆心，$BC$ 长为半径作 $\bigodot C$，$\bigodot C$ 与 $\bigodot A$ 的另一个交点为 $D$</li>
 <li>第 2 步：以 $B$ 为圆心，$BD$ 长为半径作 $\bigodot B$，$\bigodot C$ 与 $\bigodot B$ 的另一个交点为 $E$</li>
@@ -838,7 +629,8 @@
 <ul>
 <li>工具：垂直，圆</li>
 </ul>
-<p><img src="/2020/07/19/Euclidea解法与证明/beta9.PNG" style="zoom:50%;"></p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta9.PNG" style="zoom:50%;">
+
 <h5 id="Beta-10-菱形的内切圆-Сircle-in-Rhombus"><a href="#Beta-10-菱形的内切圆-Сircle-in-Rhombus" class="headerlink" title="Beta.10 菱形的内切圆 / Сircle in Rhombus"></a>Beta.10 菱形的内切圆 / Сircle in Rhombus</h5><ul>
 <li>限制：4L 6E</li>
 </ul>
@@ -847,7 +639,8 @@
 <p>在菱形内内接一个圆。</p>
 </blockquote>
 <p><strong>4L 6E</strong> 连接两条对角线，作垂直获得切点，最后画圆就 OK</p>
-<p><img src="/2020/07/19/Euclidea解法与证明/beta10 sol.PNG" style="zoom:50%;"></p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta10 sol.PNG" style="zoom:50%;">
+
 <h3 id="3、-gamma-Gamma-关"><a href="#3、-gamma-Gamma-关" class="headerlink" title="3、$\gamma$ Gamma 关"></a>3、$\gamma$ Gamma 关</h3><ul>
 <li>共计 9 关，全是主关</li>
 <li>30 颗星，其中 V 星 3 个</li>
@@ -864,7 +657,8 @@
 <li>依据：垂径定理</li>
 <li>工具：线，垂直</li>
 </ul>
-<p><img src="/2020/07/19/Euclidea解法与证明/gamma1 sol.PNG" style="zoom:50%;"></p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/gamma1 sol.PNG" style="zoom:50%;">
+
 <h5 id="Gamma-2-由角和垂心定义的三角形-Triangle-by-Angle-and-Orthocenter"><a href="#Gamma-2-由角和垂心定义的三角形-Triangle-by-Angle-and-Orthocenter" class="headerlink" title="Gamma.2 由角和垂心定义的三角形 / Triangle by Angle and Orthocenter"></a>Gamma.2 由角和垂心定义的三角形 / Triangle by Angle and Orthocenter</h5><ul>
 <li>限制：3L 7E</li>
 </ul>
@@ -877,13 +671,15 @@
 <li>依据：垂心的性质</li>
 <li>工具：垂直，垂直，线</li>
 </ul>
-<p><img src="/2020/07/19/Euclidea解法与证明/gamma2 3l.PNG" style="zoom:50%;"></p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/gamma2 3l.PNG" style="zoom:50%;">
+
 <p><strong>6E</strong> 与 3L 思想一样，用 Beta.6 3E 的方法作垂线，用共用圆的思想，使用 3 个圆作 2 条垂线。</p>
 <ul>
 <li>依据：垂心的性质</li>
 <li>工具：圆，圆，圆，线，线，线</li>
 </ul>
-<p><img src="/2020/07/19/Euclidea解法与证明/gamma2 6e.PNG" style="zoom:50%;"></p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/gamma2 6e.PNG" style="zoom:50%;">
+
 <h5 id="Gamma-3-垂直平分线交点-Intersection-of-Perpendicular-Bisectors"><a href="#Gamma-3-垂直平分线交点-Intersection-of-Perpendicular-Bisectors" class="headerlink" title="Gamma.3 垂直平分线交点 / Intersection of Perpendicular Bisectors"></a>Gamma.3 垂直平分线交点 / Intersection of Perpendicular Bisectors</h5><ul>
 <li>限制：2L 2E</li>
 </ul>
@@ -896,7 +692,8 @@
 <li>依据：外心到三角形三边的距离相等。</li>
 <li>工具：圆，线</li>
 </ul>
-<p><img src="/2020/07/19/Euclidea解法与证明/gamma3 2l2e.PNG" style="zoom:50%;"></p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/gamma3 2l2e.PNG" style="zoom:50%;">
+
 <h5 id="Gamma-4-三条等长线段-I-Three-equal-segments-1（V-星关）"><a href="#Gamma-4-三条等长线段-I-Three-equal-segments-1（V-星关）" class="headerlink" title="Gamma.4 三条等长线段 I / Three equal segments - 1（V 星关）"></a>Gamma.4 三条等长线段 I / Three equal segments - 1（V 星关）</h5><ul>
 <li>限制：4L 6E，解数：2</li>
 </ul>
@@ -909,7 +706,8 @@
 <li>依据：垂直平分线的性质；圆的半径处处相等</li>
 <li>工具：中垂，线，圆，线</li>
 </ul>
-<p><img src="/2020/07/19/Euclidea解法与证明/gamma4 4l6e.PNG" style="zoom:50%;"></p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/gamma4 4l6e.PNG" style="zoom:50%;">
+
 <p><strong>2V</strong> 明显 $\bigodot M$ 与 BC 有两个交点，所以 E 点有 2 个</p>
 <h5 id="Gamma-5-过一点并切直线的圆-Circle-through-Point-Tangent-to-Line"><a href="#Gamma-5-过一点并切直线的圆-Circle-through-Point-Tangent-to-Line" class="headerlink" title="Gamma.5 过一点并切直线的圆 / Circle through Point Tangent to Line"></a>Gamma.5 过一点并切直线的圆 / Circle through Point Tangent to Line</h5><ul>
 <li>限制：3L 6E</li>
@@ -922,12 +720,14 @@
 <ul>
 <li>工具：中垂，垂直，线</li>
 </ul>
-<p><img src="/2020/07/19/Euclidea解法与证明/gamma5 3l.PNG" style="zoom:50%;"></p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/gamma5 3l.PNG" style="zoom:50%;">
+
 <p><strong>6E</strong> 运用共用圆思想，使用两个圆来同时达成作垂线与垂直平分线。如下图，作垂线用的是 Beta.7 3E 的做法。</p>
 <ul>
 <li>工具：圆，圆，线，线，线，圆</li>
 </ul>
-<p><img src="/2020/07/19/Euclidea解法与证明/gamma5 6e.PNG" style="zoom:50%;"></p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/gamma5 6e.PNG" style="zoom:50%;">
+
 <h5 id="Gamma-6-梯形底边的中点-Midpoints-of-Trapezoid-Bases"><a href="#Gamma-6-梯形底边的中点-Midpoints-of-Trapezoid-Bases" class="headerlink" title="Gamma.6 梯形底边的中点 / Midpoints of Trapezoid Bases"></a>Gamma.6 梯形底边的中点 / Midpoints of Trapezoid Bases</h5><ul>
 <li>限制：3L 5E</li>
 </ul>
@@ -939,14 +739,17 @@
 <ul>
 <li>工具：中垂，中垂，线</li>
 </ul>
-<p><img src="/2020/07/19/Euclidea解法与证明/gamma6 3l.PNG" style="zoom:50%;"></p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/gamma6 3l.PNG" style="zoom:50%;">
+
 <p><strong>5E</strong> 详细证明见下</p>
 <ul>
 <li>工具：线，线，线，线，线</li>
 </ul>
-<p><img src="/2020/07/19/Euclidea解法与证明/gamma6 5e.PNG" style="zoom:50%;"></p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/gamma6 5e.PNG" style="zoom:50%;">
+
 <p><strong>证明</strong></p>
-<p><img src="/2020/07/19/Euclidea解法与证明/proof.PNG" style="zoom:50%;"></p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/proof.PNG" style="zoom:50%;">
+
 <ul>
 <li>依据：<strong>塞瓦定理</strong>（在 $\triangle ABC$ 内任取一点 O，延长 AO、BO、CO 分别交对边于 D、E、F，则 $\frac{BD}{DC} \times \frac{CE}{EA} \times \frac{AF}{FB} = 1$）</li>
 </ul>
@@ -1015,430 +818,225 @@
 </ul>
 <p>咕咕咕…</p>
 
-      
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-      
-    
-    
-
-    
-      <div>
         
 
-
-
-  
-
-
-
+<div>
 <ul class="post-copyright">
   <li class="post-copyright-author">
-    <strong>本文作者： </strong>fsy</li>
+    <strong>本文作者： </strong>fsy
+  </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    
-    <a href="http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/" title="Euclidea解法与证明">http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/</a>
+    <a href="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/" title="Euclidea解法与证明">http://fsy-juruo.github.io/2020/07/19/Euclidea解法与证明/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
 </ul>
-
-      </div>
-    
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2020/06/03/洛谷P6583-回首过去/" rel="next" title="洛谷P6583 回首过去">
-                <i class="fa fa-chevron-left"></i> 洛谷P6583 回首过去
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/07/30/Educational-Codeforces-Round-92-Rated-for-Div-2-题解/" rel="prev" title="Educational Codeforces Round 92 (Rated for Div. 2) 题解">
-                Educational Codeforces Round 92 (Rated for Div. 2) 题解 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
+</div>
 
 
-  </div>
+      <footer class="post-footer">
 
-
-          </div>
-          
-
-  
-    <div id="gitalk-container">
-    </div>
-    
-  
-
-
-
-        </div>
         
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/06/03/%E6%B4%9B%E8%B0%B7P6583-%E5%9B%9E%E9%A6%96%E8%BF%87%E5%8E%BB/" rel="prev" title="洛谷P6583 回首过去">
+      <i class="fa fa-chevron-left"></i> 洛谷P6583 回首过去
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/07/30/Educational-Codeforces-Round-92-Rated-for-Div-2-%E9%A2%98%E8%A7%A3/" rel="next" title="Educational Codeforces Round 92 (Rated for Div. 2) 题解">
+      Educational Codeforces Round 92 (Rated for Div. 2) 题解 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-  <aside id="sidebar" class="sidebar">
-    
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81-alpha-Alpha-%E5%85%B3%EF%BC%88%E5%85%A8%E8%A7%A3%E5%AE%8C%E6%88%90%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">1、$\alpha$ Alpha 关（全解完成）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Tutorial-%E7%AD%89%E8%BE%B9%E4%B8%89%E8%A7%92%E5%BD%A2-Equilateral-Triangle%EF%BC%88V-%E6%98%9F%E5%85%B3%EF%BC%89"><span class="nav-number">1.0.1.</span> <span class="nav-text">Tutorial 等边三角形 &#x2F; Equilateral Triangle（V 星关）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Alpha-1-60%C2%B0-%E8%A7%92-Angle-of-60%C2%B0-%EF%BC%88V-%E6%98%9F%E5%85%B3%EF%BC%89"><span class="nav-number">1.0.2.</span> <span class="nav-text">Alpha.1 60° 角 &#x2F; Angle of 60° （V 星关）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Tutorial-%E6%95%99%E7%A8%8B%EF%BC%9A%E7%9B%B8%E4%BA%A4%E5%B7%A5%E5%85%B7-Tutorial-Intersect-Tool"><span class="nav-number">1.0.3.</span> <span class="nav-text">Tutorial 教程：相交工具 &#x2F; Tutorial: Intersect Tool</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Alpha-2-%E5%9E%82%E7%9B%B4%E5%B9%B3%E5%88%86%E7%BA%BF-Perpendicular-Bisector"><span class="nav-number">1.0.4.</span> <span class="nav-text">Alpha.2 垂直平分线 &#x2F; Perpendicular Bisector</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Tutorial-%E6%95%99%E7%A8%8B%EF%BC%9A%E5%9E%82%E7%9B%B4%E5%B9%B3%E5%88%86%E7%BA%BF-Tutorial-Perpendicular-Bisector"><span class="nav-number">1.0.5.</span> <span class="nav-text">Tutorial 教程：垂直平分线 &#x2F; Tutorial: Perpendicular Bisector</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Alpha-3-%E4%B8%AD%E7%82%B9-Midpoint"><span class="nav-number">1.0.6.</span> <span class="nav-text">Alpha.3 中点 &#x2F; Midpoint</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Alpha-4-%E6%AD%A3%E6%96%B9%E5%BD%A2%E5%86%85%E7%9A%84%E5%9C%86-Circle-in-Square"><span class="nav-number">1.0.7.</span> <span class="nav-text">Alpha.4 正方形内的圆 &#x2F; Circle in Square</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Tutorial-%E6%95%99%E7%A8%8B%EF%BC%9A%E7%A7%BB%E5%8A%A8-Tutorial-Move-Tool"><span class="nav-number">1.0.8.</span> <span class="nav-text">Tutorial 教程：移动 &#x2F; Tutorial: Move Tool</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Alpha-5-%E7%9F%A9%E5%BD%A2%E5%86%85%E7%9A%84%E8%8F%B1%E5%BD%A2-Rhombus-in-Rectangle%EF%BC%88V-%E6%98%9F%E5%85%B3%EF%BC%89"><span class="nav-number">1.0.9.</span> <span class="nav-text">Alpha.5 矩形内的菱形 &#x2F; Rhombus in Rectangle（V 星关）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Alpha-6-%E5%9C%86%E5%BF%83-Circle-Center"><span class="nav-number">1.0.10.</span> <span class="nav-text">Alpha.6 圆心 &#x2F; Circle Center</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Alpha-7-%E5%9C%86%E5%86%85%E6%8E%A5%E6%AD%A3%E6%96%B9%E5%BD%A2-Inscribed-Square"><span class="nav-number">1.0.11.</span> <span class="nav-text">Alpha.7 圆内接正方形 &#x2F; Inscribed Square</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81-beta-Beta-%E5%85%B3%EF%BC%88%E5%85%A8%E8%A7%A3%E5%AE%8C%E6%88%90%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">2、$\beta$ Beta 关（全解完成）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-1-%E8%A7%92%E5%B9%B3%E5%88%86%E7%BA%BF-Angle-Bisector"><span class="nav-number">2.0.1.</span> <span class="nav-text">Beta.1 角平分线 &#x2F; Angle Bisector</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Tutorial-%E6%95%99%E7%A8%8B%EF%BC%9A%E8%A7%92%E5%B9%B3%E5%88%86%E7%BA%BF-Tutorial-Angle-Bisector"><span class="nav-number">2.0.2.</span> <span class="nav-text">Tutorial 教程：角平分线 &#x2F; Tutorial: Angle Bisector</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-2-%E8%A7%92%E5%B9%B3%E5%88%86%E7%BA%BF%E4%BA%A4%E7%82%B9-Intersection-of-Angle-Bisectors"><span class="nav-number">2.0.3.</span> <span class="nav-text">Beta.2 角平分线交点 &#x2F; Intersection of Angle Bisectors</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-3-30%C2%B0-%E8%A7%92-Angle-of-30%C2%B0%EF%BC%88V-%E6%98%9F%E5%85%B3%EF%BC%89"><span class="nav-number">2.0.4.</span> <span class="nav-text">Beta.3 30° 角 &#x2F; Angle of 30°（V 星关）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-4-%E4%BA%8C%E5%80%8D%E8%A7%92-Double-Angle%EF%BC%88V-%E6%98%9F%E5%85%B3%EF%BC%89"><span class="nav-number">2.0.5.</span> <span class="nav-text">Beta.4 二倍角 &#x2F; Double Angle（V 星关）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-5-%E5%88%87%E5%89%B2%E7%9F%A9%E5%BD%A2-Cut-Rectangle"><span class="nav-number">2.0.6.</span> <span class="nav-text">Beta.5 切割矩形 &#x2F; Cut Rectangle</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-6-%E8%BF%87%E7%BA%BF%E5%A4%96%E4%B8%80%E7%82%B9%E4%BD%9C%E5%9E%82%E7%BA%BF-Drop-a-Perpendicular"><span class="nav-number">2.0.7.</span> <span class="nav-text">Beta.6 过线外一点作垂线 &#x2F; Drop a Perpendicular</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-7-%E8%BF%87%E7%BA%BF%E4%B8%8A%E4%B8%80%E7%82%B9%E5%BC%95%E5%9E%82%E7%BA%BF-Erect-a-Perpendicular"><span class="nav-number">2.0.8.</span> <span class="nav-text">Beta.7 过线上一点引垂线 &#x2F; Erect a Perpendicular</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Tutorial-%E6%95%99%E7%A8%8B%EF%BC%9A%E5%9E%82%E7%BA%BF-Tutorial-Perpendicular"><span class="nav-number">2.0.9.</span> <span class="nav-text">Tutorial 教程：垂线 &#x2F; Tutorial: Perpendicular</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-8-%E8%BF%87%E5%9C%86%E4%B8%8A%E4%B8%80%E7%82%B9%E7%9A%84%E5%88%87%E7%BA%BF-Tangent-to-Circle-at-Point"><span class="nav-number">2.0.10.</span> <span class="nav-text">Beta.8 过圆上一点的切线 &#x2F; Tangent to Circle at Point</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-9-%E7%9B%B4%E7%BA%BF%E7%9A%84%E5%88%87%E5%9C%86-Circle-Tangent-to-Line"><span class="nav-number">2.0.11.</span> <span class="nav-text">Beta.9 直线的切圆 &#x2F; Circle Tangent to Line</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-10-%E8%8F%B1%E5%BD%A2%E7%9A%84%E5%86%85%E5%88%87%E5%9C%86-%D0%A1ircle-in-Rhombus"><span class="nav-number">2.0.12.</span> <span class="nav-text">Beta.10 菱形的内切圆 &#x2F; Сircle in Rhombus</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81-gamma-Gamma-%E5%85%B3"><span class="nav-number">3.</span> <span class="nav-text">3、$\gamma$ Gamma 关</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Gamma-1-%E5%BC%A6%E4%B8%AD%E7%82%B9-Chord-Midpoint"><span class="nav-number">3.0.1.</span> <span class="nav-text">Gamma.1 弦中点 &#x2F; Chord Midpoint</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Gamma-2-%E7%94%B1%E8%A7%92%E5%92%8C%E5%9E%82%E5%BF%83%E5%AE%9A%E4%B9%89%E7%9A%84%E4%B8%89%E8%A7%92%E5%BD%A2-Triangle-by-Angle-and-Orthocenter"><span class="nav-number">3.0.2.</span> <span class="nav-text">Gamma.2 由角和垂心定义的三角形 &#x2F; Triangle by Angle and Orthocenter</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Gamma-3-%E5%9E%82%E7%9B%B4%E5%B9%B3%E5%88%86%E7%BA%BF%E4%BA%A4%E7%82%B9-Intersection-of-Perpendicular-Bisectors"><span class="nav-number">3.0.3.</span> <span class="nav-text">Gamma.3 垂直平分线交点 &#x2F; Intersection of Perpendicular Bisectors</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Gamma-4-%E4%B8%89%E6%9D%A1%E7%AD%89%E9%95%BF%E7%BA%BF%E6%AE%B5-I-Three-equal-segments-1%EF%BC%88V-%E6%98%9F%E5%85%B3%EF%BC%89"><span class="nav-number">3.0.4.</span> <span class="nav-text">Gamma.4 三条等长线段 I &#x2F; Three equal segments - 1（V 星关）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Gamma-5-%E8%BF%87%E4%B8%80%E7%82%B9%E5%B9%B6%E5%88%87%E7%9B%B4%E7%BA%BF%E7%9A%84%E5%9C%86-Circle-through-Point-Tangent-to-Line"><span class="nav-number">3.0.5.</span> <span class="nav-text">Gamma.5 过一点并切直线的圆 &#x2F; Circle through Point Tangent to Line</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Gamma-6-%E6%A2%AF%E5%BD%A2%E5%BA%95%E8%BE%B9%E7%9A%84%E4%B8%AD%E7%82%B9-Midpoints-of-Trapezoid-Bases"><span class="nav-number">3.0.6.</span> <span class="nav-text">Gamma.6 梯形底边的中点 &#x2F; Midpoints of Trapezoid Bases</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Gamma-7-45%C2%B0-%E8%A7%92-Angle-of-45%C2%B0"><span class="nav-number">3.0.7.</span> <span class="nav-text">Gamma.7 45° 角 &#x2F; Angle of 45°</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%E3%80%81-delta-Delta-%E5%85%B3"><span class="nav-number">4.</span> <span class="nav-text">4、$\delta$ Delta 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5%E3%80%81-varepsilon-Epsilon-%E5%85%B3"><span class="nav-number">5.</span> <span class="nav-text">5、$\varepsilon$ Epsilon 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6%E3%80%81-zeta-Zeta-%E5%85%B3"><span class="nav-number">6.</span> <span class="nav-text">6、$\zeta$ Zeta 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7%E3%80%81-eta-Eta-%E5%85%B3"><span class="nav-number">7.</span> <span class="nav-text">7、$\eta$ Eta 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8%E3%80%81-theta-Theta-%E5%85%B3"><span class="nav-number">8.</span> <span class="nav-text">8、$\theta$ Theta 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9%E3%80%81-iota-Iota-%E5%85%B3"><span class="nav-number">9.</span> <span class="nav-text">9、$\iota$ Iota 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10%E3%80%81-kappa-Kappa-%E5%85%B3"><span class="nav-number">10.</span> <span class="nav-text">10、$\kappa$ Kappa 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11%E3%80%81-lambda-Lambda-%E5%85%B3"><span class="nav-number">11.</span> <span class="nav-text">11、$\lambda$ Lambda 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12%E3%80%81-mu-Mu-%E5%85%B3"><span class="nav-number">12.</span> <span class="nav-text">12、$\mu$ Mu 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13%E3%80%81-nu-Nu-%E5%85%B3"><span class="nav-number">13.</span> <span class="nav-text">13、$\nu$ Nu 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14%E3%80%81-xi-Xi-%E5%85%B3"><span class="nav-number">14.</span> <span class="nav-text">14、$\xi$ Xi 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15%E3%80%81-omicron-Omicron-%E5%85%B3"><span class="nav-number">15.</span> <span class="nav-text">15、$\omicron$ Omicron 关</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/images/avatar01.png" alt="fsy">
-            
-              <p class="site-author-name" itemprop="name">fsy</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">15</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
-
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">48</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/fsy-juruo" title="GitHub &rarr; https://github.com/fsy-juruo" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
-                </span>
-              
-            </div>
-          
-
-          
-             <div class="cc-license motion-element" itemprop="license">
-              
-                
-              
-              
-              
-              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
-             </div>
-          
-
-          
-          
-            <div class="links-of-blogroll motion-element links-of-blogroll-block">
-              <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-link"></i>
-                Links
-              </div>
-              <ul class="links-of-blogroll-list">
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://www.cnblogs.com/evenbao/" title="https://www.cnblogs.com/evenbao/" rel="noopener" target="_blank">even_bao</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://2006duckonline.github.io/2019/08/13/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5/" title="https://2006duckonline.github.io/2019/08/13/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5/" rel="noopener" target="_blank">zyx</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://ybw051114.ml/" title="https://ybw051114.ml/" rel="noopener" target="_blank">ybw</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://wxq1229.github.io/" title="https://wxq1229.github.io/" rel="noopener" target="_blank">wxq</a>
-                  </li>
-                
-              </ul>
-            </div>
-          
-
-          
-            
-          
-          
-
-        </div>
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="fsy"
+      src="/images/avatar01.png">
+  <p class="site-author-name" itemprop="name">fsy</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
       </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">45</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fsy-juruo" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;fsy-juruo" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
 
-            
-            
-            
-            
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.cnblogs.com/evenbao/" title="https:&#x2F;&#x2F;www.cnblogs.com&#x2F;evenbao&#x2F;" rel="noopener" target="_blank">even_bao</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://2006duckonline.github.io/2019/08/13/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5/" title="https:&#x2F;&#x2F;2006duckonline.github.io&#x2F;2019&#x2F;08&#x2F;13&#x2F;%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5&#x2F;" rel="noopener" target="_blank">zyx</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://ybw051114.ml/" title="https:&#x2F;&#x2F;ybw051114.ml&#x2F;" rel="noopener" target="_blank">ybw</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://wxq1229.github.io/" title="https:&#x2F;&#x2F;wxq1229.github.io&#x2F;" rel="noopener" target="_blank">wxq</a>
+        </li>
+    </ul>
+  </div>
 
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、-alpha-Alpha-关（全解完成）"><span class="nav-number">1.</span> <span class="nav-text">1、$\alpha$ Alpha 关（全解完成）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Tutorial-等边三角形-Equilateral-Triangle（V-星关）"><span class="nav-number">1.0.1.</span> <span class="nav-text">Tutorial 等边三角形 / Equilateral Triangle（V 星关）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Alpha-1-60°-角-Angle-of-60°-（V-星关）"><span class="nav-number">1.0.2.</span> <span class="nav-text">Alpha.1 60° 角 / Angle of 60° （V 星关）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Tutorial-教程：相交工具-Tutorial-Intersect-Tool"><span class="nav-number">1.0.3.</span> <span class="nav-text">Tutorial 教程：相交工具 / Tutorial: Intersect Tool</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Alpha-2-垂直平分线-Perpendicular-Bisector"><span class="nav-number">1.0.4.</span> <span class="nav-text">Alpha.2 垂直平分线 / Perpendicular Bisector</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Tutorial-教程：垂直平分线-Tutorial-Perpendicular-Bisector"><span class="nav-number">1.0.5.</span> <span class="nav-text">Tutorial 教程：垂直平分线 / Tutorial: Perpendicular Bisector</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Alpha-3-中点-Midpoint"><span class="nav-number">1.0.6.</span> <span class="nav-text">Alpha.3 中点 / Midpoint</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Alpha-4-正方形内的圆-Circle-in-Square"><span class="nav-number">1.0.7.</span> <span class="nav-text">Alpha.4 正方形内的圆 / Circle in Square</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Tutorial-教程：移动-Tutorial-Move-Tool"><span class="nav-number">1.0.8.</span> <span class="nav-text">Tutorial 教程：移动 / Tutorial: Move Tool</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Alpha-5-矩形内的菱形-Rhombus-in-Rectangle（V-星关）"><span class="nav-number">1.0.9.</span> <span class="nav-text">Alpha.5 矩形内的菱形 / Rhombus in Rectangle（V 星关）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Alpha-6-圆心-Circle-Center"><span class="nav-number">1.0.10.</span> <span class="nav-text">Alpha.6 圆心 / Circle Center</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Alpha-7-圆内接正方形-Inscribed-Square"><span class="nav-number">1.0.11.</span> <span class="nav-text">Alpha.7 圆内接正方形 / Inscribed Square</span></a></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#2、-beta-Beta-关（全解完成）"><span class="nav-number">2.</span> <span class="nav-text">2、$\beta$ Beta 关（全解完成）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-1-角平分线-Angle-Bisector"><span class="nav-number">2.0.1.</span> <span class="nav-text">Beta.1 角平分线 / Angle Bisector</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Tutorial-教程：角平分线-Tutorial-Angle-Bisector"><span class="nav-number">2.0.2.</span> <span class="nav-text">Tutorial 教程：角平分线 / Tutorial: Angle Bisector</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-2-角平分线交点-Intersection-of-Angle-Bisectors"><span class="nav-number">2.0.3.</span> <span class="nav-text">Beta.2 角平分线交点 / Intersection of Angle Bisectors</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-3-30°-角-Angle-of-30°（V-星关）"><span class="nav-number">2.0.4.</span> <span class="nav-text">Beta.3 30° 角 / Angle of 30°（V 星关）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-4-二倍角-Double-Angle（V-星关）"><span class="nav-number">2.0.5.</span> <span class="nav-text">Beta.4 二倍角 / Double Angle（V 星关）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-5-切割矩形-Cut-Rectangle"><span class="nav-number">2.0.6.</span> <span class="nav-text">Beta.5 切割矩形 / Cut Rectangle</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-6-过线外一点作垂线-Drop-a-Perpendicular"><span class="nav-number">2.0.7.</span> <span class="nav-text">Beta.6 过线外一点作垂线 / Drop a Perpendicular</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-7-过线上一点引垂线-Erect-a-Perpendicular"><span class="nav-number">2.0.8.</span> <span class="nav-text">Beta.7 过线上一点引垂线 / Erect a Perpendicular</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Tutorial-教程：垂线-Tutorial-Perpendicular"><span class="nav-number">2.0.9.</span> <span class="nav-text">Tutorial 教程：垂线 / Tutorial: Perpendicular</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-8-过圆上一点的切线-Tangent-to-Circle-at-Point"><span class="nav-number">2.0.10.</span> <span class="nav-text">Beta.8 过圆上一点的切线 / Tangent to Circle at Point</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-9-直线的切圆-Circle-Tangent-to-Line"><span class="nav-number">2.0.11.</span> <span class="nav-text">Beta.9 直线的切圆 / Circle Tangent to Line</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-10-菱形的内切圆-Сircle-in-Rhombus"><span class="nav-number">2.0.12.</span> <span class="nav-text">Beta.10 菱形的内切圆 / Сircle in Rhombus</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、-gamma-Gamma-关"><span class="nav-number">3.</span> <span class="nav-text">3、$\gamma$ Gamma 关</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Gamma-1-弦中点-Chord-Midpoint"><span class="nav-number">3.0.1.</span> <span class="nav-text">Gamma.1 弦中点 / Chord Midpoint</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Gamma-2-由角和垂心定义的三角形-Triangle-by-Angle-and-Orthocenter"><span class="nav-number">3.0.2.</span> <span class="nav-text">Gamma.2 由角和垂心定义的三角形 / Triangle by Angle and Orthocenter</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Gamma-3-垂直平分线交点-Intersection-of-Perpendicular-Bisectors"><span class="nav-number">3.0.3.</span> <span class="nav-text">Gamma.3 垂直平分线交点 / Intersection of Perpendicular Bisectors</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Gamma-4-三条等长线段-I-Three-equal-segments-1（V-星关）"><span class="nav-number">3.0.4.</span> <span class="nav-text">Gamma.4 三条等长线段 I / Three equal segments - 1（V 星关）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Gamma-5-过一点并切直线的圆-Circle-through-Point-Tangent-to-Line"><span class="nav-number">3.0.5.</span> <span class="nav-text">Gamma.5 过一点并切直线的圆 / Circle through Point Tangent to Line</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Gamma-6-梯形底边的中点-Midpoints-of-Trapezoid-Bases"><span class="nav-number">3.0.6.</span> <span class="nav-text">Gamma.6 梯形底边的中点 / Midpoints of Trapezoid Bases</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Gamma-7-45°-角-Angle-of-45°"><span class="nav-number">3.0.7.</span> <span class="nav-text">Gamma.7 45° 角 / Angle of 45°</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、-delta-Delta-关"><span class="nav-number">4.</span> <span class="nav-text">4、$\delta$ Delta 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、-varepsilon-Epsilon-关"><span class="nav-number">5.</span> <span class="nav-text">5、$\varepsilon$ Epsilon 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、-zeta-Zeta-关"><span class="nav-number">6.</span> <span class="nav-text">6、$\zeta$ Zeta 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、-eta-Eta-关"><span class="nav-number">7.</span> <span class="nav-text">7、$\eta$ Eta 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8、-theta-Theta-关"><span class="nav-number">8.</span> <span class="nav-text">8、$\theta$ Theta 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9、-iota-Iota-关"><span class="nav-number">9.</span> <span class="nav-text">9、$\iota$ Iota 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10、-kappa-Kappa-关"><span class="nav-number">10.</span> <span class="nav-text">10、$\kappa$ Kappa 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11、-lambda-Lambda-关"><span class="nav-number">11.</span> <span class="nav-text">11、$\lambda$ Lambda 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12、-mu-Mu-关"><span class="nav-number">12.</span> <span class="nav-text">12、$\mu$ Mu 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13、-nu-Nu-关"><span class="nav-number">13.</span> <span class="nav-text">13、$\nu$ Nu 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14、-xi-Xi-关"><span class="nav-number">14.</span> <span class="nav-text">14、$\xi$ Xi 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15、-omicron-Omicron-关"><span class="nav-number">15.</span> <span class="nav-text">15、$\omicron$ Omicron 关</span></a></li></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
-
-      
-        <div class="back-to-top">
+      </div>
+        <div class="back-to-top motion-element">
           <i class="fa fa-arrow-up"></i>
-          
-            <span id="scrollpercent"><span>0</span>%</span>
-          
+          <span>0%</span>
         </div>
-      
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">fsy</span>
-
-  
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
+      <i class="fa fa-chart-area"></i>
     </span>
-    
       <span class="post-meta-item-text">站点总字数：</span>
-    
-    <span title="站点总字数">133k</span>
-  
-
-  
+    <span title="站点总字数">100k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    
-    <span title="站点阅读时长">2:01</span>
-  
+    <span title="站点阅读时长">1:30</span>
 </div>
-
-
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.7.0</div>
-
-
-
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
 
         
 <div class="busuanzi-count">
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv" title="总访客量">
-      <i class="fa fa-user"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
     </span>
-  
-
-  
-    <span class="site-pv" title="总访问量">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
     </span>
-  
 </div>
 
 
@@ -1448,291 +1046,125 @@
 
 
 
-
-        
       </div>
     </footer>
-
-    
-
-    
-
-    
-
-    
   </div>
 
   
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
 
 <script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
   }
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-
-  
-
-
-  <script src="/js/src/utils.js?v=6.7.0"></script>
-
-  <script src="/js/src/motion.js?v=6.7.0"></script>
-
-
-
-  
-  
-
-  
-  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
-<script src="/js/src/post-details.js?v=6.7.0"></script>
-
-<script type="text/javascript" src="/custom/fold_action.js?v=6.7.0"></script>
-
-
-
-  
-
-
-  <script src="/js/src/bootstrap.js?v=6.7.0"></script>
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <script src="//cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.min.js"></script>
-
-  
-  
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.css">
-
-  
-  
-  <script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
-
-   <script>
-        var gitalk = new Gitalk({
-          clientID: '5a61fb0f7adaaeed9336',
-          clientSecret: 'aa4e8e185129493ab8ce5d0741589163e72b097c',
-          repo: 'fsy-juruo-comments',
-          owner: 'fsy-juruo',
-          admin: ['fsy-juruo'],
-          id: md5(location.pathname),
-          distractionFreeMode: 'true'
-        })
-        gitalk.render('gitalk-container')
-       </script>
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
     
-      <script type="text/x-mathjax-config">
+
   
 
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      
-      equationNumbers: {
-        autoNumber: "AMS"
-      }
-    }
-  });
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '5a61fb0f7adaaeed9336',
+      clientSecret: 'aa4e8e185129493ab8ce5d0741589163e72b097c',
+      repo        : 'fsy-juruo-comments',
+      owner       : 'fsy-juruo',
+      admin       : ['fsy-juruo'],
+      id          : '081efcc95250c2069e1de16fc6fe0ade',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
 </script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-      for (i = 0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-      }
-  });
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-<style>
-.MathJax_Display {
-  overflow: auto hidden;
-}
-</style>
-
-    
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  <style>
-    .copy-btn {
-      display: inline-block;
-      padding: 6px 12px;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 20px;
-      color: #333;
-      white-space: nowrap;
-      vertical-align: middle;
-      cursor: pointer;
-      background-color: #eee;
-      background-image: linear-gradient(#fcfcfc, #eee);
-      border: 1px solid #d5d5d5;
-      border-radius: 3px;
-      user-select: none;
-      outline: 0;
-    }
-
-    .highlight-wrap .copy-btn {
-      transition: opacity .3s ease-in-out;
-      opacity: 0;
-      padding: 2px 6px;
-      position: absolute;
-      right: 4px;
-      top: 8px;
-    }
-
-    .highlight-wrap:hover .copy-btn,
-    .highlight-wrap .copy-btn:focus {
-      opacity: 1
-    }
-
-    .highlight-wrap {
-      position: relative;
-    }
-  </style>
-  <script>
-    $('.highlight').each(function (i, e) {
-      var $wrap = $('<div>').addClass('highlight-wrap');
-      $(e).after($wrap);
-      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
-        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
-          return $(e).text();
-        }).toArray().join('\n');
-        var ta = document.createElement('textarea');
-        var range = document.createRange(); //For Chrome
-        var sel = window.getSelection(); //For Chrome
-        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
-        ta.style.top = yPosition + 'px'; //Prevent page scroll
-        ta.style.position = 'absolute';
-        ta.style.opacity = '0';
-        ta.value = code;
-        ta.textContent = code; //For FireFox
-        ta.contentEditable = true;
-        ta.readOnly = false;
-        document.body.appendChild(ta);
-        range.selectNode(ta);
-        sel.removeAllRanges();
-        sel.addRange(range);
-        ta.setSelectionRange(0, code.length);
-        var result = document.execCommand('copy');
-        
-          if (result) $(this).text('复制成功');
-          else $(this).text('复制失败');
-        
-        ta.blur(); //For iOS
-        $(this).blur();
-      })).on('mouseleave', function (e) {
-        var $b = $(this).find('.copy-btn');
-        setTimeout(function () {
-          $b.text('复制');
-        }, 300);
-      }).append(e);
-    })
-  </script>
-
-
-  
-  
-
-  
-  
-
-  
-
 
 </body>
 </html>

@@ -1,125 +1,51 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-CN">
-<head><meta name="generator" content="Hexo 3.8.0">
+<html lang="zh-CN">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
-
-<link rel="stylesheet" href="/css/main.css?v=6.7.0">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.7.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.7.0">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
-
-
-
-
-
-
-
-<script id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '6.7.0',
-    sidebar: {"position":"left","display":"always","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fsy-juruo.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
 
   <meta name="description" content="Password is required to read this passage.">
-<meta name="keywords" content="【OJ】Project Euler,【算法】整除分块,【算法】质数筛,【算法】快速质数计数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Project Euler 668 Square root smooth Numbers">
 <meta property="og:url" content="http://fsy-juruo.github.io/2019/08/27/Project-Euler-668-Square-root-smooth-Numbers/index.html">
 <meta property="og:site_name" content="fsy&#39;s blog">
 <meta property="og:description" content="Password is required to read this passage.">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-27T15:06:15.205Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-08-27T14:03:56.000Z">
+<meta property="article:modified_time" content="2019-08-27T15:06:15.205Z">
+<meta property="article:author" content="fsy">
+<meta property="article:tag" content="【OJ】Project Euler">
+<meta property="article:tag" content="【算法】整除分块">
+<meta property="article:tag" content="【算法】质数筛">
+<meta property="article:tag" content="【算法】快速质数计数">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Project Euler 668 Square root smooth Numbers">
-<meta name="twitter:description" content="Password is required to read this passage.">
+
+<link rel="canonical" href="http://fsy-juruo.github.io/2019/08/27/Project-Euler-668-Square-root-smooth-Numbers/">
 
 
-
-
-
-
-  <link rel="canonical" href="http://fsy-juruo.github.io/2019/08/27/Project-Euler-668-Square-root-smooth-Numbers/">
-
-
-
-<script id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
   };
 </script>
 
@@ -131,15 +57,8 @@
 
 
 
-
-
-
-
-
-
   <noscript>
   <style>
-  .use-motion .motion-element,
   .use-motion .brand,
   .use-motion .menu-item,
   .sidebar-inner,
@@ -148,9 +67,8 @@
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
-  .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
@@ -164,153 +82,69 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">fsy's blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
-    
-      
-        <p class="site-subtitle">燃峥嵘岁月，烈日终破云。</p>
-      
-    
-    
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">fsy's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">燃峥嵘岁月，烈日终破云。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
 
 
 
+
 <nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
+        <li class="menu-item menu-item-about">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
+        <li class="menu-item menu-item-tags">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-categories">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
 
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
+        <li class="menu-item menu-item-archives">
 
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
-
-      
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
+  </ul>
 </nav>
 
-
-
-  
 
 
 
@@ -318,137 +152,74 @@
     </header>
 
     
+  <div class="reading-progress-bar"></div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
-          <div id="content" class="content">
+
+          <div class="content post posts-expand">
             
 
-  <div id="posts" class="posts-expand">
     
-
-  
-
   
   
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://fsy-juruo.github.io/2019/08/27/Project-Euler-668-Square-root-smooth-Numbers/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fsy">
-      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar01.png">
+      <meta itemprop="name" content="fsy">
+      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="fsy's blog">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">Project Euler 668 Square root smooth Numbers
-
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          Project Euler 668 Square root smooth Numbers
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+          
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
+              <span class="post-meta-item-text">发表于</span>
               
 
               <time title="创建时间：2019-08-27 22:03:56 / 修改时间：23:06:15" itemprop="dateCreated datePublished" datetime="2019-08-27T22:03:56+08:00">2019-08-27</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="post-meta-item-icon">
-            <i class="fa fa-eye"></i>
-             阅读次数： 
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
             </span>
-          
 
           
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">4k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">4 分钟</span>
-              
-            </div>
-          
-
-          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>559</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
 
         </div>
       </header>
-    
 
     
     
@@ -456,432 +227,242 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        <div id="hbe-security">
-  <div class="hbe-input-container">
-  <input type="password" class="hbe-form-control" id="pass" placeholder="请回答：当 n = 1e7 时，本问题的答案是?">
-    <label for="pass">请回答：当 n = 1e7 时，本问题的答案是?</label>
-    <div class="bottom-line"></div>
+        <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="177fd130fd4e9bef698de27d2fa99e1d4cd6363af1c359894cadc3b6fad23aa2">e50a4d5fb62f0d4ad9f239f5bbd63f8f9d849ba32df70480276caf8b2299e9764f98862de1af63d60854da461980bc906468047e97b4a71525b7fc1949dcf1cf0d32679ea1fa9482edc7bb966b6fce1ebbd12ade4784e2d0876165b380f03803c983c63ed1027eb13ed7e45d87cca2a74c8dc6724172d997cf87197ad6e72a73fd820b9857cc047992f5115ff83e794bdae7f447b695cc2335b1a222c6ff6e073a5282d670a2a5eb18f87f732e7be23d0c82261d8929fb77052c344739b8522e47d11cf794d80fae2ea9313ff43cc77a14d090d3fb80b9ec5ec84a4bebd6e85d593b48dfeaa43fb1904f4478635ae0a0cd58082f35290f121c615822dccab5b20b82c1e5eca518acac257ec279fd1850537751d8d432df948983ad40756b1e72d0f3b60476d17da4f66b4a776f1e343af144589b88e496b1bd8597ff2b827fe96a5ecd36eabd031abf5a49e61d1416715fd340d1366a3bde132b14d77dddcac4894aa21c03e81564f6c3b1920aa123716e4208b9f2c386d997a30545424cd07bbb52f1b0a2fca2e298ce5a4bb78ad83ba15bd3fad86a72ab331eeb45f4d1efeae5b110f88d702bbb39bce32a6a0fe6cdb1adb336ed4f689aaed3ba01c19379343ff351c994760fad8026ab7f8d228a3cd644b20c1396d79bbfde64f780cf72391d6b25d0ffe476ce3f3fefbc6b1fa4f9b782e46d18b66ea8909656aab353091f5cf9fe0f1f85394d324560dab5edbaf360ce2d0d5ad4eed6d0758af8a0a659968176db0f446cd04d954b938ea6f1902c15c05efb904b1f5c3a0b185914571dad1f42ca4d5937e50e8a3c37072962b487e29fe29232ac895725ac60a1b78ffa335ae09108189855f48eff31f9b4ee4a7255e138603e3716f65cd660df6972a26b4e54b9480c944d3047cbc7af5c9c0671110371cbbf24b9e2cc8f88e9a10990b6b8f8d67acee7473e880052c7c588723d4f383d131b90a9b702274e5dbca4cf5da18d290c791e11dd9438e33348049071d120b1b168b5b7a1467c820ca9be7434c5b4aa35c91ebdb2f7a0aa45bb74d7ea7dec2a9d3162d7797f889e67985649f1ad86cc0c3403eb63bf69bfa9a63f1ba6f0b6f3a259d0255715ccc38363da05910fbc22f5060620bb97bd2c3c282a10ceb0dbcc994e0be23c655970a981567b8e638a77baf33402e4240922ab635ff1d425b62a3c3973c9fd9c9c3cfe12da699186112f4d75d730b4ee3d55be94a0c76624c2d0718c9015357230617eed2ef1de0620da2dd91847292a9aca5919d4718f66ef4dac759fdd890d1e99f278e93b14ea151005830f255ce5dc6d87db0fb5d2f72713d06f8d47a6e300036282b87082a261407ed3d2b16b7a406ddd4e9051f77d4fa923400637c2cb0e6811da57f1afea87c38aaf85e461b30135c5f5f061c05149ff55a7c1385ba0494fc08c38274621ad1297d60028dfd942a8a17c565bc034c4242154320d85c212060695475925432b94c156ae3469a717dbd1e1f045c80297038330ef9a72de2da0639c7512cd94ded71a7dfe6bedeae36f841da3f6ed9b11932ff3746c9c116452471823e0f54ed69f8b085d1c2058f042e92c65ee49</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请回答：当 n = 1e7 时，本问题的答案是?</span>
+      </label>
+    </div>
   </div>
 </div>
-<div id="decryptionError" style="display: none;">Incorrect Password!</div>
-<div id="noContentError" style="display: none;">No content to display!</div>
-<div id="encrypt-blog" style="display:none">
-U2FsdGVkX184TTrxWD/wuzjs2BCPU/xN07wat21GuqkGATiZnhgvKnLCd2z64g6dcixzA3VyazWRCROcpTJkaSl7te8y9P4IJgsHVEn3wDsH0qL+KyCKpZMGnYO5MNEaGhN1SpramOppgXgQzPKxV94o0gkG2zglWTuXnoDZwKmqipmVaCvv/TryIO7VaygDCXb+52tZGdvQmZ3/ES1KKJ6NDJU5PPLLKkRfxA0zMgMEHcCJpsDJrXXpayHVDAoYgRu7JxzbdCsllDXzuZFuqk+dQv15gUQJJmSGAgIDXcepRKbvtyeagUYUL+QdjQM0UlBI5ov6IVTBOhrgJM+1oCG0sHKbt/f+aH+N4CvzzPVfQlFmHemjShWd6PbYjBjT6Zbj6sIaDV63g2aQpPDiSUCLk3XOViLpOZzS+8fF/Kn5xXNUpP2txCnJV/A60Zj7oM6MKW2/zhlC9MvGTeHQKh1OagLEp6TX7jKUDZ2vNrRNRnMW0x6VSe3u7l6wmkQwko2Vbhc44pQPwQLjvFDIYqshNkQHtTVhW9U5hZ2yfQbCXDPLURtxhVqJf7MHgrgPYOLsMwnOuXbOsw+GfHzcUV9eer01MyWP1G/pstYFLu4uoqDAtfy1L7y1yXLu62VYOb0CW7dHRsCDX6d3iLqFT3tL8EmBOUFAHmAQRY/CxFAUmkW/tyMjzNaUfZAcHfSS4YEQD1HkLhNbU6e2jRtkdaASm3274RtXwGD/gZBJ81prytCyCvx6bEvU9aLecFQTiC8ObTyg3Uqrbfrx293gXSFcVSLQ2q3NoeB2cZPD4/Ii65vnwDRZs6F8SytRe3RyY8T7h1apAuC8Q1c67yMiY2wFOTabMQrir3Keh6aVyYUsqg5m5VHnSnHyon2xEl32abetQh34+HBQujfr6o0YdeLk/RVaW3TiZ/PUNIZG3BioQZ9ZVUEbyxMniMfH6lWMpxQNnSmez09Ol0tRQVCCEszInR/BTw6KQMBLB614pXapNjpKuTxoSjmmWoaacptAbH1aRQVkwISlxmiKsxqGZy63VMzI7ixin/3LGMTf3dfJk1n8LoqKlMMKsST82QuCpk/LdRK3EcTpgeXplR6PQaY9YtG+wQfHSP/8JXOVJVcOI8OrK/gj2TPvA4hUH+4MwNK12MJhn0JwEcCDjfz0fEUtfWeqjyfKl4s3NcsP+1qSjnCkHw7gfNjhMc71MS90MQAXv0jU5MK1P5lzfb/N14/4wgucgd3yd1PGGChJIhTyS3/zczDLvp0CM/dAhuvgJsn/dwvngLrToqRFsQd8zHInkLOqiQpoO5Oq7N6U0CSL/HF2ZQNsQDfl8yXTciFHaQGweLeHsuGfj0gnu3teNkLq8wkrpcaebq84UMiEfCPke2Hr1Q+nARZpGAgTW7DEbQ1bFhivhWuBQj0yGgqCS8gmsFBViRUfyhsxCoBMNGrh2+W1WzofmivzNx0esKc627fEf/PEu79GsIsynmmtuAhO7VsNY0lLUNoyun+D0EVfLV1AlVq1PEYqlLHLwkCzT9gFx8zaFkCXIPVxm/qcXrWjg0QaT6AAr2DTU94bJHr6ZmXxm4jEmZtRub7wV+em9zuPULl+nzbHYqXQP6ODXQGEE4Ne5OIumDS6n73DhWAM2ZmPchjqNmpKwzeATiCvtr9DxSosRE21P0fn9vLbksvu2HdrSZF8JPucd9e/kEiKIeDflejKWTfJq33VtbGCHmRb6mUIgTof+UY+lRVs5/C17NpLS4xJsIK4CuxkI6+zwbuWMlnf7n2tpzHNnmT+3BWcAXBPmjM2Up9aIKSAqbbKFADpPe/kxcowmohZhyypC6LP2nrH2IpOboUm5fu+METEV4r7ex+QE1dcSeiGEyNAFkmVdLxYbmioxUNlxxsd/t9B2iYdLcGejBYrchFALfs9R7s9nYA5oAMGX9c3K89vVgtN04xbmw9Az53VOfbCuIgjwBx0YAkAmkH0YxPS9Kpmkpa87nC2xHz0l+mb+pkuV1XAKlsLuWzX2Ar7dl3rnxjEr1KRjS46SNuiom6467vWn2/hrkKuxWqg9TxwAqzun/BxNj6cNAZ6kxTOerflBfM6JSyutVnuxzmTmP7GV/Rt65aziBiXsGCZndk073gfc7yMJZPrRj8MZgkkRGWZeICH8q0fhYNOAz9EZEgFAgKCipxvVca9+GwGCk3s05ACsUGJQuypIZMpkRU1KXavdGNFQ4hL1jXyKO+vkXnMiPWsxF5jDtww0iwdMBaX2pv+k44XDiUcJDYC2+9rYmgGPCy2P0ty6hfWeuI0VKY6F+KKd4fB91hMUdwXfw8QvKnp1ZHrbS93/IMaz6phjuSIubBZ5S5TcJp4bSCJieK5phF7afKSbjarpIHuxTxwkWgsEIHM2R9nsBGV13pwFOvU2XQqQfPVS7HYa2eewDbu+CXRuOIOdI1ii1HVI/Xsd4FsDnzw0MpdoMASf5npy3rm94yLaIcfR02u95RXmCHzBMXLmPgashaQ26hhTNPsc9r4bkJn6dGv0L/hvb7fcpmKz70w/8aQMT57Wze5HvBYRxxsvTPx79ETWO8EpevhBgP3ZC7aNZcdXIbeLhOA9E5tRbIkuCMGMM7DfYI9IT6ysMOCPpbszGTAsbRfjERPU17a0fHYyEWqD3LSi1yp0awmN0XIFSJgmneEwVJC+HMeJOeLgsx06dDuVcNbP0pI1bfTEpb04UX8S5vvlKrbiayaiCF2tDNhkDC0qT71Wo8kO/RBa7768O91DyrOAmj4TVc0C+kSoPQcIHXc237Km/rMqbR4i6Q+mSixkZrNiT7cna6CSTbmsA2snO64CKVFKcRDCvqpf+4aXNFoN1KZvbzW2ax3R8+aYhyIzBFNLmFnnaONtOOcQP/CnXAcs3v15osi4wHN5OG6lQEa0CgQN1e9ZZHPcBpoM2Kp/6i9TMQca7QLuJrzQ80kTmzgQO6+oRDtSnrO8hy92VdSdZ5ZbLaqeqMxt5z0iUn1kn+nyrHzynO87eiHr6C1JHCxhNSZdrdeXBnB1Qw8idmwuhgkX0bUJe5MhORO93cCdqQP6WJm4NNsD2Vm6h8at4X3iwQvlfvRqeiQaUwaguPmYljCOSiAtVW8nKefPnNtuni774kW74pL7Sq9vEXQfSIar/YsOOthv2AitSuqD9SjTR/7Gox/WIPOMX3UoGnweKqKOCIQ71j56dT6Q3pJa3OxwazWko51RkkKl5a1lJlyXkY7yKZjSYneTzF/YS45lDjlbyfsf2fwFtYWB+JemZeIbD2Z/1Tf/0WYHaaZiXr8Z8Z8M3meLwfh84+rXQzKlykZIZq8Sl4jupDAhgyWyH0engdHZVyZL6Ux6T3z0lg7xorIb5k4sltqCj2bsIXiCE8Ok3a4PGwMBJPsaLP5cBR89yzKkVBpduYLFzjZSDxCXXFV6oMmCz5zM8dL7VXPh5IZ4vbuHLY3T7IYLjgP6aONqjOIuSxBTloLy5nh7oFXETlSwjB5W4SqIRF49oUNLm41uhUzmzS8K8UL/A0/a7UoEYxEHz0V9YeNDYXVfsO1S6Z3DIguBUUwBVAWuz20Sn2++QERdprFpXh0rfYpbN92mn03puiUtMMHHJ6TNCtuEp7KZAJIfpeGkpGdBwkjbst/r92fQvt7a1G9N4kd00wYHiWXtPH0h9pLNHkSvPQMDeJCuVBawIPK2+kpj65zg4XEj+GHtb0otEgiebFkdVPS744I7BEpvgR+ZDNza0pT8ibs9+UD2wGYjnFdhuPzkdfHMYkdf20zggDmTU3QwCdl/Yg23IpwwkZfSAu4zYLdWhQkhtqjEaC4o/ksg/RMZKigcHmZWp7tbOVHrgHia0IWTuxSd1ucNy6vjbKdPeWRNDOsedC8UdUqZv7FGR4l+FGIeW1X7XMwubmy8k1ytvz9PI+Aew==
-</div>
-<script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
-      
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-      
-    
-    
-
-    
-      <div>
         
 
-
-
-  
-
-
-
+<div>
 <ul class="post-copyright">
   <li class="post-copyright-author">
-    <strong>本文作者： </strong>fsy</li>
+    <strong>本文作者： </strong>fsy
+  </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    
     <a href="http://fsy-juruo.github.io/2019/08/27/Project-Euler-668-Square-root-smooth-Numbers/" title="Project Euler 668 Square root smooth Numbers">http://fsy-juruo.github.io/2019/08/27/Project-Euler-668-Square-root-smooth-Numbers/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
 </ul>
+</div>
 
-      </div>
-    
 
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/【OJ】Project-Euler/" <i class="fa fa-tag"> 【OJ】Project Euler</a>
-          
-            <a href="/tags/【算法】整除分块/" <i class="fa fa-tag"> 【算法】整除分块</a>
-          
-            <a href="/tags/【算法】质数筛/" <i class="fa fa-tag"> 【算法】质数筛</a>
-          
-            <a href="/tags/【算法】快速质数计数/" <i class="fa fa-tag"> 【算法】快速质数计数</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/08/23/Educational-Codeforces-Round-71-Rated-for-Div-2-题解/" rel="next" title="Educational Codeforces Round 71 (Rated for Div. 2) 题解">
-                <i class="fa fa-chevron-left"></i> Educational Codeforces Round 71 (Rated for Div. 2) 题解
-              </a>
-            
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E3%80%90OJ%E3%80%91Project-Euler/" rel="tag"># 【OJ】Project Euler</a>
+              <a href="/tags/%E3%80%90%E7%AE%97%E6%B3%95%E3%80%91%E6%95%B4%E9%99%A4%E5%88%86%E5%9D%97/" rel="tag"># 【算法】整除分块</a>
+              <a href="/tags/%E3%80%90%E7%AE%97%E6%B3%95%E3%80%91%E8%B4%A8%E6%95%B0%E7%AD%9B/" rel="tag"># 【算法】质数筛</a>
+              <a href="/tags/%E3%80%90%E7%AE%97%E6%B3%95%E3%80%91%E5%BF%AB%E9%80%9F%E8%B4%A8%E6%95%B0%E8%AE%A1%E6%95%B0/" rel="tag"># 【算法】快速质数计数</a>
           </div>
 
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/06/03/洛谷P6583-回首过去/" rel="prev" title="洛谷P6583 回首过去">
-                洛谷P6583 回首过去 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-  </div>
-
-
-          </div>
-          
-
-  
-    <div id="gitalk-container">
-    </div>
-    
-  
-
-
-
-        </div>
         
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/08/23/Educational-Codeforces-Round-71-Rated-for-Div-2-%E9%A2%98%E8%A7%A3/" rel="prev" title="Educational Codeforces Round 71 (Rated for Div. 2) 题解">
+      <i class="fa fa-chevron-left"></i> Educational Codeforces Round 71 (Rated for Div. 2) 题解
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/06/03/%E6%B4%9B%E8%B0%B7P6583-%E5%9B%9E%E9%A6%96%E8%BF%87%E5%8E%BB/" rel="next" title="洛谷P6583 回首过去">
+      洛谷P6583 回首过去 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-  <aside id="sidebar" class="sidebar">
-    
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
 
-      
-
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/images/avatar01.png" alt="fsy">
-            
-              <p class="site-author-name" itemprop="name">fsy</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">15</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
-
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">48</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/fsy-juruo" title="GitHub &rarr; https://github.com/fsy-juruo" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
-                </span>
-              
-            </div>
-          
-
-          
-             <div class="cc-license motion-element" itemprop="license">
-              
-                
-              
-              
-              
-              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
-             </div>
-          
-
-          
-          
-            <div class="links-of-blogroll motion-element links-of-blogroll-block">
-              <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-link"></i>
-                Links
-              </div>
-              <ul class="links-of-blogroll-list">
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://www.cnblogs.com/evenbao/" title="https://www.cnblogs.com/evenbao/" rel="noopener" target="_blank">even_bao</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://2006duckonline.github.io/2019/08/13/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5/" title="https://2006duckonline.github.io/2019/08/13/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5/" rel="noopener" target="_blank">zyx</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://ybw051114.ml/" title="https://ybw051114.ml/" rel="noopener" target="_blank">ybw</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://wxq1229.github.io/" title="https://wxq1229.github.io/" rel="noopener" target="_blank">wxq</a>
-                  </li>
-                
-              </ul>
-            </div>
-          
-
-          
-            
-          
-          
-
-        </div>
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
       </div>
+      <!--/noindex-->
 
-      
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="fsy"
+      src="/images/avatar01.png">
+  <p class="site-author-name" itemprop="name">fsy</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">45</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fsy-juruo" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;fsy-juruo" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
 
-      
-        <div class="back-to-top">
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.cnblogs.com/evenbao/" title="https:&#x2F;&#x2F;www.cnblogs.com&#x2F;evenbao&#x2F;" rel="noopener" target="_blank">even_bao</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://2006duckonline.github.io/2019/08/13/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5/" title="https:&#x2F;&#x2F;2006duckonline.github.io&#x2F;2019&#x2F;08&#x2F;13&#x2F;%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5&#x2F;" rel="noopener" target="_blank">zyx</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://ybw051114.ml/" title="https:&#x2F;&#x2F;ybw051114.ml&#x2F;" rel="noopener" target="_blank">ybw</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://wxq1229.github.io/" title="https:&#x2F;&#x2F;wxq1229.github.io&#x2F;" rel="noopener" target="_blank">wxq</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
           <i class="fa fa-arrow-up"></i>
-          
-            <span id="scrollpercent"><span>0</span>%</span>
-          
+          <span>0%</span>
         </div>
-      
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">fsy</span>
-
-  
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
+      <i class="fa fa-chart-area"></i>
     </span>
-    
       <span class="post-meta-item-text">站点总字数：</span>
-    
-    <span title="站点总字数">133k</span>
-  
-
-  
+    <span title="站点总字数">100k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    
-    <span title="站点阅读时长">2:01</span>
-  
+    <span title="站点阅读时长">1:30</span>
 </div>
-
-
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.7.0</div>
-
-
-
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
 
         
 <div class="busuanzi-count">
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv" title="总访客量">
-      <i class="fa fa-user"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
     </span>
-  
-
-  
-    <span class="site-pv" title="总访问量">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
     </span>
-  
 </div>
 
 
@@ -891,291 +472,125 @@ U2FsdGVkX184TTrxWD/wuzjs2BCPU/xN07wat21GuqkGATiZnhgvKnLCd2z64g6dcixzA3VyazWRCROc
 
 
 
-
-        
       </div>
     </footer>
-
-    
-
-    
-
-    
-
-    
   </div>
 
   
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
 
 <script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
   }
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-
-  
-
-
-  <script src="/js/src/utils.js?v=6.7.0"></script>
-
-  <script src="/js/src/motion.js?v=6.7.0"></script>
-
-
-
-  
-  
-
-  
-  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
-<script src="/js/src/post-details.js?v=6.7.0"></script>
-
-<script type="text/javascript" src="/custom/fold_action.js?v=6.7.0"></script>
-
-
-
-  
-
-
-  <script src="/js/src/bootstrap.js?v=6.7.0"></script>
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <script src="//cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.min.js"></script>
-
-  
-  
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.css">
-
-  
-  
-  <script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
-
-   <script>
-        var gitalk = new Gitalk({
-          clientID: '5a61fb0f7adaaeed9336',
-          clientSecret: 'aa4e8e185129493ab8ce5d0741589163e72b097c',
-          repo: 'fsy-juruo-comments',
-          owner: 'fsy-juruo',
-          admin: ['fsy-juruo'],
-          id: md5(location.pathname),
-          distractionFreeMode: 'true'
-        })
-        gitalk.render('gitalk-container')
-       </script>
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
     
-      <script type="text/x-mathjax-config">
+
   
 
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      
-      equationNumbers: {
-        autoNumber: "AMS"
-      }
-    }
-  });
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '5a61fb0f7adaaeed9336',
+      clientSecret: 'aa4e8e185129493ab8ce5d0741589163e72b097c',
+      repo        : 'fsy-juruo-comments',
+      owner       : 'fsy-juruo',
+      admin       : ['fsy-juruo'],
+      id          : 'de812c49b455466e0dac16f8535dc134',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
 </script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-      for (i = 0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-      }
-  });
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-<style>
-.MathJax_Display {
-  overflow: auto hidden;
-}
-</style>
-
-    
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  <style>
-    .copy-btn {
-      display: inline-block;
-      padding: 6px 12px;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 20px;
-      color: #333;
-      white-space: nowrap;
-      vertical-align: middle;
-      cursor: pointer;
-      background-color: #eee;
-      background-image: linear-gradient(#fcfcfc, #eee);
-      border: 1px solid #d5d5d5;
-      border-radius: 3px;
-      user-select: none;
-      outline: 0;
-    }
-
-    .highlight-wrap .copy-btn {
-      transition: opacity .3s ease-in-out;
-      opacity: 0;
-      padding: 2px 6px;
-      position: absolute;
-      right: 4px;
-      top: 8px;
-    }
-
-    .highlight-wrap:hover .copy-btn,
-    .highlight-wrap .copy-btn:focus {
-      opacity: 1
-    }
-
-    .highlight-wrap {
-      position: relative;
-    }
-  </style>
-  <script>
-    $('.highlight').each(function (i, e) {
-      var $wrap = $('<div>').addClass('highlight-wrap');
-      $(e).after($wrap);
-      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
-        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
-          return $(e).text();
-        }).toArray().join('\n');
-        var ta = document.createElement('textarea');
-        var range = document.createRange(); //For Chrome
-        var sel = window.getSelection(); //For Chrome
-        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
-        ta.style.top = yPosition + 'px'; //Prevent page scroll
-        ta.style.position = 'absolute';
-        ta.style.opacity = '0';
-        ta.value = code;
-        ta.textContent = code; //For FireFox
-        ta.contentEditable = true;
-        ta.readOnly = false;
-        document.body.appendChild(ta);
-        range.selectNode(ta);
-        sel.removeAllRanges();
-        sel.addRange(range);
-        ta.setSelectionRange(0, code.length);
-        var result = document.execCommand('copy');
-        
-          if (result) $(this).text('复制成功');
-          else $(this).text('复制失败');
-        
-        ta.blur(); //For iOS
-        $(this).blur();
-      })).on('mouseleave', function (e) {
-        var $b = $(this).find('.copy-btn');
-        setTimeout(function () {
-          $b.text('复制');
-        }, 300);
-      }).append(e);
-    })
-  </script>
-
-
-  
-  
-
-  
-  
-
-  
-
 
 </body>
 </html>
