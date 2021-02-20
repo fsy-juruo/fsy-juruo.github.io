@@ -27,6 +27,9 @@
 <meta property="og:site_name" content="fsy&#39;s blog">
 <meta property="og:description" content="嘛貌似是远古时期写的文章了 qwq 填了填坑                            玩过 Euclidea 吗？ 啥？那个暴力搜索游戏？">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/alpha1%204l%204e.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/alpha2%20sol.PNG">
+<meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/alpha3%20sol.PNG">
 <meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/alpha4.PNG">
 <meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/alpha5.PNG">
 <meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/alpha5%202sol.PNG">
@@ -61,10 +64,10 @@
 <meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/gamma6%205e.PNG">
 <meta property="og:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/proof.PNG">
 <meta property="article:published_time" content="2020-07-18T23:08:17.000Z">
-<meta property="article:modified_time" content="2021-02-02T09:19:44.664Z">
+<meta property="article:modified_time" content="2021-02-20T04:22:55.516Z">
 <meta property="article:author" content="fsy">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/alpha4.PNG">
+<meta name="twitter:image" content="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/alpha1%204l%204e.PNG">
 
 <link rel="canonical" href="http://fsy-juruo.github.io/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/">
 
@@ -228,7 +231,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-02 17:19:44" itemprop="dateModified" datetime="2021-02-02T17:19:44+08:00">2021-02-02</time>
+                <time title="修改时间：2021-02-20 12:22:55" itemprop="dateModified" datetime="2021-02-20T12:22:55+08:00">2021-02-20</time>
               </span>
 
           
@@ -244,7 +247,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>7.2k</span>
+              <span>7.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -274,52 +277,42 @@
 
 <a id="more"></a>
 
-<h3 id="1、-alpha-Alpha-关（全解完成）"><a href="#1、-alpha-Alpha-关（全解完成）" class="headerlink" title="1、$\alpha$ Alpha 关（全解完成）"></a>1、$\alpha$ Alpha 关（全解完成）</h3><ul>
+<h3 id="玩这个游戏，你需要…"><a href="#玩这个游戏，你需要…" class="headerlink" title="玩这个游戏，你需要…"></a>玩这个游戏，你需要…</h3><ul>
+<li>中学几何知识</li>
+<li>会遐想</li>
+<li><del>一个效率较好的暴力搜索程序</del></li>
+</ul>
+<h3 id="Alpha-alpha-关（全解完成）"><a href="#Alpha-alpha-关（全解完成）" class="headerlink" title="Alpha $\alpha$ 关（全解完成）"></a>Alpha $\alpha$ 关（全解完成）</h3><ul>
 <li>共计 11 关，4 个教程关，7 个主关</li>
 <li>36 颗星，其中 V 星 3 个</li>
 </ul>
-<h5 id="Tutorial-等边三角形-Equilateral-Triangle（V-星关）"><a href="#Tutorial-等边三角形-Equilateral-Triangle（V-星关）" class="headerlink" title="Tutorial 等边三角形 / Equilateral Triangle（V 星关）"></a>Tutorial 等边三角形 / Equilateral Triangle（V 星关）</h5><ul>
-<li>限制：4L 4E。解数：2</li>
+<h4 id="Tutorial-等边三角形-Equilateral-Triangle（V-星关）"><a href="#Tutorial-等边三角形-Equilateral-Triangle（V-星关）" class="headerlink" title="Tutorial 等边三角形 / Equilateral Triangle（V 星关）"></a>Tutorial 等边三角形 / Equilateral Triangle（V 星关）</h4><ul>
+<li>限制：4L 4E。<span style="color:rgb(0, 0, 255);">解数：2</span></li>
 </ul>
 <blockquote>
 <p>Construct an equilateral triangle with the given side. The construction must be exact. Guessing even very close points does not count as a solution.</p>
 <p>过已知边作等边三角形。构造必须精确，即使猜的点非常接近也不被算为正解。</p>
 </blockquote>
-<div style="margin-top: -20px;"><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">4L4E</span></div></div><div class="fold">
 <p><strong>4L 4E</strong> 等腰三角形三边相等</p>
 <ul>
 <li>工具：圆，圆，线，线</li>
 </ul>
-<p>![](Euclidea解法与证明\alpha1 4l 4e.PNG)</p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/alpha1 4l 4e.PNG" style="zoom:50%;">
 
-</div><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">4L4E</span></div></div></div>
-
-<div style="margin-top: -20px;"><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">2V（无图）</span></div></div><div class="fold">
 <p><strong>2V</strong> 下面还有一个</p>
-
-</div><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">2V（无图）</span></div></div></div>
-
-<h5 id="Alpha-1-60°-角-Angle-of-60°-（V-星关）"><a href="#Alpha-1-60°-角-Angle-of-60°-（V-星关）" class="headerlink" title="Alpha.1 60° 角 / Angle of 60° （V 星关）"></a>Alpha.1 60° 角 / Angle of 60° （V 星关）</h5><ul>
-<li>限制：3L 3E。解数：2</li>
+<h4 id="Alpha-1-60°-角-Angle-of-60°-（V-星关）"><a href="#Alpha-1-60°-角-Angle-of-60°-（V-星关）" class="headerlink" title="Alpha.1 60° 角 / Angle of 60° （V 星关）"></a>Alpha.1 60° 角 / Angle of 60° （V 星关）</h4><ul>
+<li>限制：3L 3E。<span style="color:rgb(0, 0, 255);">解数：2</span></li>
 </ul>
 <blockquote>
 <p>Construct an angle of 60° with the given side.</p>
-<p>对于给定射线做一个 60° 角。</p>
+<p>过给定射线做一个 60° 角。</p>
 </blockquote>
-<div style="margin-top: -20px;"><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">3L3E（无图）</span></div></div><div class="fold">
 <p><strong>3L 3E</strong> 等价于上一关</p>
 <ul>
 <li>工具：圆，圆，线</li>
 </ul>
-
-</div><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">3L3E（无图）</span></div></div></div>
-
-<div style="margin-top: -20px;"><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">2V（无图）</span></div></div><div class="fold">
 <p><strong>2V</strong> 下面还有一个</p>
-
-</div><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">2V（无图）</span></div></div></div>
-
-<h5 id="Tutorial-教程：相交工具-Tutorial-Intersect-Tool"><a href="#Tutorial-教程：相交工具-Tutorial-Intersect-Tool" class="headerlink" title="Tutorial 教程：相交工具 / Tutorial: Intersect Tool"></a>Tutorial 教程：相交工具 / Tutorial: Intersect Tool</h5><ul>
+<h4 id="Tutorial-教程：相交工具-Tutorial-Intersect-Tool"><a href="#Tutorial-教程：相交工具-Tutorial-Intersect-Tool" class="headerlink" title="Tutorial 教程：相交工具 / Tutorial: Intersect Tool"></a>Tutorial 教程：相交工具 / Tutorial: Intersect Tool</h4><ul>
 <li>限制：0L 0E。</li>
 </ul>
 <blockquote>
@@ -327,73 +320,58 @@
 <p>求两圆交点。</p>
 </blockquote>
 <p><strong>0L 0E</strong> 点相交工具，再点两个圆就 OK</p>
-<h5 id="Alpha-2-垂直平分线-Perpendicular-Bisector"><a href="#Alpha-2-垂直平分线-Perpendicular-Bisector" class="headerlink" title="Alpha.2 垂直平分线 / Perpendicular Bisector"></a>Alpha.2 垂直平分线 / Perpendicular Bisector</h5><ul>
+<h4 id="Alpha-2-垂直平分线-Perpendicular-Bisector"><a href="#Alpha-2-垂直平分线-Perpendicular-Bisector" class="headerlink" title="Alpha.2 垂直平分线 / Perpendicular Bisector"></a>Alpha.2 垂直平分线 / Perpendicular Bisector</h4><ul>
 <li>限制：3L 3E</li>
 </ul>
 <blockquote>
 <p>Construct the perpendicular bisector of the segment.</p>
 <p>作给定线段的垂直平分线。</p>
 </blockquote>
-<div style="margin-top: -20px;"><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">3L3E</span></div></div><div class="fold">
 <p><strong>3L 3E</strong> 初中基础尺规作图</p>
 <ul>
 <li>工具：圆，圆，线</li>
 </ul>
-<p>![](Euclidea解法与证明\alpha2 sol.PNG)</p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/alpha2 sol.PNG" style="zoom:50%;">
 
-</div><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">3L3E</span></div></div></div>
-
-<h5 id="Tutorial-教程：垂直平分线-Tutorial-Perpendicular-Bisector"><a href="#Tutorial-教程：垂直平分线-Tutorial-Perpendicular-Bisector" class="headerlink" title="Tutorial 教程：垂直平分线 / Tutorial: Perpendicular Bisector"></a>Tutorial 教程：垂直平分线 / Tutorial: Perpendicular Bisector</h5><p>你可以直接点击线段的两个端点，作这个线段的垂直平分线了。使用花费：1L 3E</p>
-<h5 id="Alpha-3-中点-Midpoint"><a href="#Alpha-3-中点-Midpoint" class="headerlink" title="Alpha.3 中点 / Midpoint"></a>Alpha.3 中点 / Midpoint</h5><ul>
+<h4 id="Tutorial-教程：垂直平分线-Tutorial-Perpendicular-Bisector"><a href="#Tutorial-教程：垂直平分线-Tutorial-Perpendicular-Bisector" class="headerlink" title="Tutorial 教程：垂直平分线 / Tutorial: Perpendicular Bisector"></a>Tutorial 教程：垂直平分线 / Tutorial: Perpendicular Bisector</h4><p>你可以直接点击线段的两个端点，作这个线段的垂直平分线了。使用花费：1L 3E</p>
+<h4 id="Alpha-3-中点-Midpoint"><a href="#Alpha-3-中点-Midpoint" class="headerlink" title="Alpha.3 中点 / Midpoint"></a>Alpha.3 中点 / Midpoint</h4><ul>
 <li>限制：2L 4E</li>
 </ul>
 <blockquote>
 <p>Construct the midpoint of the segment defined by two points.</p>
 <p>作给定两点对应线段的中点。</p>
 </blockquote>
-<div style="margin-top: -20px;"><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">2L4E</span></div></div><div class="fold">
 <p><strong>2L 4E</strong> 1L3E 用中垂线，1L1E 连接两个端点，两条线的交点即为所求。</p>
-<p>![](Euclidea解法与证明\alpha3 sol.PNG)</p>
+<img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/alpha3 sol.PNG" style="zoom:50%;">
 
-</div><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">2L4E</span></div></div></div>
-
-<h5 id="Alpha-4-正方形内的圆-Circle-in-Square"><a href="#Alpha-4-正方形内的圆-Circle-in-Square" class="headerlink" title="Alpha.4 正方形内的圆 / Circle in Square"></a>Alpha.4 正方形内的圆 / Circle in Square</h5><ul>
+<h4 id="Alpha-4-正方形内的圆-Circle-in-Square"><a href="#Alpha-4-正方形内的圆-Circle-in-Square" class="headerlink" title="Alpha.4 正方形内的圆 / Circle in Square"></a>Alpha.4 正方形内的圆 / Circle in Square</h4><ul>
 <li>限制：3L 5E</li>
 </ul>
 <blockquote>
 <p>Inscribe a circle in the square.</p>
 <p>在正方形内内接一个圆。</p>
 </blockquote>
-<div style="margin-top: -20px;"><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">3L5E</span></div></div><div class="fold">
 <p><strong>3L 5E</strong> 圆心：正方形对角线交点，半径：正方形边长一半，以此确定圆。</p>
 <ul>
 <li>工具：中垂，线，圆</li>
 </ul>
 <img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/alpha4.PNG" style="zoom:50%;">
 
-</div><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">3L5E</span></div></div></div>
-
-<h5 id="Tutorial-教程：移动-Tutorial-Move-Tool"><a href="#Tutorial-教程：移动-Tutorial-Move-Tool" class="headerlink" title="Tutorial 教程：移动 / Tutorial: Move Tool"></a>Tutorial 教程：移动 / Tutorial: Move Tool</h5><p>这个描述的是帕斯卡定理。但你其实并不需要知道它是啥，随便拖着一个蓝点移动就 OK</p>
-<h5 id="Alpha-5-矩形内的菱形-Rhombus-in-Rectangle（V-星关）"><a href="#Alpha-5-矩形内的菱形-Rhombus-in-Rectangle（V-星关）" class="headerlink" title="Alpha.5 矩形内的菱形 / Rhombus in Rectangle（V 星关）"></a>Alpha.5 矩形内的菱形 / Rhombus in Rectangle（V 星关）</h5><ul>
-<li>限制：3L 5E，解数：2</li>
+<h4 id="Tutorial-教程：移动-Tutorial-Move-Tool"><a href="#Tutorial-教程：移动-Tutorial-Move-Tool" class="headerlink" title="Tutorial 教程：移动 / Tutorial: Move Tool"></a>Tutorial 教程：移动 / Tutorial: Move Tool</h4><p>这个描述的是帕斯卡定理。但你其实并不需要知道它是啥，随便拖着一个蓝点移动就 OK</p>
+<h4 id="Alpha-5-矩形内的菱形-Rhombus-in-Rectangle（V-星关）"><a href="#Alpha-5-矩形内的菱形-Rhombus-in-Rectangle（V-星关）" class="headerlink" title="Alpha.5 矩形内的菱形 / Rhombus in Rectangle（V 星关）"></a>Alpha.5 矩形内的菱形 / Rhombus in Rectangle（V 星关）</h4><ul>
+<li>限制：3L 5E，<span style="color:rgb(0, 0, 255);">解数：2</span></li>
 </ul>
 <blockquote>
 <p>Inscribe a rhombus in the rectangle so that they share a diagonal.</p>
 <p>在矩形内内接一个菱形，且二者共用一条对角线。</p>
 </blockquote>
-<div style="margin-top: -20px;"><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">3L5E</span></div></div><div class="fold">
 <p><strong>3L 5E</strong> 菱形对角线互相垂直平分，所以随便选一条对角线并作其垂直平分线。与矩形产生 2 个交点，加上选的那条对角线的顶点就有 4 个点了。注意其中标注的两条边已经有了别再画一遍…</p>
 <img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/alpha5.PNG" style="zoom:50%;">
 
-</div><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">3L5E</span></div></div></div>
-
-<div style="margin-top: -20px;"><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">2V</span></div></div><div class="fold">
 <p><strong>2V</strong> 有两条对角线可选，就有两个不同菱形…</p>
 <img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/alpha5 2sol.PNG" style="zoom:50%;">
 
-</div><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">2V</span></div></div></div>
-
-<h5 id="Alpha-6-圆心-Circle-Center"><a href="#Alpha-6-圆心-Circle-Center" class="headerlink" title="Alpha.6 圆心 / Circle Center"></a>Alpha.6 圆心 / Circle Center</h5><ul>
+<h4 id="Alpha-6-圆心-Circle-Center"><a href="#Alpha-6-圆心-Circle-Center" class="headerlink" title="Alpha.6 圆心 / Circle Center"></a>Alpha.6 圆心 / Circle Center</h4><ul>
 <li>限制：2L 5E</li>
 </ul>
 <blockquote>
@@ -401,7 +379,6 @@
 <p>作给定圆的圆心。<strong>注意：本关 L 星，E 星为两个独立的任务。为了得到三星，你必须作图两次：一个 2L 的解和一个 5E 的解。</strong></p>
 </blockquote>
 <p><strong>从这关开始，大多数关卡的 L 星，E 星都不能通过只作一次图同时得到。</strong></p>
-<div style="margin-top: -20px;"><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">2L</span></div></div><div class="fold">
 <p><strong>2L</strong> 在圆上随便选两组点，作每组点的垂直平分线，交点即为中点</p>
 <ul>
 <li><p>依据：垂径定理推论（弦的垂直平分线必经过圆心）</p>
@@ -411,25 +388,19 @@
 </ul>
 <img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/alpha6.PNG" style="zoom:50%;">
 
-</div><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">2L</span></div></div></div>
-
-<div style="margin-top: -20px;"><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">5E</span></div></div><div class="fold">
 <p><strong>5E</strong> 利用<strong>共用圆</strong>的方法，作 3 个圆来得到 2 组垂直平分线，再求交点</p>
 <ul>
 <li>工具：圆，圆，圆，线，线</li>
 </ul>
 <img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/alpha6 5e.PNG" style="zoom:50%;">
 
-</div><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">5E</span></div></div></div>
-
-<h5 id="Alpha-7-圆内接正方形-Inscribed-Square"><a href="#Alpha-7-圆内接正方形-Inscribed-Square" class="headerlink" title="Alpha.7 圆内接正方形 / Inscribed Square"></a>Alpha.7 圆内接正方形 / Inscribed Square</h5><ul>
+<h4 id="Alpha-7-圆内接正方形-Inscribed-Square"><a href="#Alpha-7-圆内接正方形-Inscribed-Square" class="headerlink" title="Alpha.7 圆内接正方形 / Inscribed Square"></a>Alpha.7 圆内接正方形 / Inscribed Square</h4><ul>
 <li>要求：6L 7E</li>
 </ul>
 <blockquote>
 <p>Inscribe a square in the circle. One vertex of the square is given.</p>
 <p>以给定点为顶点，在圆中作一个内接正方形。</p>
 </blockquote>
-<div style="margin-top: -20px;"><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">6L</span></div></div><div class="fold">
 <p><strong>6L</strong> 直接连给定点与圆心得到正方形一条对角线，再做这个对角线的垂直平分线，四个顶点就都有了，顺次连接即可</p>
 <ul>
 <li>依据：正方形对角线互相垂直平分</li>
@@ -437,9 +408,6 @@
 </ul>
 <img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/alpha7 6l.PNG" style="zoom:50%;">
 
-</div><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">6L</span></div></div></div>
-
-<div style="margin-top: -20px;"><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">7E+分步阐述与证明</span></div></div><div class="fold">
 <p><strong>7E</strong> <strong>此任务是许多新手遇到的第一个障碍。故进行分步阐述</strong></p>
 <ul>
 <li><p>工具：圆，圆，线，线，线，线，线</p>
@@ -461,16 +429,13 @@
 </ul>
 <img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/ALPHA7 7e final.PNG" style="zoom:67%;">
 
-<p><strong>证明：</strong> 首先，由直径 $EF$ 的圆周角得出 $\angle EDF = 90^{\circ}$，直径 $AD$ 的圆周角得出 $\angle AGD = 90^{\circ}$，$\angle AHD = 90^{\circ}$，轻松证明出 4 个 $90^{\circ}$。</p>
+<p><strong>证明：</strong> 首先，由直径 $EF$ 的圆周角得出 $\angle EDF = 90^{\circ}$，直径 $AD$ 的圆周角得出 $\angle AGD = 90^{\circ}$，$\angle AHD = 90^{\circ}$，证明出 4 个 $90^{\circ}$。</p>
 <p>上文已证出 $\angle COD = \angle DOC = 30^{\circ}$，圆周角定理得 $\angle EFD = 15^{\circ}$，进一步可得 $\angle CDF = 15^{\circ}$，$\angle ADH = 45^{\circ}$。此时就可以证明这是一个正方形了。</p>
-
-</div><div class="fold_hider"><div class="close hider_title"><span style="color:gray;font-size:12px">7E+分步阐述与证明</span></div></div></div>
-
-<h3 id="2、-beta-Beta-关（全解完成）"><a href="#2、-beta-Beta-关（全解完成）" class="headerlink" title="2、$\beta$ Beta 关（全解完成）"></a>2、$\beta$ Beta 关（全解完成）</h3><ul>
+<h3 id="Beta-beta-关（全解完成）"><a href="#Beta-beta-关（全解完成）" class="headerlink" title="Beta $\beta$ 关（全解完成）"></a>Beta $\beta$ 关（全解完成）</h3><ul>
 <li>共计 12 关，2 个教程关，10 个主关</li>
 <li>38 颗星，其中 V 星 2 个</li>
 </ul>
-<h5 id="Beta-1-角平分线-Angle-Bisector"><a href="#Beta-1-角平分线-Angle-Bisector" class="headerlink" title="Beta.1 角平分线 / Angle Bisector"></a>Beta.1 角平分线 / Angle Bisector</h5><ul>
+<h4 id="Beta-1-角平分线-Angle-Bisector"><a href="#Beta-1-角平分线-Angle-Bisector" class="headerlink" title="Beta.1 角平分线 / Angle Bisector"></a>Beta.1 角平分线 / Angle Bisector</h4><ul>
 <li>限制：2L 4E</li>
 </ul>
 <blockquote>
@@ -484,8 +449,8 @@
 </ul>
 <img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta1 sol.PNG" style="zoom:50%;">
 
-<h5 id="Tutorial-教程：角平分线-Tutorial-Angle-Bisector"><a href="#Tutorial-教程：角平分线-Tutorial-Angle-Bisector" class="headerlink" title="Tutorial 教程：角平分线 / Tutorial: Angle Bisector"></a>Tutorial 教程：角平分线 / Tutorial: Angle Bisector</h5><p>你可以顺次点击角一条边上的任意一点，角的顶点，角另外一条边上的任意一点，来直接画出这个角的角平分线了。花费：1L 4E</p>
-<h5 id="Beta-2-角平分线交点-Intersection-of-Angle-Bisectors"><a href="#Beta-2-角平分线交点-Intersection-of-Angle-Bisectors" class="headerlink" title="Beta.2 角平分线交点 / Intersection of Angle Bisectors"></a>Beta.2 角平分线交点 / Intersection of Angle Bisectors</h5><ul>
+<h4 id="Tutorial-教程：角平分线-Tutorial-Angle-Bisector"><a href="#Tutorial-教程：角平分线-Tutorial-Angle-Bisector" class="headerlink" title="Tutorial 教程：角平分线 / Tutorial: Angle Bisector"></a>Tutorial 教程：角平分线 / Tutorial: Angle Bisector</h4><p>你可以顺次点击角一条边上的任意一点，角的顶点，角另外一条边上的任意一点，来直接画出这个角的角平分线了。花费：1L 4E</p>
+<h4 id="Beta-2-角平分线交点-Intersection-of-Angle-Bisectors"><a href="#Beta-2-角平分线交点-Intersection-of-Angle-Bisectors" class="headerlink" title="Beta.2 角平分线交点 / Intersection of Angle Bisectors"></a>Beta.2 角平分线交点 / Intersection of Angle Bisectors</h4><ul>
 <li>限制：2L 6E</li>
 </ul>
 <blockquote>
@@ -501,8 +466,8 @@
 <p><strong>6E</strong> 巧妙地共用圆，用 4 个圆作两条角平分线。如图，A，B 两个圆被共用。</p>
 <img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta2 6e.png" style="zoom:50%;">
 
-<h5 id="Beta-3-30°-角-Angle-of-30°（V-星关）"><a href="#Beta-3-30°-角-Angle-of-30°（V-星关）" class="headerlink" title="Beta.3 30° 角 / Angle of 30°（V 星关）"></a>Beta.3 30° 角 / Angle of 30°（V 星关）</h5><ul>
-<li>限制：3L 3E，解数：2</li>
+<h4 id="Beta-3-30°-角-Angle-of-30°（V-星关）"><a href="#Beta-3-30°-角-Angle-of-30°（V-星关）" class="headerlink" title="Beta.3 30° 角 / Angle of 30°（V 星关）"></a>Beta.3 30° 角 / Angle of 30°（V 星关）</h4><ul>
+<li>限制：3L 3E，<span style="color:rgb(0, 0, 255);">解数：2</span></li>
 </ul>
 <blockquote>
 <p>Construct an angle of 30° with the given side.</p>
@@ -518,8 +483,8 @@
 <p><strong>2V</strong> 下面还有一个。</p>
 <img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta3.PNG" style="zoom:50%;">
 
-<h5 id="Beta-4-二倍角-Double-Angle（V-星关）"><a href="#Beta-4-二倍角-Double-Angle（V-星关）" class="headerlink" title="Beta.4 二倍角 / Double Angle（V 星关）"></a>Beta.4 二倍角 / Double Angle（V 星关）</h5><ul>
-<li>限制：3L 3E，解数：2</li>
+<h4 id="Beta-4-二倍角-Double-Angle（V-星关）"><a href="#Beta-4-二倍角-Double-Angle（V-星关）" class="headerlink" title="Beta.4 二倍角 / Double Angle（V 星关）"></a>Beta.4 二倍角 / Double Angle（V 星关）</h4><ul>
+<li>限制：3L 3E，<span style="color:rgb(0, 0, 255);">解数：2</span></li>
 </ul>
 <blockquote>
 <p>Construct an angle equal to the given one so that they share one side.</p>
@@ -534,7 +499,7 @@
 <p><strong>2V</strong> 下面还有一解。</p>
 <img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta4 2v.PNG" style="zoom:50%;">
 
-<h5 id="Beta-5-切割矩形-Cut-Rectangle"><a href="#Beta-5-切割矩形-Cut-Rectangle" class="headerlink" title="Beta.5 切割矩形 / Cut Rectangle"></a>Beta.5 切割矩形 / Cut Rectangle</h5><ul>
+<h4 id="Beta-5-切割矩形-Cut-Rectangle"><a href="#Beta-5-切割矩形-Cut-Rectangle" class="headerlink" title="Beta.5 切割矩形 / Cut Rectangle"></a>Beta.5 切割矩形 / Cut Rectangle</h4><ul>
 <li>限制：3L 3E</li>
 </ul>
 <blockquote>
@@ -550,7 +515,7 @@
 </ul>
 <img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta5.PNG" style="zoom:50%;">
 
-<h5 id="Beta-6-过线外一点作垂线-Drop-a-Perpendicular"><a href="#Beta-6-过线外一点作垂线-Drop-a-Perpendicular" class="headerlink" title="Beta.6 过线外一点作垂线 / Drop a Perpendicular"></a>Beta.6 过线外一点作垂线 / Drop a Perpendicular</h5><ul>
+<h4 id="Beta-6-过线外一点作垂线-Drop-a-Perpendicular"><a href="#Beta-6-过线外一点作垂线-Drop-a-Perpendicular" class="headerlink" title="Beta.6 过线外一点作垂线 / Drop a Perpendicular"></a>Beta.6 过线外一点作垂线 / Drop a Perpendicular</h4><ul>
 <li>限制：2L 3E</li>
 </ul>
 <blockquote>
@@ -570,7 +535,7 @@
 </ul>
 <img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta6 3e.PNG" style="zoom:50%;">
 
-<h5 id="Beta-7-过线上一点引垂线-Erect-a-Perpendicular"><a href="#Beta-7-过线上一点引垂线-Erect-a-Perpendicular" class="headerlink" title="Beta.7 过线上一点引垂线 / Erect a Perpendicular"></a>Beta.7 过线上一点引垂线 / Erect a Perpendicular</h5><ul>
+<h4 id="Beta-7-过线上一点引垂线-Erect-a-Perpendicular"><a href="#Beta-7-过线上一点引垂线-Erect-a-Perpendicular" class="headerlink" title="Beta.7 过线上一点引垂线 / Erect a Perpendicular"></a>Beta.7 过线上一点引垂线 / Erect a Perpendicular</h4><ul>
 <li>限制：1L 3E</li>
 </ul>
 <blockquote>
@@ -590,8 +555,8 @@
 </ul>
 <img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta7 3e.PNG" style="zoom:50%;">
 
-<h5 id="Tutorial-教程：垂线-Tutorial-Perpendicular"><a href="#Tutorial-教程：垂线-Tutorial-Perpendicular" class="headerlink" title="Tutorial 教程：垂线 / Tutorial: Perpendicular"></a>Tutorial 教程：垂线 / Tutorial: Perpendicular</h5><p>你可以直接过一点作一条直线的垂线了。花费：1L 3E</p>
-<h5 id="Beta-8-过圆上一点的切线-Tangent-to-Circle-at-Point"><a href="#Beta-8-过圆上一点的切线-Tangent-to-Circle-at-Point" class="headerlink" title="Beta.8 过圆上一点的切线 / Tangent to Circle at Point"></a>Beta.8 过圆上一点的切线 / Tangent to Circle at Point</h5><ul>
+<h4 id="Tutorial-教程：垂线-Tutorial-Perpendicular"><a href="#Tutorial-教程：垂线-Tutorial-Perpendicular" class="headerlink" title="Tutorial 教程：垂线 / Tutorial: Perpendicular"></a>Tutorial 教程：垂线 / Tutorial: Perpendicular</h4><p>你可以直接过一点作一条直线的垂线了。花费：1L 3E</p>
+<h4 id="Beta-8-过圆上一点的切线-Tangent-to-Circle-at-Point"><a href="#Beta-8-过圆上一点的切线-Tangent-to-Circle-at-Point" class="headerlink" title="Beta.8 过圆上一点的切线 / Tangent to Circle at Point"></a>Beta.8 过圆上一点的切线 / Tangent to Circle at Point</h4><ul>
 <li>限制：2L 3E</li>
 </ul>
 <blockquote>
@@ -618,7 +583,7 @@
 <li>依据：<strong>弦切角逆定理</strong>（以三角形任意一条边为邻边，在三角形外部作一个角等于该边的对角，那么所作角的另一边与三角形外接圆相切，切点为所作角的顶点。）</li>
 </ul>
 <p>由圆可以轻易推出 $DC = CB$，$CB = CE$，$DB=EB$。可得到 $\triangle DCB \cong \triangle BCE$，$\angle BDC = \angle CBE$。由弦切角逆定理，$BE$ 为 $\bigodot A$ 的切线，$B$ 为切点。</p>
-<h5 id="Beta-9-直线的切圆-Circle-Tangent-to-Line"><a href="#Beta-9-直线的切圆-Circle-Tangent-to-Line" class="headerlink" title="Beta.9 直线的切圆 / Circle Tangent to Line"></a>Beta.9 直线的切圆 / Circle Tangent to Line</h5><ul>
+<h4 id="Beta-9-直线的切圆-Circle-Tangent-to-Line"><a href="#Beta-9-直线的切圆-Circle-Tangent-to-Line" class="headerlink" title="Beta.9 直线的切圆 / Circle Tangent to Line"></a>Beta.9 直线的切圆 / Circle Tangent to Line</h4><ul>
 <li>限制：2L 4E</li>
 </ul>
 <blockquote>
@@ -631,7 +596,7 @@
 </ul>
 <img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta9.PNG" style="zoom:50%;">
 
-<h5 id="Beta-10-菱形的内切圆-Сircle-in-Rhombus"><a href="#Beta-10-菱形的内切圆-Сircle-in-Rhombus" class="headerlink" title="Beta.10 菱形的内切圆 / Сircle in Rhombus"></a>Beta.10 菱形的内切圆 / Сircle in Rhombus</h5><ul>
+<h4 id="Beta-10-菱形的内切圆-Сircle-in-Rhombus"><a href="#Beta-10-菱形的内切圆-Сircle-in-Rhombus" class="headerlink" title="Beta.10 菱形的内切圆 / Сircle in Rhombus"></a>Beta.10 菱形的内切圆 / Сircle in Rhombus</h4><ul>
 <li>限制：4L 6E</li>
 </ul>
 <blockquote>
@@ -641,11 +606,11 @@
 <p><strong>4L 6E</strong> 连接两条对角线，作垂直获得切点，最后画圆就 OK</p>
 <img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/beta10 sol.PNG" style="zoom:50%;">
 
-<h3 id="3、-gamma-Gamma-关"><a href="#3、-gamma-Gamma-关" class="headerlink" title="3、$\gamma$ Gamma 关"></a>3、$\gamma$ Gamma 关</h3><ul>
+<h3 id="Gamma-gamma-关（全解完成）"><a href="#Gamma-gamma-关（全解完成）" class="headerlink" title="Gamma $\gamma$ 关（全解完成）"></a>Gamma $\gamma$ 关（全解完成）</h3><ul>
 <li>共计 9 关，全是主关</li>
 <li>30 颗星，其中 V 星 3 个</li>
 </ul>
-<h5 id="Gamma-1-弦中点-Chord-Midpoint"><a href="#Gamma-1-弦中点-Chord-Midpoint" class="headerlink" title="Gamma.1 弦中点 / Chord Midpoint"></a>Gamma.1 弦中点 / Chord Midpoint</h5><ul>
+<h4 id="Gamma-1-弦中点-Chord-Midpoint"><a href="#Gamma-1-弦中点-Chord-Midpoint" class="headerlink" title="Gamma.1 弦中点 / Chord Midpoint"></a>Gamma.1 弦中点 / Chord Midpoint</h4><ul>
 <li>限制：2L 4E</li>
 </ul>
 <blockquote>
@@ -659,7 +624,7 @@
 </ul>
 <img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/gamma1 sol.PNG" style="zoom:50%;">
 
-<h5 id="Gamma-2-由角和垂心定义的三角形-Triangle-by-Angle-and-Orthocenter"><a href="#Gamma-2-由角和垂心定义的三角形-Triangle-by-Angle-and-Orthocenter" class="headerlink" title="Gamma.2 由角和垂心定义的三角形 / Triangle by Angle and Orthocenter"></a>Gamma.2 由角和垂心定义的三角形 / Triangle by Angle and Orthocenter</h5><ul>
+<h4 id="Gamma-2-由角和垂心定义的三角形-Triangle-by-Angle-and-Orthocenter"><a href="#Gamma-2-由角和垂心定义的三角形-Triangle-by-Angle-and-Orthocenter" class="headerlink" title="Gamma.2 由角和垂心定义的三角形 / Triangle by Angle and Orthocenter"></a>Gamma.2 由角和垂心定义的三角形 / Triangle by Angle and Orthocenter</h4><ul>
 <li>限制：3L 7E</li>
 </ul>
 <blockquote>
@@ -680,7 +645,7 @@
 </ul>
 <img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/gamma2 6e.PNG" style="zoom:50%;">
 
-<h5 id="Gamma-3-垂直平分线交点-Intersection-of-Perpendicular-Bisectors"><a href="#Gamma-3-垂直平分线交点-Intersection-of-Perpendicular-Bisectors" class="headerlink" title="Gamma.3 垂直平分线交点 / Intersection of Perpendicular Bisectors"></a>Gamma.3 垂直平分线交点 / Intersection of Perpendicular Bisectors</h5><ul>
+<h4 id="Gamma-3-垂直平分线交点-Intersection-of-Perpendicular-Bisectors"><a href="#Gamma-3-垂直平分线交点-Intersection-of-Perpendicular-Bisectors" class="headerlink" title="Gamma.3 垂直平分线交点 / Intersection of Perpendicular Bisectors"></a>Gamma.3 垂直平分线交点 / Intersection of Perpendicular Bisectors</h4><ul>
 <li>限制：2L 2E</li>
 </ul>
 <blockquote>
@@ -694,8 +659,8 @@
 </ul>
 <img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/gamma3 2l2e.PNG" style="zoom:50%;">
 
-<h5 id="Gamma-4-三条等长线段-I-Three-equal-segments-1（V-星关）"><a href="#Gamma-4-三条等长线段-I-Three-equal-segments-1（V-星关）" class="headerlink" title="Gamma.4 三条等长线段 I / Three equal segments - 1（V 星关）"></a>Gamma.4 三条等长线段 I / Three equal segments - 1（V 星关）</h5><ul>
-<li>限制：4L 6E，解数：2</li>
+<h4 id="Gamma-4-三条等长线段-I-Three-equal-segments-1（V-星关）"><a href="#Gamma-4-三条等长线段-I-Three-equal-segments-1（V-星关）" class="headerlink" title="Gamma.4 三条等长线段 I / Three equal segments - 1（V 星关）"></a>Gamma.4 三条等长线段 I / Three equal segments - 1（V 星关）</h4><ul>
+<li>限制：4L 6E，<span style="color:rgb(0, 0, 255);">解数：2</span></li>
 </ul>
 <blockquote>
 <p>Given an angle ABC and a point M inside it, find points D on BA and E on BC and construct segments DM and ME such that BD = DM = ME.</p>
@@ -709,7 +674,7 @@
 <img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/gamma4 4l6e.PNG" style="zoom:50%;">
 
 <p><strong>2V</strong> 明显 $\bigodot M$ 与 BC 有两个交点，所以 E 点有 2 个</p>
-<h5 id="Gamma-5-过一点并切直线的圆-Circle-through-Point-Tangent-to-Line"><a href="#Gamma-5-过一点并切直线的圆-Circle-through-Point-Tangent-to-Line" class="headerlink" title="Gamma.5 过一点并切直线的圆 / Circle through Point Tangent to Line"></a>Gamma.5 过一点并切直线的圆 / Circle through Point Tangent to Line</h5><ul>
+<h4 id="Gamma-5-过一点并切直线的圆-Circle-through-Point-Tangent-to-Line"><a href="#Gamma-5-过一点并切直线的圆-Circle-through-Point-Tangent-to-Line" class="headerlink" title="Gamma.5 过一点并切直线的圆 / Circle through Point Tangent to Line"></a>Gamma.5 过一点并切直线的圆 / Circle through Point Tangent to Line</h4><ul>
 <li>限制：3L 6E</li>
 </ul>
 <blockquote>
@@ -728,7 +693,7 @@
 </ul>
 <img src="/2020/07/19/Euclidea%E8%A7%A3%E6%B3%95%E4%B8%8E%E8%AF%81%E6%98%8E/gamma5 6e.PNG" style="zoom:50%;">
 
-<h5 id="Gamma-6-梯形底边的中点-Midpoints-of-Trapezoid-Bases"><a href="#Gamma-6-梯形底边的中点-Midpoints-of-Trapezoid-Bases" class="headerlink" title="Gamma.6 梯形底边的中点 / Midpoints of Trapezoid Bases"></a>Gamma.6 梯形底边的中点 / Midpoints of Trapezoid Bases</h5><ul>
+<h4 id="Gamma-6-梯形底边的中点-Midpoints-of-Trapezoid-Bases"><a href="#Gamma-6-梯形底边的中点-Midpoints-of-Trapezoid-Bases" class="headerlink" title="Gamma.6 梯形底边的中点 / Midpoints of Trapezoid Bases"></a>Gamma.6 梯形底边的中点 / Midpoints of Trapezoid Bases</h4><ul>
 <li>限制：3L 5E</li>
 </ul>
 <blockquote>
@@ -757,11 +722,52 @@
 <p>由梯形 $AB \parallel CD$，易得 $\frac{FA}{AC} = \frac{FB}{BD}$，即 $\frac{FA}{AC} \times \frac{BD}{FB} = 1$。</p>
 <p>由塞瓦定理 $\frac{CG}{GD} \times \frac{FA}{AC} \times \frac{BD}{FB} = 1$，所以 $\frac{CG}{GD} = 1$，$CG = GD$。G 为 CD 中点。</p>
 <p>故 EG 为三角形中位线。</p>
-<h5 id="Gamma-7-45°-角-Angle-of-45°"><a href="#Gamma-7-45°-角-Angle-of-45°" class="headerlink" title="Gamma.7 45° 角 / Angle of 45°"></a>Gamma.7 45° 角 / Angle of 45°</h5><h3 id="4、-delta-Delta-关"><a href="#4、-delta-Delta-关" class="headerlink" title="4、$\delta$ Delta 关"></a>4、$\delta$ Delta 关</h3><ul>
+<p><span style="color:rgb(255, 0, 0);"><strong>注：由于博客 BUG，下文的所有图片无法显示。</strong></span></p>
+<h4 id="Gamma-7-45°-角-Angle-of-45°"><a href="#Gamma-7-45°-角-Angle-of-45°" class="headerlink" title="Gamma.7 45° 角 / Angle of 45°"></a>Gamma.7 45° 角 / Angle of 45°</h4><ul>
+<li>限制：2L 5E，<span style="color:rgb(0, 0, 255);">解数：2</span></li>
+</ul>
+<blockquote>
+<p>Construct an angle of 45° with the given side.</p>
+<p>以给定射线为一边，做一个 45° 角。</p>
+</blockquote>
+<p><strong>2L</strong> 平分直角。</p>
+<ul>
+<li>工具：垂，角分</li>
+</ul>
+<p><strong>5E</strong> 利用正方形一边与一条对角线构造 45°。</p>
+<ul>
+<li>工具：圆，垂，线</li>
+</ul>
+<p><strong>2V</strong> 下面还有一个。</p>
+<h4 id="Gamma-8-菱形-Lozenge"><a href="#Gamma-8-菱形-Lozenge" class="headerlink" title="Gamma.8 菱形 / Lozenge"></a>Gamma.8 菱形 / Lozenge</h4><ul>
+<li>限制：5L 7E，<span style="color:rgb(0, 0, 255);">解数：4</span></li>
+</ul>
+<blockquote>
+<p>Construct a rhombus with the given side and an angle of 45° in a vertex.</p>
+<p>以给定线段为一边，作一个顶角为 45° 的菱形。</p>
+</blockquote>
+<p><strong>5L</strong> 先构造出 45° 得到两边，作垂得到第三边，利用三点共线得到第四条边。</p>
+<ul>
+<li>工具：圆，垂，角分，线，垂</li>
+</ul>
+<p><strong>7E</strong> 主体思想与 5E 基本相同。在 45° 构造上，7E 使用了 Gamma.7 4E 的方法。</p>
+<ul>
+<li>工具：圆，圆，线，圆，线，线，线</li>
+</ul>
+<p><strong>4V</strong> 上、下两类；顶角顶点有 2 个；共 4 个可能的菱形。</p>
+<h4 id="Gamma-9-四边形的中心-Center-of-Quadrilateral"><a href="#Gamma-9-四边形的中心-Center-of-Quadrilateral" class="headerlink" title="Gamma.9 四边形的中心 / Center of Quadrilateral"></a>Gamma.9 四边形的中心 / Center of Quadrilateral</h4><blockquote>
+<p>Construct the midpoint of the segment that connects the midpoints of the diagonals of the quadrilateral.</p>
+<p>构造出四边形两对角线所连线段的中点。</p>
+</blockquote>
+<p><strong>4L 10E</strong> 任意选取四边形一条边，再选取一条对边，作这两条边的中点并连接，该线段的中点即为所求。</p>
+<h3 id="Delta-delta-关"><a href="#Delta-delta-关" class="headerlink" title="Delta $\delta$ 关"></a>Delta $\delta$ 关</h3><ul>
 <li>共计 10 关，全是主关</li>
 <li>34 颗星，其中 V 星 4 个</li>
 </ul>
-<p>咕咕咕…</p>
+<h4 id="Delta-1"><a href="#Delta-1" class="headerlink" title="Delta.1"></a>Delta.1</h4><blockquote>
+<p>Construct a point C on the line AB such that |AC|=2|AB| using only a compass.</p>
+<p>仅用圆规，</p>
+</blockquote>
 <h3 id="5、-varepsilon-Epsilon-关"><a href="#5、-varepsilon-Epsilon-关" class="headerlink" title="5、$\varepsilon$ Epsilon 关"></a>5、$\varepsilon$ Epsilon 关</h3><ul>
 <li>共计 12 关，1 个教程关，11 个主关</li>
 <li>40 颗星，其中 V 星 4 个</li>
@@ -915,7 +921,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81-alpha-Alpha-%E5%85%B3%EF%BC%88%E5%85%A8%E8%A7%A3%E5%AE%8C%E6%88%90%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">1、$\alpha$ Alpha 关（全解完成）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Tutorial-%E7%AD%89%E8%BE%B9%E4%B8%89%E8%A7%92%E5%BD%A2-Equilateral-Triangle%EF%BC%88V-%E6%98%9F%E5%85%B3%EF%BC%89"><span class="nav-number">1.0.1.</span> <span class="nav-text">Tutorial 等边三角形 &#x2F; Equilateral Triangle（V 星关）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Alpha-1-60%C2%B0-%E8%A7%92-Angle-of-60%C2%B0-%EF%BC%88V-%E6%98%9F%E5%85%B3%EF%BC%89"><span class="nav-number">1.0.2.</span> <span class="nav-text">Alpha.1 60° 角 &#x2F; Angle of 60° （V 星关）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Tutorial-%E6%95%99%E7%A8%8B%EF%BC%9A%E7%9B%B8%E4%BA%A4%E5%B7%A5%E5%85%B7-Tutorial-Intersect-Tool"><span class="nav-number">1.0.3.</span> <span class="nav-text">Tutorial 教程：相交工具 &#x2F; Tutorial: Intersect Tool</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Alpha-2-%E5%9E%82%E7%9B%B4%E5%B9%B3%E5%88%86%E7%BA%BF-Perpendicular-Bisector"><span class="nav-number">1.0.4.</span> <span class="nav-text">Alpha.2 垂直平分线 &#x2F; Perpendicular Bisector</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Tutorial-%E6%95%99%E7%A8%8B%EF%BC%9A%E5%9E%82%E7%9B%B4%E5%B9%B3%E5%88%86%E7%BA%BF-Tutorial-Perpendicular-Bisector"><span class="nav-number">1.0.5.</span> <span class="nav-text">Tutorial 教程：垂直平分线 &#x2F; Tutorial: Perpendicular Bisector</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Alpha-3-%E4%B8%AD%E7%82%B9-Midpoint"><span class="nav-number">1.0.6.</span> <span class="nav-text">Alpha.3 中点 &#x2F; Midpoint</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Alpha-4-%E6%AD%A3%E6%96%B9%E5%BD%A2%E5%86%85%E7%9A%84%E5%9C%86-Circle-in-Square"><span class="nav-number">1.0.7.</span> <span class="nav-text">Alpha.4 正方形内的圆 &#x2F; Circle in Square</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Tutorial-%E6%95%99%E7%A8%8B%EF%BC%9A%E7%A7%BB%E5%8A%A8-Tutorial-Move-Tool"><span class="nav-number">1.0.8.</span> <span class="nav-text">Tutorial 教程：移动 &#x2F; Tutorial: Move Tool</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Alpha-5-%E7%9F%A9%E5%BD%A2%E5%86%85%E7%9A%84%E8%8F%B1%E5%BD%A2-Rhombus-in-Rectangle%EF%BC%88V-%E6%98%9F%E5%85%B3%EF%BC%89"><span class="nav-number">1.0.9.</span> <span class="nav-text">Alpha.5 矩形内的菱形 &#x2F; Rhombus in Rectangle（V 星关）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Alpha-6-%E5%9C%86%E5%BF%83-Circle-Center"><span class="nav-number">1.0.10.</span> <span class="nav-text">Alpha.6 圆心 &#x2F; Circle Center</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Alpha-7-%E5%9C%86%E5%86%85%E6%8E%A5%E6%AD%A3%E6%96%B9%E5%BD%A2-Inscribed-Square"><span class="nav-number">1.0.11.</span> <span class="nav-text">Alpha.7 圆内接正方形 &#x2F; Inscribed Square</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81-beta-Beta-%E5%85%B3%EF%BC%88%E5%85%A8%E8%A7%A3%E5%AE%8C%E6%88%90%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">2、$\beta$ Beta 关（全解完成）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-1-%E8%A7%92%E5%B9%B3%E5%88%86%E7%BA%BF-Angle-Bisector"><span class="nav-number">2.0.1.</span> <span class="nav-text">Beta.1 角平分线 &#x2F; Angle Bisector</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Tutorial-%E6%95%99%E7%A8%8B%EF%BC%9A%E8%A7%92%E5%B9%B3%E5%88%86%E7%BA%BF-Tutorial-Angle-Bisector"><span class="nav-number">2.0.2.</span> <span class="nav-text">Tutorial 教程：角平分线 &#x2F; Tutorial: Angle Bisector</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-2-%E8%A7%92%E5%B9%B3%E5%88%86%E7%BA%BF%E4%BA%A4%E7%82%B9-Intersection-of-Angle-Bisectors"><span class="nav-number">2.0.3.</span> <span class="nav-text">Beta.2 角平分线交点 &#x2F; Intersection of Angle Bisectors</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-3-30%C2%B0-%E8%A7%92-Angle-of-30%C2%B0%EF%BC%88V-%E6%98%9F%E5%85%B3%EF%BC%89"><span class="nav-number">2.0.4.</span> <span class="nav-text">Beta.3 30° 角 &#x2F; Angle of 30°（V 星关）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-4-%E4%BA%8C%E5%80%8D%E8%A7%92-Double-Angle%EF%BC%88V-%E6%98%9F%E5%85%B3%EF%BC%89"><span class="nav-number">2.0.5.</span> <span class="nav-text">Beta.4 二倍角 &#x2F; Double Angle（V 星关）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-5-%E5%88%87%E5%89%B2%E7%9F%A9%E5%BD%A2-Cut-Rectangle"><span class="nav-number">2.0.6.</span> <span class="nav-text">Beta.5 切割矩形 &#x2F; Cut Rectangle</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-6-%E8%BF%87%E7%BA%BF%E5%A4%96%E4%B8%80%E7%82%B9%E4%BD%9C%E5%9E%82%E7%BA%BF-Drop-a-Perpendicular"><span class="nav-number">2.0.7.</span> <span class="nav-text">Beta.6 过线外一点作垂线 &#x2F; Drop a Perpendicular</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-7-%E8%BF%87%E7%BA%BF%E4%B8%8A%E4%B8%80%E7%82%B9%E5%BC%95%E5%9E%82%E7%BA%BF-Erect-a-Perpendicular"><span class="nav-number">2.0.8.</span> <span class="nav-text">Beta.7 过线上一点引垂线 &#x2F; Erect a Perpendicular</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Tutorial-%E6%95%99%E7%A8%8B%EF%BC%9A%E5%9E%82%E7%BA%BF-Tutorial-Perpendicular"><span class="nav-number">2.0.9.</span> <span class="nav-text">Tutorial 教程：垂线 &#x2F; Tutorial: Perpendicular</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-8-%E8%BF%87%E5%9C%86%E4%B8%8A%E4%B8%80%E7%82%B9%E7%9A%84%E5%88%87%E7%BA%BF-Tangent-to-Circle-at-Point"><span class="nav-number">2.0.10.</span> <span class="nav-text">Beta.8 过圆上一点的切线 &#x2F; Tangent to Circle at Point</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-9-%E7%9B%B4%E7%BA%BF%E7%9A%84%E5%88%87%E5%9C%86-Circle-Tangent-to-Line"><span class="nav-number">2.0.11.</span> <span class="nav-text">Beta.9 直线的切圆 &#x2F; Circle Tangent to Line</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beta-10-%E8%8F%B1%E5%BD%A2%E7%9A%84%E5%86%85%E5%88%87%E5%9C%86-%D0%A1ircle-in-Rhombus"><span class="nav-number">2.0.12.</span> <span class="nav-text">Beta.10 菱形的内切圆 &#x2F; Сircle in Rhombus</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81-gamma-Gamma-%E5%85%B3"><span class="nav-number">3.</span> <span class="nav-text">3、$\gamma$ Gamma 关</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Gamma-1-%E5%BC%A6%E4%B8%AD%E7%82%B9-Chord-Midpoint"><span class="nav-number">3.0.1.</span> <span class="nav-text">Gamma.1 弦中点 &#x2F; Chord Midpoint</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Gamma-2-%E7%94%B1%E8%A7%92%E5%92%8C%E5%9E%82%E5%BF%83%E5%AE%9A%E4%B9%89%E7%9A%84%E4%B8%89%E8%A7%92%E5%BD%A2-Triangle-by-Angle-and-Orthocenter"><span class="nav-number">3.0.2.</span> <span class="nav-text">Gamma.2 由角和垂心定义的三角形 &#x2F; Triangle by Angle and Orthocenter</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Gamma-3-%E5%9E%82%E7%9B%B4%E5%B9%B3%E5%88%86%E7%BA%BF%E4%BA%A4%E7%82%B9-Intersection-of-Perpendicular-Bisectors"><span class="nav-number">3.0.3.</span> <span class="nav-text">Gamma.3 垂直平分线交点 &#x2F; Intersection of Perpendicular Bisectors</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Gamma-4-%E4%B8%89%E6%9D%A1%E7%AD%89%E9%95%BF%E7%BA%BF%E6%AE%B5-I-Three-equal-segments-1%EF%BC%88V-%E6%98%9F%E5%85%B3%EF%BC%89"><span class="nav-number">3.0.4.</span> <span class="nav-text">Gamma.4 三条等长线段 I &#x2F; Three equal segments - 1（V 星关）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Gamma-5-%E8%BF%87%E4%B8%80%E7%82%B9%E5%B9%B6%E5%88%87%E7%9B%B4%E7%BA%BF%E7%9A%84%E5%9C%86-Circle-through-Point-Tangent-to-Line"><span class="nav-number">3.0.5.</span> <span class="nav-text">Gamma.5 过一点并切直线的圆 &#x2F; Circle through Point Tangent to Line</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Gamma-6-%E6%A2%AF%E5%BD%A2%E5%BA%95%E8%BE%B9%E7%9A%84%E4%B8%AD%E7%82%B9-Midpoints-of-Trapezoid-Bases"><span class="nav-number">3.0.6.</span> <span class="nav-text">Gamma.6 梯形底边的中点 &#x2F; Midpoints of Trapezoid Bases</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Gamma-7-45%C2%B0-%E8%A7%92-Angle-of-45%C2%B0"><span class="nav-number">3.0.7.</span> <span class="nav-text">Gamma.7 45° 角 &#x2F; Angle of 45°</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%E3%80%81-delta-Delta-%E5%85%B3"><span class="nav-number">4.</span> <span class="nav-text">4、$\delta$ Delta 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5%E3%80%81-varepsilon-Epsilon-%E5%85%B3"><span class="nav-number">5.</span> <span class="nav-text">5、$\varepsilon$ Epsilon 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6%E3%80%81-zeta-Zeta-%E5%85%B3"><span class="nav-number">6.</span> <span class="nav-text">6、$\zeta$ Zeta 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7%E3%80%81-eta-Eta-%E5%85%B3"><span class="nav-number">7.</span> <span class="nav-text">7、$\eta$ Eta 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8%E3%80%81-theta-Theta-%E5%85%B3"><span class="nav-number">8.</span> <span class="nav-text">8、$\theta$ Theta 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9%E3%80%81-iota-Iota-%E5%85%B3"><span class="nav-number">9.</span> <span class="nav-text">9、$\iota$ Iota 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10%E3%80%81-kappa-Kappa-%E5%85%B3"><span class="nav-number">10.</span> <span class="nav-text">10、$\kappa$ Kappa 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11%E3%80%81-lambda-Lambda-%E5%85%B3"><span class="nav-number">11.</span> <span class="nav-text">11、$\lambda$ Lambda 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12%E3%80%81-mu-Mu-%E5%85%B3"><span class="nav-number">12.</span> <span class="nav-text">12、$\mu$ Mu 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13%E3%80%81-nu-Nu-%E5%85%B3"><span class="nav-number">13.</span> <span class="nav-text">13、$\nu$ Nu 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14%E3%80%81-xi-Xi-%E5%85%B3"><span class="nav-number">14.</span> <span class="nav-text">14、$\xi$ Xi 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15%E3%80%81-omicron-Omicron-%E5%85%B3"><span class="nav-number">15.</span> <span class="nav-text">15、$\omicron$ Omicron 关</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8E%A9%E8%BF%99%E4%B8%AA%E6%B8%B8%E6%88%8F%EF%BC%8C%E4%BD%A0%E9%9C%80%E8%A6%81%E2%80%A6"><span class="nav-number">1.</span> <span class="nav-text">玩这个游戏，你需要…</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Alpha-alpha-%E5%85%B3%EF%BC%88%E5%85%A8%E8%A7%A3%E5%AE%8C%E6%88%90%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">Alpha $\alpha$ 关（全解完成）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Tutorial-%E7%AD%89%E8%BE%B9%E4%B8%89%E8%A7%92%E5%BD%A2-Equilateral-Triangle%EF%BC%88V-%E6%98%9F%E5%85%B3%EF%BC%89"><span class="nav-number">2.1.</span> <span class="nav-text">Tutorial 等边三角形 &#x2F; Equilateral Triangle（V 星关）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Alpha-1-60%C2%B0-%E8%A7%92-Angle-of-60%C2%B0-%EF%BC%88V-%E6%98%9F%E5%85%B3%EF%BC%89"><span class="nav-number">2.2.</span> <span class="nav-text">Alpha.1 60° 角 &#x2F; Angle of 60° （V 星关）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tutorial-%E6%95%99%E7%A8%8B%EF%BC%9A%E7%9B%B8%E4%BA%A4%E5%B7%A5%E5%85%B7-Tutorial-Intersect-Tool"><span class="nav-number">2.3.</span> <span class="nav-text">Tutorial 教程：相交工具 &#x2F; Tutorial: Intersect Tool</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Alpha-2-%E5%9E%82%E7%9B%B4%E5%B9%B3%E5%88%86%E7%BA%BF-Perpendicular-Bisector"><span class="nav-number">2.4.</span> <span class="nav-text">Alpha.2 垂直平分线 &#x2F; Perpendicular Bisector</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tutorial-%E6%95%99%E7%A8%8B%EF%BC%9A%E5%9E%82%E7%9B%B4%E5%B9%B3%E5%88%86%E7%BA%BF-Tutorial-Perpendicular-Bisector"><span class="nav-number">2.5.</span> <span class="nav-text">Tutorial 教程：垂直平分线 &#x2F; Tutorial: Perpendicular Bisector</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Alpha-3-%E4%B8%AD%E7%82%B9-Midpoint"><span class="nav-number">2.6.</span> <span class="nav-text">Alpha.3 中点 &#x2F; Midpoint</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Alpha-4-%E6%AD%A3%E6%96%B9%E5%BD%A2%E5%86%85%E7%9A%84%E5%9C%86-Circle-in-Square"><span class="nav-number">2.7.</span> <span class="nav-text">Alpha.4 正方形内的圆 &#x2F; Circle in Square</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tutorial-%E6%95%99%E7%A8%8B%EF%BC%9A%E7%A7%BB%E5%8A%A8-Tutorial-Move-Tool"><span class="nav-number">2.8.</span> <span class="nav-text">Tutorial 教程：移动 &#x2F; Tutorial: Move Tool</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Alpha-5-%E7%9F%A9%E5%BD%A2%E5%86%85%E7%9A%84%E8%8F%B1%E5%BD%A2-Rhombus-in-Rectangle%EF%BC%88V-%E6%98%9F%E5%85%B3%EF%BC%89"><span class="nav-number">2.9.</span> <span class="nav-text">Alpha.5 矩形内的菱形 &#x2F; Rhombus in Rectangle（V 星关）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Alpha-6-%E5%9C%86%E5%BF%83-Circle-Center"><span class="nav-number">2.10.</span> <span class="nav-text">Alpha.6 圆心 &#x2F; Circle Center</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Alpha-7-%E5%9C%86%E5%86%85%E6%8E%A5%E6%AD%A3%E6%96%B9%E5%BD%A2-Inscribed-Square"><span class="nav-number">2.11.</span> <span class="nav-text">Alpha.7 圆内接正方形 &#x2F; Inscribed Square</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Beta-beta-%E5%85%B3%EF%BC%88%E5%85%A8%E8%A7%A3%E5%AE%8C%E6%88%90%EF%BC%89"><span class="nav-number">3.</span> <span class="nav-text">Beta $\beta$ 关（全解完成）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Beta-1-%E8%A7%92%E5%B9%B3%E5%88%86%E7%BA%BF-Angle-Bisector"><span class="nav-number">3.1.</span> <span class="nav-text">Beta.1 角平分线 &#x2F; Angle Bisector</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tutorial-%E6%95%99%E7%A8%8B%EF%BC%9A%E8%A7%92%E5%B9%B3%E5%88%86%E7%BA%BF-Tutorial-Angle-Bisector"><span class="nav-number">3.2.</span> <span class="nav-text">Tutorial 教程：角平分线 &#x2F; Tutorial: Angle Bisector</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Beta-2-%E8%A7%92%E5%B9%B3%E5%88%86%E7%BA%BF%E4%BA%A4%E7%82%B9-Intersection-of-Angle-Bisectors"><span class="nav-number">3.3.</span> <span class="nav-text">Beta.2 角平分线交点 &#x2F; Intersection of Angle Bisectors</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Beta-3-30%C2%B0-%E8%A7%92-Angle-of-30%C2%B0%EF%BC%88V-%E6%98%9F%E5%85%B3%EF%BC%89"><span class="nav-number">3.4.</span> <span class="nav-text">Beta.3 30° 角 &#x2F; Angle of 30°（V 星关）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Beta-4-%E4%BA%8C%E5%80%8D%E8%A7%92-Double-Angle%EF%BC%88V-%E6%98%9F%E5%85%B3%EF%BC%89"><span class="nav-number">3.5.</span> <span class="nav-text">Beta.4 二倍角 &#x2F; Double Angle（V 星关）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Beta-5-%E5%88%87%E5%89%B2%E7%9F%A9%E5%BD%A2-Cut-Rectangle"><span class="nav-number">3.6.</span> <span class="nav-text">Beta.5 切割矩形 &#x2F; Cut Rectangle</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Beta-6-%E8%BF%87%E7%BA%BF%E5%A4%96%E4%B8%80%E7%82%B9%E4%BD%9C%E5%9E%82%E7%BA%BF-Drop-a-Perpendicular"><span class="nav-number">3.7.</span> <span class="nav-text">Beta.6 过线外一点作垂线 &#x2F; Drop a Perpendicular</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Beta-7-%E8%BF%87%E7%BA%BF%E4%B8%8A%E4%B8%80%E7%82%B9%E5%BC%95%E5%9E%82%E7%BA%BF-Erect-a-Perpendicular"><span class="nav-number">3.8.</span> <span class="nav-text">Beta.7 过线上一点引垂线 &#x2F; Erect a Perpendicular</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tutorial-%E6%95%99%E7%A8%8B%EF%BC%9A%E5%9E%82%E7%BA%BF-Tutorial-Perpendicular"><span class="nav-number">3.9.</span> <span class="nav-text">Tutorial 教程：垂线 &#x2F; Tutorial: Perpendicular</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Beta-8-%E8%BF%87%E5%9C%86%E4%B8%8A%E4%B8%80%E7%82%B9%E7%9A%84%E5%88%87%E7%BA%BF-Tangent-to-Circle-at-Point"><span class="nav-number">3.10.</span> <span class="nav-text">Beta.8 过圆上一点的切线 &#x2F; Tangent to Circle at Point</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Beta-9-%E7%9B%B4%E7%BA%BF%E7%9A%84%E5%88%87%E5%9C%86-Circle-Tangent-to-Line"><span class="nav-number">3.11.</span> <span class="nav-text">Beta.9 直线的切圆 &#x2F; Circle Tangent to Line</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Beta-10-%E8%8F%B1%E5%BD%A2%E7%9A%84%E5%86%85%E5%88%87%E5%9C%86-%D0%A1ircle-in-Rhombus"><span class="nav-number">3.12.</span> <span class="nav-text">Beta.10 菱形的内切圆 &#x2F; Сircle in Rhombus</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gamma-gamma-%E5%85%B3%EF%BC%88%E5%85%A8%E8%A7%A3%E5%AE%8C%E6%88%90%EF%BC%89"><span class="nav-number">4.</span> <span class="nav-text">Gamma $\gamma$ 关（全解完成）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Gamma-1-%E5%BC%A6%E4%B8%AD%E7%82%B9-Chord-Midpoint"><span class="nav-number">4.1.</span> <span class="nav-text">Gamma.1 弦中点 &#x2F; Chord Midpoint</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Gamma-2-%E7%94%B1%E8%A7%92%E5%92%8C%E5%9E%82%E5%BF%83%E5%AE%9A%E4%B9%89%E7%9A%84%E4%B8%89%E8%A7%92%E5%BD%A2-Triangle-by-Angle-and-Orthocenter"><span class="nav-number">4.2.</span> <span class="nav-text">Gamma.2 由角和垂心定义的三角形 &#x2F; Triangle by Angle and Orthocenter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Gamma-3-%E5%9E%82%E7%9B%B4%E5%B9%B3%E5%88%86%E7%BA%BF%E4%BA%A4%E7%82%B9-Intersection-of-Perpendicular-Bisectors"><span class="nav-number">4.3.</span> <span class="nav-text">Gamma.3 垂直平分线交点 &#x2F; Intersection of Perpendicular Bisectors</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Gamma-4-%E4%B8%89%E6%9D%A1%E7%AD%89%E9%95%BF%E7%BA%BF%E6%AE%B5-I-Three-equal-segments-1%EF%BC%88V-%E6%98%9F%E5%85%B3%EF%BC%89"><span class="nav-number">4.4.</span> <span class="nav-text">Gamma.4 三条等长线段 I &#x2F; Three equal segments - 1（V 星关）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Gamma-5-%E8%BF%87%E4%B8%80%E7%82%B9%E5%B9%B6%E5%88%87%E7%9B%B4%E7%BA%BF%E7%9A%84%E5%9C%86-Circle-through-Point-Tangent-to-Line"><span class="nav-number">4.5.</span> <span class="nav-text">Gamma.5 过一点并切直线的圆 &#x2F; Circle through Point Tangent to Line</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Gamma-6-%E6%A2%AF%E5%BD%A2%E5%BA%95%E8%BE%B9%E7%9A%84%E4%B8%AD%E7%82%B9-Midpoints-of-Trapezoid-Bases"><span class="nav-number">4.6.</span> <span class="nav-text">Gamma.6 梯形底边的中点 &#x2F; Midpoints of Trapezoid Bases</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Gamma-7-45%C2%B0-%E8%A7%92-Angle-of-45%C2%B0"><span class="nav-number">4.7.</span> <span class="nav-text">Gamma.7 45° 角 &#x2F; Angle of 45°</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Gamma-8-%E8%8F%B1%E5%BD%A2-Lozenge"><span class="nav-number">4.8.</span> <span class="nav-text">Gamma.8 菱形 &#x2F; Lozenge</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Gamma-9-%E5%9B%9B%E8%BE%B9%E5%BD%A2%E7%9A%84%E4%B8%AD%E5%BF%83-Center-of-Quadrilateral"><span class="nav-number">4.9.</span> <span class="nav-text">Gamma.9 四边形的中心 &#x2F; Center of Quadrilateral</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Delta-delta-%E5%85%B3"><span class="nav-number">5.</span> <span class="nav-text">Delta $\delta$ 关</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Delta-1"><span class="nav-number">5.1.</span> <span class="nav-text">Delta.1</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5%E3%80%81-varepsilon-Epsilon-%E5%85%B3"><span class="nav-number">6.</span> <span class="nav-text">5、$\varepsilon$ Epsilon 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6%E3%80%81-zeta-Zeta-%E5%85%B3"><span class="nav-number">7.</span> <span class="nav-text">6、$\zeta$ Zeta 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7%E3%80%81-eta-Eta-%E5%85%B3"><span class="nav-number">8.</span> <span class="nav-text">7、$\eta$ Eta 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8%E3%80%81-theta-Theta-%E5%85%B3"><span class="nav-number">9.</span> <span class="nav-text">8、$\theta$ Theta 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9%E3%80%81-iota-Iota-%E5%85%B3"><span class="nav-number">10.</span> <span class="nav-text">9、$\iota$ Iota 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10%E3%80%81-kappa-Kappa-%E5%85%B3"><span class="nav-number">11.</span> <span class="nav-text">10、$\kappa$ Kappa 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11%E3%80%81-lambda-Lambda-%E5%85%B3"><span class="nav-number">12.</span> <span class="nav-text">11、$\lambda$ Lambda 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12%E3%80%81-mu-Mu-%E5%85%B3"><span class="nav-number">13.</span> <span class="nav-text">12、$\mu$ Mu 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13%E3%80%81-nu-Nu-%E5%85%B3"><span class="nav-number">14.</span> <span class="nav-text">13、$\nu$ Nu 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14%E3%80%81-xi-Xi-%E5%85%B3"><span class="nav-number">15.</span> <span class="nav-text">14、$\xi$ Xi 关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15%E3%80%81-omicron-Omicron-%E5%85%B3"><span class="nav-number">16.</span> <span class="nav-text">15、$\omicron$ Omicron 关</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -931,14 +937,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">45</span>
+        <span class="site-state-item-count">47</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1006,13 +1012,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">100k</span>
+    <span title="站点总字数">102k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:30</span>
+    <span title="站点阅读时长">1:33</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
   </div>
