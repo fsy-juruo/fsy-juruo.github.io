@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fsy-juruo.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="最近颓废的一批，逼自己翻译点东西。 翻译自 BIJECTIVE PROOF PROBLEMS，部分表述有修改。 进度：28 &#x2F; 249 (upd on 2021.2.27)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【翻译向】Stanley 的双射法题目合集">
+<meta property="og:url" content="http://fsy-juruo.github.io/2021/02/27/%E3%80%90%E7%BF%BB%E8%AF%91%E5%90%91%E3%80%91Stanley-%E7%9A%84%E5%8F%8C%E5%B0%84%E6%B3%95%E9%A2%98%E7%9B%AE%E5%90%88%E9%9B%86/index.html">
+<meta property="og:site_name" content="fsy&#39;s blog">
+<meta property="og:description" content="最近颓废的一批，逼自己翻译点东西。 翻译自 BIJECTIVE PROOF PROBLEMS，部分表述有修改。 进度：28 &#x2F; 249 (upd on 2021.2.27)">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-02-27T11:43:51.000Z">
+<meta property="article:modified_time" content="2021-05-08T23:04:50.664Z">
+<meta property="article:author" content="fsy">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://fsy-juruo.github.io/2021/02/27/%E3%80%90%E7%BF%BB%E8%AF%91%E5%90%91%E3%80%91Stanley-%E7%9A%84%E5%8F%8C%E5%B0%84%E6%B3%95%E9%A2%98%E7%9B%AE%E5%90%88%E9%9B%86/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>【翻译向】Stanley 的双射法题目合集 | fsy's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">fsy's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">燃峥嵘岁月，烈日终破云。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://fsy-juruo.github.io/2021/02/27/%E3%80%90%E7%BF%BB%E8%AF%91%E5%90%91%E3%80%91Stanley-%E7%9A%84%E5%8F%8C%E5%B0%84%E6%B3%95%E9%A2%98%E7%9B%AE%E5%90%88%E9%9B%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar01.png">
+      <meta itemprop="name" content="fsy">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fsy's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【翻译向】Stanley 的双射法题目合集
+        </h1>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-27 19:43:51" itemprop="dateCreated datePublished" datetime="2021-02-27T19:43:51+08:00">2021-02-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-05-09 07:04:50" itemprop="dateModified" datetime="2021-05-09T07:04:50+08:00">2021-05-09</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>最近颓废的一批，逼自己翻译点东西。</p>
+<p>翻译自 <a target="_blank" rel="noopener" href="https://xyix.gitee.io/images/bijective%20proof%20probs.pdf">BIJECTIVE PROOF PROBLEMS</a>，部分表述有修改。</p>
+<p>进度：28 / 249 (upd on 2021.2.27)</p>
+<a id="more"></a>
+
+<h4 id="标记-amp-注意事项"><a href="#标记-amp-注意事项" class="headerlink" title="标记 &amp; 注意事项"></a>标记 &amp; 注意事项</h4><h5 id="标记"><a href="#标记" class="headerlink" title="标记"></a>标记</h5><ul>
+<li>$\mathbb{P}$：正整数集。</li>
+<li>$[n]$：$n \in \mathbb{N}$ 时，指集合 ${1, 2, 3, \cdots, n}$。</li>
+</ul>
+<h5 id="难度"><a href="#难度" class="headerlink" title="难度"></a>难度</h5><ul>
+<li>[1]：简单题，比较显然。</li>
+<li>[2]：中等难度，有点困难。</li>
+<li>[3]：难。</li>
+<li>[u]：本题还未被解决。</li>
+<li>[?]：本题结论已知，但我不确定目前是否有组合意义下的证明。</li>
+<li>[*]：本题目前还没有组合意义下的证明。</li>
+</ul>
+<p>不管如何，<strong>目前所有题目的结论均是已知的。</strong></p>
+<p>我们使用 + 与 - 来对题目进行更精细的评分、如 [3-] 表示比 [3] 简单一点。</p>
+<h5 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h5><ul>
+<li><strong>本文名为“双射法题目合集”，请避免使用归纳法，递推法，生成函数等其他方法。</strong></li>
+<li>如果你上来就想搞学术研究，以下为一些有趣的双射法题目（但是里面大多数题目都挺难的）：27, 28, 59, 107, 143, 118, 123, 125, 140, 148, 151, 195, 198, 215, 216, 217, 226, 235, 247。</li>
+</ul>
+<h4 id="1-基础组合数学-Elementary-Combinatorics"><a href="#1-基础组合数学-Elementary-Combinatorics" class="headerlink" title="1 基础组合数学 | Elementary Combinatorics"></a>1 基础组合数学 | Elementary Combinatorics</h4><h5 id="题-1-1"><a href="#题-1-1" class="headerlink" title="题 1 [1]"></a>题 1 [1]</h5><p>证明：$n$ 元集合的<strong>子集（subset）</strong>数为 $2^n$。</p>
+<h5 id="题-2-1"><a href="#题-2-1" class="headerlink" title="题 2 [1]"></a>题 2 [1]</h5><p>定义正整数 $n$ 的一个<strong>拆分（composition）</strong>为一个<strong>正整数</strong>序列 $\alpha = \left(\alpha_1, \alpha_2, \cdots, \alpha_k\right)$，其中 $\sum \alpha_i = n$。</p>
+<p>证明：$n$ 的拆分个数为 $2^{n-1}$。</p>
+<h5 id="题-3-2"><a href="#题-3-2" class="headerlink" title="题 3 [2]"></a>题 3 [2]</h5><p>证明：$n$ 的所有拆分的元素个数之和等于 $(n+1) 2^{n-2}$。</p>
+<h5 id="题-4-2"><a href="#题-4-2" class="headerlink" title="题 4 [2-]"></a>题 4 [2-]</h5><p>对于正整数 $n \geq 2$，证明：$n$ 的所有拆分里，含有偶数个偶数元素的拆分数量为 $2^{n-2}$。</p>
+<h5 id="题-5-2"><a href="#题-5-2" class="headerlink" title="题 5 [2]"></a>题 5 [2]</h5><p>给定正整数 $n, k$，<em>分别计算</em>满足以下条件的 $k$ 元组 $(S_1, S_2, S_3, \cdots, S_k)$ 的数目。其中 $S_i (1 \leq i \leq k)$ 是 $[n]$ 的子集：（换言之，这是三道独立的题目。但是解决它们的方法有异曲同工之妙。）</p>
+<p>(a) $S_1 \subseteq S_2 \subseteq \cdots \subseteq S_k$。</p>
+<p>(b) $S_i$ <strong>两两不交（pairwise disjoint）</strong>。</p>
+<p>(c) $S_1 \cap S_2 \cap \cdots \cap S_k = \varnothing$</p>
+<h5 id="题-6-1"><a href="#题-6-1" class="headerlink" title="题 6 [1]"></a>题 6 [1]</h5><p>令 $S$ 为任意 $n$ 元集合，定义 $\binom{S}{k}$ 为 $S$ 所有 $k$ 元子集的集合。定义 $\binom{n}{k} = |\binom{S}{k}|$。（其实我们只是把二项式系数在组合意义下定义了一遍。此时 $n, k \in \N$）</p>
+<p>证明：<br>$$<br>k! \dbinom{n}{k} = n(n-1)(n-2) \cdots (n-k+1)<br>$$</p>
+<h5 id="题-7-1"><a href="#题-7-1" class="headerlink" title="题 7 [1+]"></a>题 7 [1+]</h5><p>已知 $ \binom{x}{k} = \frac{x(x-1)(x-2) \cdots (x-k+1)}{k!}$。</p>
+<p>证明：<br>$$<br>(x+y)^n = \sum_{k=0}^{n} \binom{n}{k} x^k y^{n-k}<br>$$<br><span style="color:rgb(255, 0, 255);">原作者注.</span> 等式左右侧均为关于 $x$ 和 $y$ 的多项式，若两个多项式 $P(x, y)$ 与 $Q(x, y)$ 在 $x, y \in \mathbb{N}$ 时有 $P(x, y) = Q(x, y)$ 恒成立，那么 $P(x, y)$，$Q(x, y)$ 这两个多项式相同。所以此处，证明原式在 $x, y \in \mathbb{N}$ 时成立就已足够。</p>
+<h5 id="题-8-1"><a href="#题-8-1" class="headerlink" title="题 8 [1]"></a>题 8 [1]</h5><p>令正数 $n, m \geq 0$，求：在 $n \times m$ 的网格里，每一步仅能向左、向上移动一格，从 $(0, 0)$ 走到 $(n, m)$ 有多少种走法？</p>
+<h5 id="题-9-1"><a href="#题-9-1" class="headerlink" title="题 9 [1]"></a>题 9 [1]</h5><p>对于 $n &gt; 0$，证明：<br>$$<br>2 \dbinom{2n-1}{n} = \dbinom{2n}{n}<br>$$</p>
+<h5 id="题-10-1"><a href="#题-10-1" class="headerlink" title="题 10 [1+]"></a>题 10 [1+]</h5><p>对于 $n \geq 1$，证明：<br>$$<br>\sum_{k=0}^{n} (-1)^{k} \binom{n}{k} = 0<br>$$</p>
+<h5 id="题-11-1"><a href="#题-11-1" class="headerlink" title="题 11 [1+]"></a>题 11 [1+]</h5><p>对于 $n \geq 0$，证明：<br>$$<br>\sum_{k=0}^{n} \binom{x}{k} \binom{y}{n-k} = \binom{x+y}{n}<br>$$</p>
+<h5 id="题-12-2"><a href="#题-12-2" class="headerlink" title="题 12 [2-]"></a>题 12 [2-]</h5><p>对于 $n \geq 0$，证明：<br>$$<br>\sum_{k=0}^{n} \binom{x+k}{k} = \binom{x+n+1}{n}<br>$$</p>
+<h5 id="题-13-3"><a href="#题-13-3" class="headerlink" title="题 13 [3]"></a>题 13 [3]</h5><p>对于 $n \geq 0$，证明：<br>$$<br>\sum_{k=0}^{n} \binom{2k}{k} \binom{2(n-k)}{n-k} = 4^{n}<br>$$</p>
+<h5 id="题-14-3"><a href="#题-14-3" class="headerlink" title="题 14 [3-]"></a>题 14 [3-]</h5><p>令 $m = \min(a, b)$，证明：<br>$$<br>\sum_{i=0}^{m} \binom{x+y+i}{i} \binom{y}{a-i}\binom{x}{b-i} = \binom{x+a}{b}<br>$$</p>
+<h5 id="题-15-3"><a href="#题-15-3" class="headerlink" title="题 15 [3-]"></a>题 15 [3-]</h5><p>对于 $n \geq 0$，证明：<br>$$<br>\sum_{k=0}^{n} \binom{n}{k}^2 x^k = \sum_{j=0}^{n} \binom{n}{j} \binom{2n-j}{n} (x-1)^j<br>$$</p>
+<h5 id="题-16-3"><a href="#题-16-3" class="headerlink" title="题 16 [3-]"></a>题 16 [3-]</h5><p>给定 $n \geq 0$，证明：<br>$$<br>\sum_{i+j+k=n} \binom{i+j}{i} \binom{j+k}{j} \binom{k+i}{k} = \sum_{r=0}^{n} \binom{2r}{r}<br>$$</p>
+<h5 id="题-17"><a href="#题-17" class="headerlink" title="题 17 [?]"></a>题 17 [?]</h5><p>给定 $n \geq 0$，证明：<br>$$<br>\sum_{k=0}^{2n} (-1)^k \binom{2n}{k}^3 = (-1)^n \frac{(3n)!}{n!^3}<br>$$</p>
+<h5 id="题-18-3"><a href="#题-18-3" class="headerlink" title="题 18 [3]"></a>题 18 [3]</h5><p>令 $f(n)$ 为剩余系 $\mathbb{Z}/n\mathbb{Z}$ 中，元素之和 $\bmod n = 0$ 的子集的个数（包括 $\varnothing$）。比如说，$f(5) = 8$，这 $8$ 个集合分别为 $\varnothing$，${0}$，${1, 4}$，${2, 3}$，${0, 1, 4}$，${0, 2, 3}$，${1, 2, 3, 4}$，${0, 1, 2, 3, 4}$。</p>
+<p>证明：$n$ 为正奇数时，$f(n)$ 即为有 $n$ 个珠子的黑白项链在旋转变化下的等价类个数。</p>
+<p><span style="color:rgb(255, 0, 255);">原作者注.</span> $n$ 为奇质数时，本题非常容易。</p>
+<h5 id="题-19-2"><a href="#题-19-2" class="headerlink" title="题 19 [2-]"></a>题 19 [2-]</h5><p>求：有多少个 $m \times n$ 的 0-1 矩阵，满足矩阵的每一行，每一列都有奇数个 1？</p>
+<h5 id="题-20-a-1"><a href="#题-20-a-1" class="headerlink" title="题 20 (a) [1-]"></a>题 20 (a) [1-]</h5><p>给定 $k, n \geq 1$。证明：</p>
+<p>满足 $1 \leq a_i \leq k$，且 $a_i \neq a_{i+1} (1 \leq i &lt; n)$ 的序列 $(a_1, \cdots, a_n)$ 的数量为 $k(k-1)^{n-1}$。</p>
+<h5 id="题-20-b-2"><a href="#题-20-b-2" class="headerlink" title="题 20 (b) [2+]"></a>题 20 (b) [2+]</h5><p>题 20 (a) 中其他条件不变，再限定 $a_1 \neq a_n$，则满足条件的序列数量为：<br>$$<br>g_k(n) = (k-1)^n + (k-1)(-1)^n<br>$$<br><span style="color:rgb(255, 0, 255);">原作者注.</span> 可以通过双射法轻松证明：<br>$$<br>g_k(n-1)+g_k(n) = k(k-1)^{n-1}<br>$$<br>故可证 1.20(b)-1 式。但是我并不清楚是否存在一种双射法能直接证明 1.20(b)-1 式。</p>
+<h5 id="题-21-2"><a href="#题-21-2" class="headerlink" title="题 21 [2-]"></a>题 21 [2-]</h5><p>若 $p$ 为质数，$a \in \mathbb{N}_{+}$。证明：$a^p-a$ 可被 $p$ 整除。</p>
+<h5 id="题-22-a-2"><a href="#题-22-a-2" class="headerlink" title="题 22 (a) [2]"></a>题 22 (a) [2]</h5><p>令 $p$ 为质数。证明：$\binom{2p}{p} - 2$ 可被 $p^2$ 整除。</p>
+<h5 id="题-22-b"><a href="#题-22-b" class="headerlink" title="题 22 (b) [*]"></a>题 22 (b) [*]</h5><p>题 22 (a) 中其他条件不变。若 $p &gt; 3$，证明：$\binom{2p}{p} - 2$ 可被 $p^3$ 整除。</p>
+<h5 id="题-23-2"><a href="#题-23-2" class="headerlink" title="题 23 [2-]"></a>题 23 [2-]</h5><p>若 $p$ 为质数，证明：$(p-1)!+1$ 可被 $p$ 整除。</p>
+<h5 id="题-24-1"><a href="#题-24-1" class="headerlink" title="题 24 [1]"></a>题 24 [1]</h5><p>一个对<strong>多重集合（multiset）</strong>的不严谨的定义是：含有重复元素的集合。比如多重集合 ${1, 1, 1, 2, 4, 4, 5, 5}$，简写为 ${1^3, 2, 4^2, 5^2}$。</p>
+<p>定义：</p>
+<p>数字 $i$ 在一个多重集合 $M$ 内的出现次数为 $i$ 的<strong>重复次数（multiplicity）</strong>，记作 $\nu_M(i)$ 或 $\nu(i)$。</p>
+<p>若两个多重集合 $N, M$ 满足 $\forall i$，$\nu_N(i) \leq \nu_M(i)$，则称 $N$ 为 $M$ 的<strong>子多重集（submultiset）</strong>。</p>
+<p>问：令 $M = {1^{\nu(1)}, 2^{\nu(2)},3^{\nu(3)}, \cdots, k^{\nu(k)}}$，$M$ 有多少个子多重集？</p>
+<h5 id="题-25-2"><a href="#题-25-2" class="headerlink" title="题 25 [2]"></a>题 25 [2]</h5><p>我们称一个多重集 $M$ 的<strong>大小（size）</strong>或<strong>基数（cardinality）</strong>为该多重集内的元素个数（重复的元素分别计算个数），记作 $|M|$。</p>
+<p>如多重集 $M = {1, 1, 1, 2, 4, 4, 4, 5, 5}$，$|M| = 9$。</p>
+<p>再称一个多重集 $M$ 可从集合 $S$ 中<strong>选出（on）</strong>，当且仅当 $M$ 中的每个元素都在 $S$ 内。</p>
+<p>令 $\left(\binom{n}{k}\right)$ 为从一个 $n$ 元集合中<strong>可选出</strong>的 $k$ 元多重集的个数。</p>
+<p>证明：<br>$$<br>\left(\dbinom{n}{k}\right) = \binom{n+k-1}{k}<br>$$</p>
+<h5 id="题-26-2"><a href="#题-26-2" class="headerlink" title="题 26 [2-]"></a>题 26 [2-]</h5><p>给定 $n, k \geq 0$，求方程<br>$$<br>x_1 + x_2 + \cdots + x_k = n<br>$$<br>的非负整数解数。</p>
+<h5 id="题-27"><a href="#题-27" class="headerlink" title="题 27 [*]"></a>题 27 [*]</h5><p>令 $n \geq 2$，$t \geq 0$。</p>
+<p><span style="color:rgb(0, 0, 255);">注.</span> 下面的定义修改了部分表述。</p>
+<p>定义一个合法序列 $S(n, t)$ 为：</p>
+<ul>
+<li>长度为 $n + 2t \binom{n}{2}$。</li>
+<li>这个序列里有 $n$ 个 $x$，与 $2t$ 个 $a_{i, j}$（$1 \leq i &lt; j \leq n$）。</li>
+<li>对于每一个 $a_{i, j}$，它应该出现在第 $i$ 个 $x$ 与第 $j$ 个 $x$ 之间。</li>
+</ul>
+<p>记 $f(n, t)$ 为 $S(n, t)$ 的个数。试证：<br>$$<br>f(n, t) = \dfrac{(n+tn(n-1)!)}{n!t!^n(2t)!^\binom{n}{2}} \prod_{i=1}^{n} \dfrac{((j-1)t)!^2(jt)!}{(1+(n+j-2)t)!}<br>$$<br><span style="color:rgb(255, 0, 255);">原作者注.</span> 对于本题，某个特殊情况的式子可以通过 Selberg 积分得到。如果本题存在组合做法，那一定会非常有趣。</p>
+<h5 id="题-28"><a href="#题-28" class="headerlink" title="题 28 [*]"></a>题 28 [*]</h5><p>定义度数为 $n$ 的<strong>二进制德·布鲁金序列（binary de Brujin sequence）</strong>为一个 0-1 序列 $a_1, a_2, \cdots, a_{2^n}$，满足对于任意 $i \in [1, 2^n]$，其<strong>循环因子（circular factors）</strong> $a_i a_{i+1} \cdots a_{i+n-1}$ （下标模 $2^n$ 后加 1）互不相同。</p>
+<p>如：一个度数为 $3$ 的二进制德·布鲁金序列为 00010111。</p>
+<p>证明：度数为 $n$ 的二进制德·布鲁金序列有 $2^{2^{n-1}}$ 个。</p>
+<p><span style="color:rgb(255, 0, 255);">原作者注.</span> 注意到 $2^{2^{n-1}} = \sqrt{2^{2^n}}$。故令 $\mathcal{B}_n$ 为所有度数为 $n$ 的二进制德·布鲁金序列的集合，令 ${0, 1}^{2^n}$ 为度数为 $n$ 的二进制序列，只需证明双射 $\mathcal{B}_n \times \mathcal{B}_n \rightarrow {0, 1}^{2^n}$。</p>
+<p><span style="color:rgb(255, 0, 255);">原作者注.</span> 1946 年，数学家 Nicolaas Govert de Bruijn 第一次定义二进制德·布鲁金序列，并算出其个数。但 1975 年时，人们发现数学家 A. de Riviere 早就提出了这个问题，且数学家 C. Flye Sainte-Marie 在 1894 年就已证明这个问题。</p>
+<h4 id="2-排列-Permutations"><a href="#2-排列-Permutations" class="headerlink" title="2 排列 | Permutations"></a>2 排列 | Permutations</h4><h4 id="3-划分-Partitions"><a href="#3-划分-Partitions" class="headerlink" title="3 划分 | Partitions"></a>3 划分 | Partitions</h4><h4 id="4-树-Trees"><a href="#4-树-Trees" class="headerlink" title="4 树 | Trees"></a>4 树 | Trees</h4><h4 id="5-卡特兰数-Catalan-Numbers"><a href="#5-卡特兰数-Catalan-Numbers" class="headerlink" title="5 卡特兰数 | Catalan Numbers"></a>5 卡特兰数 | Catalan Numbers</h4><h4 id="6-杨表-Young-Tableaux"><a href="#6-杨表-Young-Tableaux" class="headerlink" title="6 杨表 | Young Tableaux"></a>6 杨表 | Young Tableaux</h4><h4 id="7-网格与镶嵌密铺-Lattice-Paths-amp-Tilings"><a href="#7-网格与镶嵌密铺-Lattice-Paths-amp-Tilings" class="headerlink" title="7 网格与镶嵌密铺 | Lattice Paths &amp; Tilings"></a>7 网格与镶嵌密铺 | Lattice Paths &amp; Tilings</h4>
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>fsy
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://fsy-juruo.github.io/2021/02/27/%E3%80%90%E7%BF%BB%E8%AF%91%E5%90%91%E3%80%91Stanley-%E7%9A%84%E5%8F%8C%E5%B0%84%E6%B3%95%E9%A2%98%E7%9B%AE%E5%90%88%E9%9B%86/" title="【翻译向】Stanley 的双射法题目合集">http://fsy-juruo.github.io/2021/02/27/【翻译向】Stanley-的双射法题目合集/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/02/20/IOI-2018-%E7%BB%83%E4%B9%A0%E8%B5%9B-Bubble-Sort-2/" rel="prev" title="IOI 2018 练习赛 Bubble Sort 2">
+      <i class="fa fa-chevron-left"></i> IOI 2018 练习赛 Bubble Sort 2
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/05/09/%E6%9C%AC%E5%8D%9A%E5%AE%A2%E5%81%9C%E6%9B%B4%E8%AF%B4%E6%98%8E/" rel="next" title="本博客停更说明">
+      本博客停更说明 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%87%E8%AE%B0-amp-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">1.</span> <span class="nav-text">标记 &amp; 注意事项</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%A0%87%E8%AE%B0"><span class="nav-number">1.1.</span> <span class="nav-text">标记</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%9A%BE%E5%BA%A6"><span class="nav-number">1.2.</span> <span class="nav-text">难度</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">1.3.</span> <span class="nav-text">注意事项</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%9F%BA%E7%A1%80%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6-Elementary-Combinatorics"><span class="nav-number">2.</span> <span class="nav-text">1 基础组合数学 | Elementary Combinatorics</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%A2%98-1-1"><span class="nav-number">2.1.</span> <span class="nav-text">题 1 [1]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%A2%98-2-1"><span class="nav-number">2.2.</span> <span class="nav-text">题 2 [1]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%A2%98-3-2"><span class="nav-number">2.3.</span> <span class="nav-text">题 3 [2]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%A2%98-4-2"><span class="nav-number">2.4.</span> <span class="nav-text">题 4 [2-]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%A2%98-5-2"><span class="nav-number">2.5.</span> <span class="nav-text">题 5 [2]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%A2%98-6-1"><span class="nav-number">2.6.</span> <span class="nav-text">题 6 [1]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%A2%98-7-1"><span class="nav-number">2.7.</span> <span class="nav-text">题 7 [1+]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%A2%98-8-1"><span class="nav-number">2.8.</span> <span class="nav-text">题 8 [1]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%A2%98-9-1"><span class="nav-number">2.9.</span> <span class="nav-text">题 9 [1]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%A2%98-10-1"><span class="nav-number">2.10.</span> <span class="nav-text">题 10 [1+]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%A2%98-11-1"><span class="nav-number">2.11.</span> <span class="nav-text">题 11 [1+]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%A2%98-12-2"><span class="nav-number">2.12.</span> <span class="nav-text">题 12 [2-]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%A2%98-13-3"><span class="nav-number">2.13.</span> <span class="nav-text">题 13 [3]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%A2%98-14-3"><span class="nav-number">2.14.</span> <span class="nav-text">题 14 [3-]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%A2%98-15-3"><span class="nav-number">2.15.</span> <span class="nav-text">题 15 [3-]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%A2%98-16-3"><span class="nav-number">2.16.</span> <span class="nav-text">题 16 [3-]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%A2%98-17"><span class="nav-number">2.17.</span> <span class="nav-text">题 17 [?]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%A2%98-18-3"><span class="nav-number">2.18.</span> <span class="nav-text">题 18 [3]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%A2%98-19-2"><span class="nav-number">2.19.</span> <span class="nav-text">题 19 [2-]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%A2%98-20-a-1"><span class="nav-number">2.20.</span> <span class="nav-text">题 20 (a) [1-]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%A2%98-20-b-2"><span class="nav-number">2.21.</span> <span class="nav-text">题 20 (b) [2+]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%A2%98-21-2"><span class="nav-number">2.22.</span> <span class="nav-text">题 21 [2-]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%A2%98-22-a-2"><span class="nav-number">2.23.</span> <span class="nav-text">题 22 (a) [2]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%A2%98-22-b"><span class="nav-number">2.24.</span> <span class="nav-text">题 22 (b) [*]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%A2%98-23-2"><span class="nav-number">2.25.</span> <span class="nav-text">题 23 [2-]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%A2%98-24-1"><span class="nav-number">2.26.</span> <span class="nav-text">题 24 [1]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%A2%98-25-2"><span class="nav-number">2.27.</span> <span class="nav-text">题 25 [2]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%A2%98-26-2"><span class="nav-number">2.28.</span> <span class="nav-text">题 26 [2-]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%A2%98-27"><span class="nav-number">2.29.</span> <span class="nav-text">题 27 [*]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%A2%98-28"><span class="nav-number">2.30.</span> <span class="nav-text">题 28 [*]</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E6%8E%92%E5%88%97-Permutations"><span class="nav-number">3.</span> <span class="nav-text">2 排列 | Permutations</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E5%88%92%E5%88%86-Partitions"><span class="nav-number">4.</span> <span class="nav-text">3 划分 | Partitions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-%E6%A0%91-Trees"><span class="nav-number">5.</span> <span class="nav-text">4 树 | Trees</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0-Catalan-Numbers"><span class="nav-number">6.</span> <span class="nav-text">5 卡特兰数 | Catalan Numbers</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-%E6%9D%A8%E8%A1%A8-Young-Tableaux"><span class="nav-number">7.</span> <span class="nav-text">6 杨表 | Young Tableaux</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-%E7%BD%91%E6%A0%BC%E4%B8%8E%E9%95%B6%E5%B5%8C%E5%AF%86%E9%93%BA-Lattice-Paths-amp-Tilings"><span class="nav-number">8.</span> <span class="nav-text">7 网格与镶嵌密铺 | Lattice Paths &amp; Tilings</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="fsy"
+      src="/images/avatar01.png">
+  <p class="site-author-name" itemprop="name">fsy</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">47</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fsy-juruo" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;fsy-juruo" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.cnblogs.com/evenbao/" title="https:&#x2F;&#x2F;www.cnblogs.com&#x2F;evenbao&#x2F;" rel="noopener" target="_blank">even_bao</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://2006duckonline.github.io/2019/08/13/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5/" title="https:&#x2F;&#x2F;2006duckonline.github.io&#x2F;2019&#x2F;08&#x2F;13&#x2F;%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5&#x2F;" rel="noopener" target="_blank">zyx</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://ybw051114.netlify.app/" title="https:&#x2F;&#x2F;ybw051114.netlify.app&#x2F;" rel="noopener" target="_blank">ybw</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://wxq1229.github.io/" title="https:&#x2F;&#x2F;wxq1229.github.io&#x2F;" rel="noopener" target="_blank">wxq</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">fsy</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">105k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">1:36</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '5a61fb0f7adaaeed9336',
+      clientSecret: 'aa4e8e185129493ab8ce5d0741589163e72b097c',
+      repo        : 'fsy-juruo-comments',
+      owner       : 'fsy-juruo',
+      admin       : ['fsy-juruo'],
+      id          : '49babc4b44c6a96e38b2da7f60092584',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>
